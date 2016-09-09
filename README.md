@@ -1,11 +1,13 @@
-# PageKit
+# Laravel UI.Pages (PageKit)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9/mini.png)](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5decf43d0f574e7a833dacfda9ad676c)](https://www.codacy.com/app/shawnsandy04/pagekit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shawnsandy/pagekit&amp;utm_campaign=Badge_Grade)
 
-PageKit is a quick and easy way to upgrade the standard Laravel install page with a clean and modern Starter website or default pages. Allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes. While you focus on the prouduct design and development. 
+Laravel UI.Pages originally (PageKit) is a quick and easy way to upgrade the standard Laravel UI to with a clean and modern Starter website or default pages-- Home Abut Contact. Allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes. Allowing you to focus on the design and development from the get go. 
+
+> If you are looking for the original PageKit package you can still find it here at [Pagekit Original](https://github.com/shawnsandy/pagekit). I changed the name to avoid conflict with PageKit, a php cms. I also used the opportunity to reboot to fix versioning to better meet semver standards. Sorry for the inconvenience I hope you find the package useful.
+
 
 ![PageKit Screenshot](pagekit.png)
-
 
 ## Installation (traditional)
 
