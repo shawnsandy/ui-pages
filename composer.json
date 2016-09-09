@@ -1,12 +1,12 @@
 {
     "name": "shawnsandy/pagekit",
     "type": "library",
-    "description": "Laravel PageKit",
+    "description": "Laravel Ui.Pages",
     "keywords": [
         "shawnsandy",
         "PageKit"
     ],
-    "homepage": "https://github.com/shawnsandy/pagekit",
+    "homepage": "https://github.com/shawnsandy/ui-pages",
     "license": "MIT",
     "authors": [{
         "name": "Shawn Sandy",

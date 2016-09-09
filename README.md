@@ -4,7 +4,7 @@
 
 Laravel UI.Pages originally (PageKit) is a quick and easy way to upgrade the standard Laravel UI to with a clean and modern Starter website or default pages-- Home Abut Contact. Allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes. Allowing you to focus on the design and development from the get go. 
 
-> If you are looking for the original PageKit package you can still find it here at [Pagekit Original](https://github.com/shawnsandy/pagekit). I changed the name to avoid conflict with PageKit, a php cms. I also used the opportunity to reboot to fix versioning to better meet semver standards. Sorry for the inconvenience I hope you find the package useful.
+> If you are looking for the original PageKit package you can still find it here at [Pagekit Original](https://github.com/shawnsandy/pagekit). I have moved PageKit to and new repository and changed the name to avoid conflict with PageKit, a php cms. I also used the opportunity to reboot to fix/update versioning to better meet semver standards. Sorry for the inconvenience I hope you find the package useful.
 
 
 ![PageKit Screenshot](pagekit.png)
@@ -151,58 +151,11 @@ History
 
 ## Change Log
 
-Version 1.4.6 -- PageKit RC-1a
+v.1.0.1
 
-Prepping for official release
+Renamed the package and mover the repository
 
-Full mail integration
-Adds a admin dashboard template
-Refactored the vendor publish tags to pagekit- prefix
-Changed from font-awesome to Material-Icons
-UI Updates
-Bug Fixes
-
-
-
-Version 1.3.7
-
-Animate On Scroll Library install
-- animates header and footer
-
-Version 1.3.6 BETA
-
-Adds Google Analytics js tracker to default view
-Updates to PageKit config settings and readme
-
-Version 1.3.5 BETA
-
-Code analysis passed
-Added to SensioLabsInsight for code analysis 
-Fixes issues with style rendering for custom branding options
-
-Version 1.3.4 BETA 
-
-Adds a Branding feature
-
-Customize fonts, color, background image etc from the config/pagekit.php file
-Updates the readme
-
-Version 1.3.3
-
-...
-
-Version 1.3.2 BETA
-
-- Removes several composer packages
-
-
-Version 1.3.1 BETA
-
-- Added package config file
-- Updated the read-me
-- Minor changes to layout/views 
-
-
+[Pagekit Changelog](CHANGELOG.md)
 
 ## License
 
