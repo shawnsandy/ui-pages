@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+node_modules
+/vendor/
+npm-debug.log
+bower_components
+/ace-builds/
+/packages/
+!/src/public/vendor/
+/src/public/vendor-1/
+/src/public/bkvendor-1/

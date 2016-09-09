@@ -1,0 +1,49 @@
+{
+  "name": "pagekit",
+  "version": "1.0.0",
+  "description": "Package Management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --output-style nested --indent-type space --indent-width 4 -r -o src/public/css/pagekit src/resources/assets && notify -t 'SCSS Compiled' -m 'Completed' ",
+    "autoprefixer": "postcss -u autoprefixer -r /src/public/css/pagekit/*.css",
+    "fonts": "cp -R packages/typicons.font/src/font src/public/vendor/typicons",
+    "animatecss": "cp -R packages/animate.css/animate.css src/public/vendor",
+    "font-awesome": "cp -R node_modules/font-awesome src/public/vendor/font-awesome",
+    "copy:aos": "cp -R node_modules/aos/dist src/public/vendor/aos/",
+    "setup": "npm run fonts && npm run animatecss && npm run font-awesome && npm run copy:aos",
+    "watch:css": "onchange 'src/resources/assets/modules/*.scss' -- npm run scss",
+    "images": "imagemin images/bg/* --out-dir=src/public/img/bg -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnsandy/pagekit.git"
+  },
+  "keywords": [
+    "Larave",
+    "PageKit"
+  ],
+  "author": "shawn sandy <shawnsandy04@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shawnsandy/pagekit/issues"
+  },
+  "homepage": "https://github.com/shawnsandy/pagekit#readme",
+  "devDependencies": {
+    "aos": "^2.0.4",
+    "autoprefixer": "^6.4.0",
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.3",
+    "imagemin": "^5.2.2",
+    "imagemin-cli": "^3.0.0",
+    "node-sass": "^3.8.0",
+    "onchange": "^3.0.0",
+    "postcss-cli": "^2.5.2",
+    "typicons.font": "^2.0.7"
+  },
+  "dependencies": {
+    "node-notifier": "^4.6.1"
+  }
+}

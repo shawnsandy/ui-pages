@@ -1,0 +1,30 @@
+{
+  "name": "pagekit",
+  "description": "Package Management",
+  "main": "index.js",
+  "authors": [
+    "shawn sandy <shawnsandy04@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Larave",
+    "PageKit"
+  ],
+  "homepage": "https://github.com/shawnsandy/pagekit",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/public/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "typicons.font": "typicons#^2.0.7",
+    "animate.css": "^3.5.2"
+  }
+}

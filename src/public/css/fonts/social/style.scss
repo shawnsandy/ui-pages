@@ -1,0 +1,394 @@
+@import "variables";
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot?cpfv14');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?cpfv14#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf?cpfv14') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?cpfv14') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?cpfv14#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.social {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.social-v-card {
+  &:before {
+    content: $social-v-card;
+  }
+}
+.social-video {
+  &:before {
+    content: $social-video;
+  }
+}
+.social-vinyl {
+  &:before {
+    content: $social-vinyl;
+  }
+}
+.social-voicemail {
+  &:before {
+    content: $social-voicemail;
+  }
+}
+.social-wallet {
+  &:before {
+    content: $social-wallet;
+  }
+}
+.social-water {
+  &:before {
+    content: $social-water;
+  }
+}
+.social-500px-with-circle {
+  &:before {
+    content: $social-500px-with-circle;
+  }
+}
+.social-500px {
+  &:before {
+    content: $social-500px;
+  }
+}
+.social-basecamp {
+  &:before {
+    content: $social-basecamp;
+  }
+}
+.social-behance {
+  &:before {
+    content: $social-behance;
+  }
+}
+.social-creative-cloud {
+  &:before {
+    content: $social-creative-cloud;
+  }
+}
+.social-dropbox {
+  &:before {
+    content: $social-dropbox;
+  }
+}
+.social-evernote {
+  &:before {
+    content: $social-evernote;
+  }
+}
+.social-flattr {
+  &:before {
+    content: $social-flattr;
+  }
+}
+.social-foursquare {
+  &:before {
+    content: $social-foursquare;
+  }
+}
+.social-google-drive {
+  &:before {
+    content: $social-google-drive;
+  }
+}
+.social-google-hangouts {
+  &:before {
+    content: $social-google-hangouts;
+  }
+}
+.social-grooveshark {
+  &:before {
+    content: $social-grooveshark;
+  }
+}
+.social-icloud {
+  &:before {
+    content: $social-icloud;
+  }
+}
+.social-mixi {
+  &:before {
+    content: $social-mixi;
+  }
+}
+.social-onedrive {
+  &:before {
+    content: $social-onedrive;
+  }
+}
+.social-paypal {
+  &:before {
+    content: $social-paypal;
+  }
+}
+.social-picasa {
+  &:before {
+    content: $social-picasa;
+  }
+}
+.social-qq {
+  &:before {
+    content: $social-qq;
+  }
+}
+.social-rdio-with-circle {
+  &:before {
+    content: $social-rdio-with-circle;
+  }
+}
+.social-renren {
+  &:before {
+    content: $social-renren;
+  }
+}
+.social-scribd {
+  &:before {
+    content: $social-scribd;
+  }
+}
+.social-sina-weibo {
+  &:before {
+    content: $social-sina-weibo;
+  }
+}
+.social-skype-with-circle {
+  &:before {
+    content: $social-skype-with-circle;
+  }
+}
+.social-skype {
+  &:before {
+    content: $social-skype;
+  }
+}
+.social-slideshare {
+  &:before {
+    content: $social-slideshare;
+  }
+}
+.social-smashing {
+  &:before {
+    content: $social-smashing;
+  }
+}
+.social-soundcloud {
+  &:before {
+    content: $social-soundcloud;
+  }
+}
+.social-spotify-with-circle {
+  &:before {
+    content: $social-spotify-with-circle;
+  }
+}
+.social-spotify {
+  &:before {
+    content: $social-spotify;
+  }
+}
+.social-swarm {
+  &:before {
+    content: $social-swarm;
+  }
+}
+.social-vine-with-circle {
+  &:before {
+    content: $social-vine-with-circle;
+  }
+}
+.social-vine {
+  &:before {
+    content: $social-vine;
+  }
+}
+.social-vk-alternitive {
+  &:before {
+    content: $social-vk-alternitive;
+  }
+}
+.social-vk-with-circle {
+  &:before {
+    content: $social-vk-with-circle;
+  }
+}
+.social-vk {
+  &:before {
+    content: $social-vk;
+  }
+}
+.social-xing-with-circle {
+  &:before {
+    content: $social-xing-with-circle;
+  }
+}
+.social-xing {
+  &:before {
+    content: $social-xing;
+  }
+}
+.social-yelp {
+  &:before {
+    content: $social-yelp;
+  }
+}
+.social-dribbble-with-circle {
+  &:before {
+    content: $social-dribbble-with-circle;
+  }
+}
+.social-dribbble {
+  &:before {
+    content: $social-dribbble;
+  }
+}
+.social-facebook-with-circle {
+  &:before {
+    content: $social-facebook-with-circle;
+  }
+}
+.social-facebook {
+  &:before {
+    content: $social-facebook;
+  }
+}
+.social-flickr-with-circle {
+  &:before {
+    content: $social-flickr-with-circle;
+  }
+}
+.social-flickr {
+  &:before {
+    content: $social-flickr;
+  }
+}
+.social-github-with-circle {
+  &:before {
+    content: $social-github-with-circle;
+  }
+}
+.social-github {
+  &:before {
+    content: $social-github;
+  }
+}
+.social-google-with-circle {
+  &:before {
+    content: $social-google-with-circle;
+  }
+}
+.social-google {
+  &:before {
+    content: $social-google;
+  }
+}
+.social-instagram-with-circle {
+  &:before {
+    content: $social-instagram-with-circle;
+  }
+}
+.social-instagram {
+  &:before {
+    content: $social-instagram;
+  }
+}
+.social-lastfm-with-circle {
+  &:before {
+    content: $social-lastfm-with-circle;
+  }
+}
+.social-lastfm {
+  &:before {
+    content: $social-lastfm;
+  }
+}
+.social-linkedin-with-circle {
+  &:before {
+    content: $social-linkedin-with-circle;
+  }
+}
+.social-linkedin {
+  &:before {
+    content: $social-linkedin;
+  }
+}
+.social-pinterest-with-circle {
+  &:before {
+    content: $social-pinterest-with-circle;
+  }
+}
+.social-pinterest {
+  &:before {
+    content: $social-pinterest;
+  }
+}
+.social-rdio {
+  &:before {
+    content: $social-rdio;
+  }
+}
+.social-stumbleupon-with-circle {
+  &:before {
+    content: $social-stumbleupon-with-circle;
+  }
+}
+.social-stumbleupon {
+  &:before {
+    content: $social-stumbleupon;
+  }
+}
+.social-tumblr-with-circle {
+  &:before {
+    content: $social-tumblr-with-circle;
+  }
+}
+.social-tumblr {
+  &:before {
+    content: $social-tumblr;
+  }
+}
+.social-twitter-with-circle {
+  &:before {
+    content: $social-twitter-with-circle;
+  }
+}
+.social-twitter {
+  &:before {
+    content: $social-twitter;
+  }
+}
+.social-vimeo-with-circle {
+  &:before {
+    content: $social-vimeo-with-circle;
+  }
+}
+.social-vimeo {
+  &:before {
+    content: $social-vimeo;
+  }
+}
+.social-youtube-with-circle {
+  &:before {
+    content: $social-youtube-with-circle;
+  }
+}
+.social-youtube {
+  &:before {
+    content: $social-youtube;
+  }
+}
+

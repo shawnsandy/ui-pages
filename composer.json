@@ -1,0 +1,59 @@
+{
+    "name": "shawnsandy/pagekit",
+    "type": "library",
+    "description": "Laravel PageKit",
+    "keywords": [
+        "shawnsandy",
+        "PageKit"
+    ],
+    "homepage": "https://github.com/shawnsandy/pagekit",
+    "license": "MIT",
+    "authors": [{
+        "name": "Shawn Sandy",
+        "email": "shawnsandy04@gmail.com",
+        "homepage": "http://shawnsandy.design",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": "~5.6|~7.0",
+        "adamwathan/bootforms": "^0.8.1",
+        "barryvdh/laravel-debugbar": "^2.2",
+        "doctrine/dbal": "^2.5",
+        "greggilbert/recaptcha": "^2.1",
+        "jeroen-g/laravel-packager": "^1.5",
+        "laracasts/flash": "^2.0",
+        "laracasts/generators": "^1.1",
+        "laracasts/utilities": "^2.1",
+        "laravel/socialite": "^2.0",
+        "laravelcollective/html": "^5.2",
+        "rap2hpoutre/laravel-log-viewer": "^0.6.0",
+        "sven/env-providers": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0||~5.0",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "ShawnSandy\\PageKit\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ShawnSandy\\PageKit\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "format": "phpcbf --standard=psr2 src/"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
