@@ -1,12 +1,12 @@
 {
-  "name": "pagekit",
+  "name": "ui-pages",
   "version": "1.0.0",
   "description": "Package Management",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --output-style nested --indent-type space --indent-width 4 -r -o src/public/css/pagekit src/resources/assets && notify -t 'SCSS Compiled' -m 'Completed' ",
-    "autoprefixer": "postcss -u autoprefixer -r /src/public/css/pagekit/*.css",
+    "scss": "node-sass --output-style nested --indent-type space --indent-width 4 -r -o src/public/css/ui-pages src/resources/assets && notify -t 'SCSS Compiled' -m 'Completed' ",
+    "autoprefixer": "postcss -u autoprefixer -r /src/public/css/ui-pages/*.css",
     "fonts": "cp -R packages/typicons.font/src/font src/public/vendor/typicons",
     "animatecss": "cp -R packages/animate.css/animate.css src/public/vendor",
     "font-awesome": "cp -R node_modules/font-awesome src/public/vendor/font-awesome",
@@ -17,18 +17,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shawnsandy/pagekit.git"
+    "url": "git+https://github.com/shawnsandy/ui-pages.git"
   },
   "keywords": [
     "Larave",
-    "PageKit"
+    "ui-pages"
   ],
   "author": "shawn sandy <shawnsandy04@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shawnsandy/pagekit/issues"
+    "url": "https://github.com/shawnsandy/ui-pages/issues"
   },
-  "homepage": "https://github.com/shawnsandy/pagekit#readme",
+  "homepage": "https://github.com/shawnsandy/ui-pages#readme",
   "devDependencies": {
     "aos": "^2.0.4",
     "autoprefixer": "^6.4.0",

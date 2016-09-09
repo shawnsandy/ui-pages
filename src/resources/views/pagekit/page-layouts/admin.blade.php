@@ -32,6 +32,7 @@
                                         <a href="#"><i class="fa material material_people" aria-hidden="true"></i><span
                                                     class="nav-title">Users</span></a>
                                     </li>
+                                @show
                                     <li>
                                         <a href=""><i class="fa material material_settings" aria-hidden="true"></i><span
                                                     class="nav-title">Settings</span>
@@ -43,7 +44,7 @@
                                                     class="nav-title">Top</span>
                                         </a>
                                     </li>
-                                @show
+
                             </ul>
                         </nav>
                     </div>
