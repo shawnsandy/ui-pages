@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --output-style nested --indent-type space --indent-width 4 -r -o src/public/css/ui-pages src/resources/assets && notify -t 'SCSS Compiled' -m 'Completed' ",
-    "autoprefixer": "postcss -u autoprefixer -r /src/public/css/ui-pages/*.css",
+    "scss": "node-sass --output-style nested --indent-type space --indent-width 4 -r -o src/public/css/pagekit src/resources/assets && notify -t 'SCSS Compiled' -m 'Completed' ",
+    "autoprefixer": "postcss -u autoprefixer -r /src/public/css/pagekit/*.css",
     "fonts": "cp -R packages/typicons.font/src/font src/public/vendor/typicons",
     "animatecss": "cp -R packages/animate.css/animate.css src/public/vendor",
     "font-awesome": "cp -R node_modules/font-awesome src/public/vendor/font-awesome",
     "copy:aos": "cp -R node_modules/aos/dist src/public/vendor/aos/",
     "setup": "npm run fonts && npm run animatecss && npm run font-awesome && npm run copy:aos",
-    "watch:css": "onchange 'src/resources/assets/modules/*.scss' -- npm run scss",
+    "watch:css": "onchange 'src/resources/assets/*.scss' -- npm run scss",
     "images": "imagemin images/bg/* --out-dir=src/public/img/bg -p"
   },
   "repository": {

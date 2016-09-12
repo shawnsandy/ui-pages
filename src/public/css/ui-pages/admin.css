@@ -6,6 +6,7 @@
     padding: 0;
     display: table;
     height: 100%;
+    max-width: 350px;
     width: 150px;
     overflow: hidden;
     background-color: #333333;

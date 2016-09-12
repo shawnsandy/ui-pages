@@ -1,7 +1,5 @@
-@extends('page::page-layouts.admin')
+@extends('page::page-layouts.admin-v2')
 
-@section('sidebar-links')
-@endsection
 
 @section('content')
     <div class="container-fluid">
@@ -14,8 +12,6 @@
 
                 </div>
             </div>
-
         </div>
-
     </div>
 @endsection

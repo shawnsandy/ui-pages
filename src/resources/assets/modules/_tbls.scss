@@ -1,0 +1,23 @@
+.tbl {
+  display: table;
+  height: inherit;
+  width: 100%;
+
+  &-row {
+    display: table-row;
+  }
+
+  &-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &-top {
+    vertical-align: top;
+  }
+
+  &-bottom {
+    vertical-align: bottom;
+  }
+
+}
