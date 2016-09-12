@@ -5,20 +5,15 @@ body {
   overflow-x: hidden;
 }
 
-.admin-nav {
-  height: 50px;
-  padding: 0 20px;
-}
-
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
   left: $sidebar-width;
-  width: 0;
+  width: 80;
   height: 100%;
   margin-left: -$sidebar-width;
   overflow-y: auto;
-  background: #000;
+  background: $gray-dark;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -27,11 +22,11 @@ body {
 
 #wrapper {
   padding-left: 0;
+  height: 100%;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-
 }
 
 #wrapper.toggled {
@@ -45,12 +40,13 @@ body {
 #page-content-wrapper {
   width: 100%;
   position: absolute;
+  height: 100%;
   /*padding: 15px;*/
 }
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
-  margin-right: -$sidebar-width;
+  margin-right: 80px;
 }
 
 /* Sidebar Styles */
@@ -58,14 +54,44 @@ body {
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: $sidebar-width;
+  width: $sidebar-width-closed;
   margin: 0;
   padding: 0;
   list-style: none;
+
+  .material {
+    font-size: 24px;
+    padding: 0 10px 0 10px;
+    display: block;
+    text-shadow: #000 1px 1px 3px;
+  }
+
+  li a {
+    text-align: center;
+    width: $sidebar-width;
+    padding: 15px 0 15px;
+    .toggled & {
+      width: 80px;
+    }
+  }
+
+  .nav-title {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    font-size: 14px;
+    display: block;
+    .toggled & {
+      display: none;
+    }
+
+  }
+
 }
 
 .sidebar-nav li {
-  text-indent: 20px;
+  //text-indent: 20px;
   line-height: 40px;
 }
 
@@ -101,13 +127,17 @@ body {
   background: none;
 }
 
+.sidebar-right {
+  height: 100%;
+}
+
 @media(min-width: 768px) {
   #wrapper {
     padding-left: $sidebar-width;
   }
 
   #wrapper.toggled {
-    padding-left: 0;
+    padding-left: 80px;
   }
 
   #sidebar-wrapper {
@@ -115,7 +145,7 @@ body {
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    width: 0;
+    width: 80px;
   }
 
   #page-content-wrapper {
@@ -130,3 +160,4 @@ body {
 }
 
 @import "modules/tbls";
+@import "modules/dashboard";

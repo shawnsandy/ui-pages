@@ -1,19 +1,15 @@
 body {
     overflow-x: hidden; }
 
-.admin-nav {
-    height: 50px;
-    padding: 0 20px; }
-
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
     left: 200px;
-    width: 0;
+    width: 80;
     height: 100%;
     margin-left: -200px;
     overflow-y: auto;
-    background: #000;
+    background: #333333;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -21,6 +17,7 @@ body {
 
 #wrapper {
     padding-left: 0;
+    height: 100%;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -35,23 +32,43 @@ body {
 #page-content-wrapper {
     width: 100%;
     position: absolute;
+    height: 100%;
     /*padding: 15px;*/ }
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -200px; }
+    margin-right: 80px; }
 
 /* Sidebar Styles */
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 200px;
+    width: 80px;
     margin: 0;
     padding: 0;
     list-style: none; }
+    .sidebar-nav .material {
+        font-size: 24px;
+        padding: 0 10px 0 10px;
+        display: block;
+        text-shadow: #000 1px 1px 3px; }
+    .sidebar-nav li a {
+        text-align: center;
+        width: 200px;
+        padding: 15px 0 15px; }
+        .toggled .sidebar-nav li a {
+            width: 80px; }
+    .sidebar-nav .nav-title {
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        font-size: 14px;
+        display: block; }
+        .toggled .sidebar-nav .nav-title {
+            display: none; }
 
 .sidebar-nav li {
-    text-indent: 20px;
     line-height: 40px; }
 
 .sidebar-nav li a {
@@ -80,15 +97,18 @@ body {
     color: #fff;
     background: none; }
 
+.sidebar-right {
+    height: 100%; }
+
 @media (min-width: 768px) {
     #wrapper {
         padding-left: 200px; }
     #wrapper.toggled {
-        padding-left: 0; }
+        padding-left: 80px; }
     #sidebar-wrapper {
         width: 200px; }
     #wrapper.toggled #sidebar-wrapper {
-        width: 0; }
+        width: 80px; }
     #page-content-wrapper {
         padding: 0px;
         position: relative; }
@@ -109,3 +129,29 @@ body {
         vertical-align: top; }
     .tbl-bottom {
         vertical-align: bottom; }
+
+.dashboard-wrapper {
+    height: 100%; }
+    .dashboard-wrapper .dashboard {
+        width: 90%;
+        padding: 20px 20px; }
+    .dashboard-wrapper .dashboard-sidebar {
+        width: 20%;
+        min-width: 280px;
+        background-color: #F9F9F9; }
+        .dashboard-wrapper .dashboard-sidebar > * {
+            padding: 10px 20px; }
+        .dashboard-wrapper .dashboard-sidebar h3 {
+            margin-top: 5px; }
+
+.admin-nav {
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid #F9F9F9; }
+    .admin-nav .branding {
+        width: 280px;
+        margin-right: 1px solid #F9F9F9; }
+    .admin-nav .material {
+        font-size: 28px; }
+    .admin-nav a {
+        text-decoration: none; }

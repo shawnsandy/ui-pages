@@ -12,7 +12,7 @@
     "font-awesome": "cp -R node_modules/font-awesome src/public/vendor/font-awesome",
     "copy:aos": "cp -R node_modules/aos/dist src/public/vendor/aos/",
     "setup": "npm run fonts && npm run animatecss && npm run font-awesome && npm run copy:aos",
-    "watch:css": "onchange 'src/resources/assets/*.scss' -- npm run scss",
+    "watch:css": "onchange 'src/resources/assets/**/*.scss' -- npm run scss",
     "images": "imagemin images/bg/* --out-dir=src/public/img/bg -p"
   },
   "repository": {
