@@ -7,12 +7,13 @@
             <ul class="sidebar-nav">
                 <li>
                     <a href="#" class="" id="menu-toggle">
-                        <i class="material material_menu"></i>
+                        <i class="material material_menu toggle-btn"></i>
+                        <i class="material material_close toggle-btn closed"></i>
                     </a>
                 </li>
                 @section('sidebar-links')
                     <li>
-                        <a href="">
+                        <a href="/dash">
                             <i class="fa material material_apps" aria-hidden="true"></i>
                             <span class="nav-title">Dashboard</span>
                         </a>
@@ -28,7 +29,7 @@
                     </li>
                 @show
                 <li>
-                    <a href=""><i class="fa material material_settings" aria-hidden="true"></i><span
+                    <a href="/dash/config"><i class="fa material material_settings" aria-hidden="true"></i><span
                                 class="nav-title">Settings</span>
                     </a>
                 </li>
@@ -95,11 +96,7 @@
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+        $('.toggle-btn').toggleClass('closed');
     });
-    $('#sidebar-toggle').click(function (e) {
-        e.preventDefault();
-        $(".sidebar-toogle").slideToggle('fast', 'linear');
-        $('#wrapper').toggleClass('sidebar-closed');
-    })
 </script>
 @endpush

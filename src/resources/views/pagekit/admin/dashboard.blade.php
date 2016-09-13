@@ -1,4 +1,4 @@
-@extends('page::page-layouts.admin')
+@extends('page::page-layouts.admin-v2')
 @section('content')
 
     <div class="container-fluid">

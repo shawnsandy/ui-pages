@@ -58,6 +58,8 @@ body {
         padding: 15px 0 15px; }
         .toggled .sidebar-nav li a {
             width: 80px; }
+    .sidebar-nav .closed {
+        display: none; }
     .sidebar-nav .nav-title {
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
@@ -69,12 +71,19 @@ body {
             display: none; }
 
 .sidebar-nav li {
-    line-height: 40px; }
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999; }
+    color: #999999;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
@@ -147,10 +156,10 @@ body {
 .admin-nav {
     height: 60px;
     padding: 0 20px;
-    border-bottom: 1px solid #F9F9F9; }
+    border-bottom: 1px solid #EEEEEE; }
     .admin-nav .branding {
         width: 280px;
-        margin-right: 1px solid #F9F9F9; }
+        border-right: 1px solid #EEEEEE; }
     .admin-nav .material {
         font-size: 28px; }
     .admin-nav a {
