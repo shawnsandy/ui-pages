@@ -1,6 +1,6 @@
 # Laravel UI.Pages (PageKit)
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9/mini.png)](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5decf43d0f574e7a833dacfda9ad676c)](https://www.codacy.com/app/shawnsandy04/pagekit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shawnsandy/pagekit&amp;utm_campaign=Badge_Grade)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9/mini.png)](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/31fe3b80a4b74e68b2d06a5859a42615)](https://www.codacy.com/app/shawnsandy04/ui-pages?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shawnsandy/ui-pages&amp;utm_campaign=Badge_Grade)
 
 Laravel UI.Pages originally (PageKit) is a quick and easy way to upgrade the standard Laravel UI to with a clean and modern Starter website or default pages-- Home Abut Contact. Allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes. Allowing you to focus on the design and development from the get go. 
 

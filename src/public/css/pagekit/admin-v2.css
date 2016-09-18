@@ -22,6 +22,9 @@ body {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
+    #wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5, #wrapper h6 {
+        margin-top: 5px;
+        margin-bottom: 20px; }
 
 #wrapper.toggled {
     padding-left: 200px; }
@@ -142,8 +145,8 @@ body {
 .dashboard-wrapper {
     height: 100%; }
     .dashboard-wrapper .dashboard {
-        width: 90%;
-        padding: 20px 20px; }
+        width: 100%;
+        padding: 15px 0; }
     .dashboard-wrapper .dashboard-sidebar {
         width: 20%;
         min-width: 280px;
@@ -164,3 +167,12 @@ body {
         font-size: 28px; }
     .admin-nav a {
         text-decoration: none; }
+
+.widgets .social {
+    font-size: 16px; }
+    .widgets .social-reg {
+        font-size: 36px; }
+    .widgets .social-med {
+        font-size: 48px; }
+    .widgets .social-large {
+        font-size: 72px; }

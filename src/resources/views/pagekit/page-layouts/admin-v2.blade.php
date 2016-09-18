@@ -34,9 +34,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href=""><i class="fa material material_arrow_upward"
-                                  aria-hidden="true"></i><span
-                                class="nav-title">Top</span>
+                    <a href=""><i class="fa material material_arrow_upward" aria-hidden="true"></i><span class="nav-title">Top</span>
                     </a>
                 </li>
             </ul>
@@ -56,9 +54,9 @@
                             </h4>
                         </div>
                         <div class="tbl-cell profile text-right">
-                           <p>
-                               Shawn Sandy
-                           </p>
+                            <p>
+                                Shawn Sandy
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -66,9 +64,7 @@
             <div class="dashboard-wrapper">
                 <div class="tbl">
                     <div class="tbl-cell tbl-top dashboard">
-                        <div class="">
-                            <div class=""> @yield('content')</div>
-                        </div>
+                        <div class=""> @yield('content')</div>
                     </div>
                     <div class="tbl-cell tbl-top dashboard-sidebar">
                         <div class="">
@@ -90,7 +86,6 @@
 <link rel="stylesheet" href="{{ asset('/css/pagekit/admin-v2.css') }}">
 @endpush
 @push('scripts')
-
 <!-- Menu Toggle Script -->
 <script>
     $("#menu-toggle").click(function (e) {

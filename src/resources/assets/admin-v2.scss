@@ -27,6 +27,12 @@ body {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+
 }
 
 #wrapper.toggled {
@@ -173,3 +179,4 @@ body {
 
 @import "modules/tbls";
 @import "modules/dashboard";
+@import "modules/components";
