@@ -32,16 +32,20 @@ Route::group(['prefix' => 'dash', 'middleware' => 'web'], function(){
         return view('page::admin.dashboard');
     });
 
+    Route::get('config', 'ShawnSandy\PageKit\Controllers\PageKitController@config');
+
     Route::get('{name}', function($name){
         return view('page::admin.'. $name);
     });
+
+
 
 });
 
 Route::group(['prefix' => 'post'], function(){
 
     Route::get('', function(){
-        return view('page::admin.post');
+        return view('page::post.default');
     });
 
 });

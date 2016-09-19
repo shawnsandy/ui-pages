@@ -1,0 +1,37 @@
+.dashboard-wrapper {
+  height: 100%;
+  .dashboard {
+    width: 100%;
+    padding: 15px 0;
+  }
+  .dashboard-sidebar {
+    width: 20%;
+    min-width: 280px;
+    background-color: $hint-red;
+
+    > * {
+      padding: 10px 20px;
+    }
+
+    h3 {
+      margin-top: 5px;
+    }
+  }
+}
+
+.admin-nav {
+  height: 60px;
+  padding: 0 20px;
+  border-bottom: 1px solid $off-white;
+  .branding {
+    width: 280px;
+    border-right: 1px solid $off-white;
+  }
+
+  .material {
+    font-size: 28px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
