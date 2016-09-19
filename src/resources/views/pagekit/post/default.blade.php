@@ -1,6 +1,7 @@
 @extends('page::page-layouts.admin')
+@section('sidebar-links')
+@endsection
 @section('content')
-
     <div class="container-fluid">
         <div class="widget">
             <div class="row">

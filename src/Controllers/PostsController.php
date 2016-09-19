@@ -1,6 +1,7 @@
 <?php
 
 namespace ShawnSandy\PageKit\Controllers;
+use Illuminate\Routing\Controller;
 
 /**
  * Class EditsController
@@ -8,7 +9,7 @@ namespace ShawnSandy\PageKit\Controllers;
  *
  * @package \ShawnSandy\PageKit\Controllers
  */
-class EditsController
+class PostController extends Controller
 {
 
     /**
@@ -16,7 +17,7 @@ class EditsController
      * Create or edit post
      */
     public function index(){
-
+        return view('page::post.post');
     }
 
 }

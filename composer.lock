@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9728482d414e7473aead4ecd858f044",
-    "content-hash": "8c2918e26fca7ff515570fb48f3fdf9b",
+    "hash": "17d9606a9fb167763a07d4936aeb7bde",
+    "content-hash": "874ffb61a19855fa7ad3d6a4a358d5e8",
     "packages": [
         {
             "name": "adamwathan/bootforms",
@@ -144,6 +144,47 @@
                 "webprofiler"
             ],
             "time": "2016-07-29 15:00:36"
+        },
+        {
+            "name": "brotzka/laravel-dotenv-editor",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Brotzka/laravel-dotenv-editor.git",
+                "reference": "8a45063418b07c59a7bf9e17ada372aadf5fcc24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Brotzka/laravel-dotenv-editor/zipball/8a45063418b07c59a7bf9e17ada372aadf5fcc24",
+                "reference": "8a45063418b07c59a7bf9e17ada372aadf5fcc24",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Brotzka\\DotenvEditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabian Hagen",
+                    "email": "fabianhagen87@gmail.com"
+                }
+            ],
+            "description": "A package for editing the .env file in your Laravel root.",
+            "keywords": [
+                "dotenv",
+                "dotenv-editor",
+                "laravel"
+            ],
+            "time": "2016-08-01 04:39:02"
         },
         {
             "name": "doctrine/annotations",

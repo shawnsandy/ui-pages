@@ -1,10 +1,9 @@
 @extends('page::page-layouts.default')
-
 @section('page')
     <div id="wrapper" class="table sidebar-closed">
         <div class="table-row">
             <div class="table-cell">
-                <div class="sidebar ">
+                <div class="sidebar">
                     <div class="">
                         <nav class="top-nav">
                             <ul class="list-unstyled">
@@ -19,7 +18,8 @@
                                 </li>
                                 @section('sidebar-links')
                                     <li>
-                                        <a href=""><i class="fa material material_dashboard" aria-hidden="true"></i>
+                                        <a href="">
+                                            <i class="fa material material_apps" aria-hidden="true"></i>
                                             <span class="nav-title">Dashboard</span>
                                         </a>
                                     </li>
@@ -32,18 +32,18 @@
                                         <a href="#"><i class="fa material material_people" aria-hidden="true"></i><span
                                                     class="nav-title">Users</span></a>
                                     </li>
-                                    <li>
-                                        <a href=""><i class="fa material material_settings" aria-hidden="true"></i><span
-                                                    class="nav-title">Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><i class="fa material material_arrow_upward"
-                                                      aria-hidden="true"></i><span
-                                                    class="nav-title">Top</span>
-                                        </a>
-                                    </li>
                                 @show
+                                <li>
+                                    <a href=""><i class="fa material material_settings" aria-hidden="true"></i><span
+                                                class="nav-title">Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa material material_arrow_upward"
+                                                  aria-hidden="true"></i><span
+                                                class="nav-title">Top</span>
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -78,12 +78,9 @@
                 </div>
             </div>
 
-
             @section('sidebar-right')
                 <div class="table-cell sidebar-right">
-
                     <div class="container-fluid">
-
                         <div class="">
                             <h4 class="text-uppercase"><i class="material material_info_outline"></i></h4>
                             <p>PageKit admin starter is an easy to use bootstrap compatible admin dashboard created to
