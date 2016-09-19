@@ -70,7 +70,7 @@
 
 @stack('scripts')
 
-<script src="/vendor/aos/aos.js"></script>
+<script src="/packages/aos/aos.js"></script>
 <script>
     AOS.init();
 </script>
