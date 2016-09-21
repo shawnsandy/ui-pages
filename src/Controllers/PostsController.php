@@ -1,6 +1,8 @@
 <?php
 
 namespace ShawnSandy\PageKit\Controllers;
+
+
 use Illuminate\Routing\Controller;
 
 /**

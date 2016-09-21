@@ -10,23 +10,29 @@ class PageKitController extends Controller
 
 
     /**
-     * Profile name.
+     * Process the contact form name.
      *
      * @return Response
      */
     public function contactUs(Request $request)
     {
-        Mail::send('page::emails.contact-info', ['data' => $request->all()], function (Message $message) use ($request) {
-            $message->from($request->email, ': Contact request');
-            $message->to('shawnasndy04@gmail.com', 'shawn sandy')->subject('Your Reminder!');
-        });
-
+        $this->send_contact($request);
         return back();
     }
 
     public function config()
     {
-
         return view('page::admin.config');
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function send_contact(Request $request)
+    {
+        Mail::send('page::emails.contact-info', ['data' => $request->all()], function (Message $message) use ($request) {
+            $message->from($request->email, ': Contact request');
+            $message->to('shawnasndy04@gmail.com', 'shawn sandy')->subject('Your Reminder!');
+        });
     }
 }
