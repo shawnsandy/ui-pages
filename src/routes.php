@@ -8,7 +8,6 @@
  */
 
 Route::group(['prefix' => 'page', 'middleware' => ['web']], function () {
-
     Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@index');
     Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@page');
     Route::get('login-reset', 'ShawnSandy\PageKit\Controllers\PagesController@resetLogin');
@@ -17,18 +16,12 @@ Route::group(['prefix' => 'page', 'middleware' => ['web']], function () {
 });
 
 Route::group(['prefix' => 'dash', 'middleware' => 'web'], function () {
-
     Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
-
     Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
-
-
 });
 
 Route::group(['prefix' => 'post'], function () {
 
-    Route::get('', function () {
-        return view('page::post.default');
-    });
+    Route::get('{posts}', 'ShawnSandy\PageKit\Controllers\PostsController@index');
 
 });
