@@ -4,7 +4,6 @@
 @section('content')
     <div class="container-fluid">
         <div class="row section">
-
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
