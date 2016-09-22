@@ -20,8 +20,8 @@ Route::group(['prefix' => 'dash', 'middleware' => 'web'], function () {
     Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
 });
 
-Route::group(['prefix' => 'post'], function () {
+Route::group(['prefix' => 'p', 'middleware' => 'web'], function () {
 
-    Route::get('{posts}', 'ShawnSandy\PageKit\Controllers\PostsController@index');
+    Route::get('', 'ShawnSandy\PageKit\Controllers\PostsController@index');
 
 });

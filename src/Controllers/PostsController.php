@@ -11,7 +11,7 @@ use Illuminate\Routing\Controller;
  *
  * @package \ShawnSandy\PageKit\Controllers
  */
-class PostController extends Controller
+class PostsController extends Controller
 {
 
     /**
