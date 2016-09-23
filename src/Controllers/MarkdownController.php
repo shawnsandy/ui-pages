@@ -33,9 +33,10 @@ class MarkdownController extends Controller
     /**
      * @return string
      */
-    public function show($md){
+    public function show($posts){
 
-        $file = $md.'.md';
+        $file = $posts.'.md';
+
         if(!Storage::disk('posts')->exists($file))
             return redirect('/page/missing-page') ;
 
