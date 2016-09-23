@@ -7,7 +7,6 @@ use Mail;
 class PageKitController extends Controller
 {
 
-
     /**
      * Process the contact form name.
      *
