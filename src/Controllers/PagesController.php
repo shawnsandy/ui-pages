@@ -44,11 +44,10 @@ class PagesController extends Controller
      */
     public function theView($name, $data = [])
     {
-        if (view()->exists('page::' . $name)):
+        $view = 'missing-page';
+
+        if (view()->exists('page::' . $name))
             $view = $name;
-        else :
-            $view = 'missing-page';
-        endif;
 
         return view('page::' . $view, $data);
     }
