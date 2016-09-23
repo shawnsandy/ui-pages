@@ -28,14 +28,6 @@ class PageKitController extends Controller
      */
     public function send_contact(Request $request)
     {
-        $this->sendContactUs($request);
-    }
-
-    /**
-     * @param Request $request
-     */
-    public function sendContactUs(Request $request)
-    {
         Mail::send('page::emails.contact-info', ['data' => $request->all()], function (Message $message) use ($request) {
             $message->from($request->email, ': Contact request');
             $message->to('shawnsandy04@gmail.com', 'shawn sandy')->subject('Contact request');
@@ -43,3 +35,4 @@ class PageKitController extends Controller
     }
 
 }
+
