@@ -1,6 +1,8 @@
 <?php
 
 namespace ShawnSandy\PageKit\Controllers;
+
+
 use Illuminate\Routing\Controller;
 
 /**
@@ -9,7 +11,7 @@ use Illuminate\Routing\Controller;
  *
  * @package \ShawnSandy\PageKit\Controllers
  */
-class PostController extends Controller
+class PostsController extends Controller
 {
 
     /**

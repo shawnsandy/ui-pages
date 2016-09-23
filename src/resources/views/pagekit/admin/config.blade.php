@@ -4,9 +4,6 @@
 @section('content')
     <div class="container-fluid">
         <div class="row section">
-            @if('dotenveditor.pathToEnv')
-
-            @else
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">

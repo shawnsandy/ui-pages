@@ -27,6 +27,7 @@
         "laracasts/utilities": "^2.1",
         "laravel/socialite": "^2.0",
         "laravelcollective/html": "^5.2",
+        "michelf/php-markdown": "^1.6",
         "rap2hpoutre/laravel-log-viewer": "^0.6.0",
         "sven/env-providers": "^3.0"
     },

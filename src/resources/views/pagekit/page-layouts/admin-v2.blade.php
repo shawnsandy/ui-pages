@@ -5,38 +5,8 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li>
-                    <a href="#" class="" id="menu-toggle">
-                        <i class="material material_menu toggle-btn"></i>
-                        <i class="material material_close toggle-btn closed"></i>
-                    </a>
-                </li>
-                @section('sidebar-links')
-                    <li>
-                        <a href="/dash">
-                            <i class="fa material material_apps" aria-hidden="true"></i>
-                            <span class="nav-title">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fa material material_assignment" aria-hidden="true"></i>
-                            <span class="nav-title">Post</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa material material_people" aria-hidden="true"></i><span
-                                    class="nav-title">Users</span></a>
-                    </li>
-                @show
-                <li>
-                    <a href="/dash/config"><i class="fa material material_settings" aria-hidden="true"></i><span
-                                class="nav-title">Settings</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=""><i class="fa material material_arrow_upward" aria-hidden="true"></i><span class="nav-title">Top</span>
-                    </a>
-                </li>
+                @include('page::page-layouts.shared.sidebar-nav')
+
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -64,7 +34,7 @@
             <div class="dashboard-wrapper">
                 <div class="tbl">
                     <div class="tbl-cell tbl-top dashboard">
-                        <div class=""> @yield('content')</div>
+                        <main class=""> @yield('content')</main>
                     </div>
                     <div class="tbl-cell tbl-top dashboard-sidebar">
                         <div class="">

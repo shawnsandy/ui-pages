@@ -147,6 +147,8 @@ body {
     .dashboard-wrapper .dashboard {
         width: 100%;
         padding: 15px 0; }
+        .dashboard-wrapper .dashboard main {
+            padding: 0 10px; }
     .dashboard-wrapper .dashboard-sidebar {
         width: 20%;
         min-width: 280px;
