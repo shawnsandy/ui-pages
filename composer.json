@@ -20,8 +20,6 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "brotzka/laravel-dotenv-editor": "^2.0",
         "doctrine/dbal": "^2.5",
-        "erusev/parsedown": "^1.6",
-        "graham-campbell/markdown": "^7.0",
         "greggilbert/recaptcha": "^2.1",
         "jeroen-g/laravel-packager": "^1.5",
         "laracasts/flash": "^2.0",
@@ -29,6 +27,7 @@
         "laracasts/utilities": "^2.1",
         "laravel/socialite": "^2.0",
         "laravelcollective/html": "^5.2",
+        "michelf/php-markdown": "^1.6",
         "rap2hpoutre/laravel-log-viewer": "^0.6.0",
         "sven/env-providers": "^3.0"
     },

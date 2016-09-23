@@ -3,7 +3,8 @@
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
-use Parsedown;
+use Michelf\MarkdownExtra;
+
 
 
 /**
@@ -19,7 +20,7 @@ class MarkdownController extends Controller
     /**
      * MarkdownController constructor.
      */
-    public function __construct(Parsedown $parsedown)
+    public function __construct(MarkdownExtra $parsedown)
     {
         $this->parsedown = $parsedown;
     }
@@ -32,10 +33,17 @@ class MarkdownController extends Controller
     /**
      * @return string
      */
-    public function show(){
-        $file = Storage::disk('posts')->get('Test.md');
-        $markdown = $this->parsedown->text($file);
+    public function show($md){
+
+        $file = $md.'.md';
+        if(!Storage::disk('posts')->exists($file))
+            return redirect('/page/missing-page') ;
+
+        $file = Storage::disk('posts')->get($file);
+        $markdown = $this->parsedown->transform($file);
+
         return view('page::markdown.show', compact('markdown'));
+
     }
 
 }
