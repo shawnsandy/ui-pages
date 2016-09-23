@@ -14,7 +14,10 @@ class PageKitController extends Controller
      */
     public function contactUs(Request $request)
     {
-        $this->send_contact($request);
+        Mail::send('page::emails.contact-info', ['data' => $request->all()], function (Message $message) use ($request) {
+            $message->from($request->email, ': Contact request');
+            $message->to('shawnsandy04@gmail.com', 'shawn sandy')->subject('Contact request');
+        });
         return back();
     }
 
@@ -23,16 +26,6 @@ class PageKitController extends Controller
         return view('page::admin.config');
     }
 
-    /**
-     * @param Request $request
-     */
-    public function send_contact(Request $request)
-    {
-        Mail::send('page::emails.contact-info', ['data' => $request->all()], function (Message $message) use ($request) {
-            $message->from($request->email, ': Contact request');
-            $message->to('shawnsandy04@gmail.com', 'shawn sandy')->subject('Contact request');
-        });
-    }
 
 }
 
