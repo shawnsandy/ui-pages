@@ -3,8 +3,7 @@
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
-use Michelf\MarkdownExtra;
-
+use ShawnSandy\PageKit\Classes\PageKit;
 
 
 /**
@@ -15,14 +14,16 @@ use Michelf\MarkdownExtra;
 class MarkdownController extends Controller
 {
 
-    protected $parsedown;
+    protected $pagekit;
 
     /**
      * MarkdownController constructor.
+     * @param PageKit $pageKit
+     * @internal param PageKit $kit
      */
-    public function __construct(MarkdownExtra $parsedown)
+    public function __construct(PageKit $pageKit)
     {
-        $this->parsedown = $parsedown;
+        $this->pagekit = $pageKit;
     }
 
     public function index(){
@@ -35,14 +36,8 @@ class MarkdownController extends Controller
      */
     public function show($posts){
 
-        $file = $posts.'.md';
-
-        if(!Storage::disk('posts')->exists($file))
-            return redirect('/page/missing-page') ;
-
-        $file = Storage::disk('posts')->get($file);
-        $markdown = $this->parsedown->transform($file);
-
+        $file = $posts;
+        $markdown = $this->pagekit->markdown($file);
         return view('page::markdown.show', compact('markdown'));
 
     }
