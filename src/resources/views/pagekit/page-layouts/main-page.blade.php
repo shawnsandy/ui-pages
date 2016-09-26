@@ -16,6 +16,7 @@
 
 <!-- main page content  -->
 <main>
+    {{ Breadcrumbs::breadcrumbs() }}
 @yield('content')
 </main>
 
