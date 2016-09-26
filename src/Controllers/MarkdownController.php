@@ -1,10 +1,10 @@
 <?php namespace ShawnSandy\PageKit\Controllers;
 
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
-use Michelf\MarkdownExtra;
-
+use ShawnSandy\PageKit\Classes\PageKit;
 
 
 /**
@@ -15,33 +15,41 @@ use Michelf\MarkdownExtra;
 class MarkdownController extends Controller
 {
 
-    protected $parsedown;
+    protected $pagekit;
 
     /**
      * MarkdownController constructor.
+     * @param PageKit $pageKit
+     * @internal param PageKit $kit
      */
-    public function __construct(MarkdownExtra $parsedown)
+    public function __construct(PageKit $pageKit)
     {
-        $this->parsedown = $parsedown;
+        $this->pagekit = $pageKit;
     }
 
-    public function index(){
+    public function index()
+    {
+        $files = Storage::disk('markdown')->directories();
+        $arr = [];
+        foreach ($files as $file):
+         $arr =   trim($file, '.md');
+        endforeach;
 
-        return view('page::markdown.index');
+        return $arr;
     }
 
     /**
+     * @param $posts
+     * @param Request $request
      * @return string
      */
-    public function show($posts){
+    public function show($posts, Request $request)
+    {
 
-        $file = $posts.'.md';
-
-        if(!Storage::disk('posts')->exists($file))
-            return redirect('/page/missing-page') ;
-
-        $file = Storage::disk('posts')->get($file);
-        $markdown = $this->parsedown->transform($file);
+        $file = $posts;
+        $markdown = $this->pagekit->markdown($file);
+        if($request->has('page'))
+            $markdown = $this->pagekit->markdown($request->page, $posts);
 
         return view('page::markdown.show', compact('markdown'));
 
