@@ -32,7 +32,7 @@ class MarkdownController extends Controller
         $files = Storage::disk('markdown')->directories();
         $arr = [];
         foreach ($files as $file):
-         $arr =   trim($file, '.md');
+            $arr = trim($file, '.md');
         endforeach;
 
         return $arr;
@@ -48,10 +48,14 @@ class MarkdownController extends Controller
 
         $file = $posts;
         $markdown = $this->pagekit->markdown($file);
-        if($request->has('page'))
+        $view = "page::missing-page";
+        if ($request->has('page')):
             $markdown = $this->pagekit->markdown($request->page, $posts);
+            if(!empty($markdown))
+            $view = 'page::markdown.show';
+        endif;
 
-        return view('page::markdown.show', compact('markdown'));
+        return view($view, compact('markdown'));
 
     }
 
