@@ -3,32 +3,35 @@
 namespace ShawnSandy\PageKit\Classes;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 
 /**
  * Class Breadcrumbs
  *
  * @package \ShawnSandy\PageKit\Classes
  */
-class Breadcrumbs extends  Controller
+class Breadcrumbs
 {
+
+    protected $request ;
 
     public function __construct()
     {
+        $this->request = new Request(); ;
     }
 
-    public function breadcrumbs(Request $request)
+    public function breadcrumbs()
     {
-        $breadcrumbs = $this->crumbs($request);
+
+        $breadcrumbs = $this->crumbs();
         return view("page::shared.breadcrumbs", [
             'breadcrumbs' => $breadcrumbs
         ]);
 
     }
 
-    public function crumbs(Request $request)
+    public function crumbs($Rsegments)
     {
-        $segments = $request->segments();
+        $segments = $Rsegments;
         $item = '';
         $crumbs = [];
         foreach ($segments as $segment):

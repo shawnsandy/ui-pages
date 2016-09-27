@@ -16,7 +16,7 @@
 
 <!-- main page content  -->
 <main>
-    {{ Breadcrumbs::breadcrumbs() }}
+ @include('page::shared.breadcrumbs')
 @yield('content')
 </main>
 
