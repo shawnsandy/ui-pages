@@ -16,17 +16,12 @@
 
 <!-- main page content  -->
 <main>
- @include('page::shared.breadcrumbs')
-@yield('content')
+    @yield('content')
 </main>
 
-
-
- <!-- footer -->
- @section('footer')
-
-     @include('page::shared.footer')
-
- @show
+<!-- footer -->
+@section('footer')
+    @include('page::shared.footer')
+@show
 
 @endsection
