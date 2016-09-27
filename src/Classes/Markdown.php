@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
  *
  * @package \ShawnSandy\PageKit\Classes
  */
-class PageKit
+class Markdown
 {
 
     protected $markdown;

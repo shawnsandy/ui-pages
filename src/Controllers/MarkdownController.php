@@ -4,7 +4,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
-use ShawnSandy\PageKit\Classes\PageKit;
+use ShawnSandy\PageKit\Classes\Markdown;
 
 
 /**
@@ -19,10 +19,10 @@ class MarkdownController extends Controller
 
     /**
      * MarkdownController constructor.
-     * @param PageKit $pageKit
+     * @param Markdown $pageKit
      * @internal param PageKit $kit
      */
-    public function __construct(PageKit $pageKit)
+    public function __construct(Markdown $pageKit)
     {
         $this->pagekit = $pageKit;
     }
