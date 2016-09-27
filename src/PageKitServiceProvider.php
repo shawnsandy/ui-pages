@@ -3,6 +3,7 @@
 namespace ShawnSandy\PageKit;
 
 use Illuminate\Support\ServiceProvider;
+use ShawnSandy\PageKit\Classes\Breadcrumbs;
 
 
 class PageKitServiceProvider extends ServiceProvider
@@ -52,7 +53,9 @@ class PageKitServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('Breadcrumbs', function(){
+           return new Breadcrumbs();
+        });
     }
 
 

@@ -16,16 +16,12 @@
 
 <!-- main page content  -->
 <main>
-@yield('content')
+    @yield('content')
 </main>
 
-
-
- <!-- footer -->
- @section('footer')
-
-     @include('page::shared.footer')
-
- @show
+<!-- footer -->
+@section('footer')
+    @include('page::shared.footer')
+@show
 
 @endsection
