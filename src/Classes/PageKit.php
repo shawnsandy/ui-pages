@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
  *
  * @package \ShawnSandy\PageKit\Classes
  */
-class Markdown
+class PageKit
 {
 
     protected $markdown;
@@ -66,7 +66,7 @@ class Markdown
          * if the $array count is > 0 link should contain url params
          *
          */
-
+        
         $array = explode('/', $file_path);
         $data['dir'] = $array[0];
         $data['name'] = trim($array[1], '.md');
