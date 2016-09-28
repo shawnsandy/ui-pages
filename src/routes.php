@@ -29,5 +29,6 @@ Route::group(['middleware' => 'web'], function(){
     });
 
     Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
+    Route::get('dash-login', 'ShawnSandy\PageKit\Controllers\LoginController@index');
 
 });

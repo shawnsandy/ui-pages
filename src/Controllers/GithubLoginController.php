@@ -2,9 +2,9 @@
 
 namespace ShawnSandy\PageKit\Controllers;
 
-
-use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite as Socialite;
 
 
@@ -21,8 +21,14 @@ class GithubLoginController extends Controller
     }
 
     public function handleAuth(){
+//        try{
+//            $user = Socialite::with('github')->user();
+//        } catch (\Exception $e){
+//            return Redirect::to('/dash-login');
+//        }
 
-        $user = Socialite::driver('github')->user();
+        $user = Socialite::driver('github')->stateless()->user();
+
         var_dump($user);
         return $user->user['login'];
 

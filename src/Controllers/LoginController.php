@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
 
     public function index(){
-        return 'login page';
+        return 'ss<a href="/github/auth">Login</a>' ;
     }
 
 }
