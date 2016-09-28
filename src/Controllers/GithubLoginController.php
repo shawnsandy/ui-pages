@@ -1,6 +1,8 @@
 <?php
 
 namespace ShawnSandy\PageKit\Controllers;
+
+
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite as Socialite;
@@ -20,7 +22,7 @@ class GithubLoginController extends Controller
 
     public function handleAuth(){
 
-        $user = Socialite::with('github')->user();
+        $user = Socialite::driver('github')->user();
         var_dump($user);
         return $user->user['login'];
 
