@@ -2,6 +2,7 @@
 
 namespace ShawnSandy\PageKit\Controllers;
 use Illuminate\Routing\Controller;
+use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite as Socialite;
 
 
