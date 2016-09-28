@@ -30,7 +30,7 @@ class GithubLoginController extends Controller
             return Redirect::to('/dash-login');
         }
 
-//        $user = Socialite::driver('github')->stateless()->user()
+//      $user = Socialite::driver('github')->stateless()->user()
         $this->loginUser($user);
         var_dump($user);
         return $user->user['login'];
@@ -45,7 +45,6 @@ class GithubLoginController extends Controller
                 'github_nickname' => $user->nickname,
                 'git_hub' => $user->email
             ]
-
         ]);
 
     }
