@@ -22,6 +22,12 @@ Route::group(['middleware' => 'web'], function(){
         Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
     });
 
+    Route::group(['prefix' => 'github'], function(){
+        Route::get('login', 'ShawnSandy\PageKit\Controllers\GithubLoginController@handleAuth');
+        Route::get('auth', 'ShawnSandy\PageKit\Controllers\GithubLoginController@auth');
+
+    });
+
     Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
 
 });
