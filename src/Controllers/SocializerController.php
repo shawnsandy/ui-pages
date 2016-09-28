@@ -11,6 +11,7 @@ namespace packages\ShawnSandy\PageKit\src\Controllers;
 use Exception;
 use Illuminate\Routing\Controller;
 use Laravel\Socialite\Facades\Socialite;
+use ShawnSandy\PageKit\Classes\Socializer;
 
 
 /**
@@ -23,10 +24,12 @@ class SocializerController extends Controller
 {
 
 
+    protected $socializer;
 
-    public function __construct()
+    public function __construct(Socializer $socializer)
     {
 
+        $this->socializer = $socializer;
     }
 
 

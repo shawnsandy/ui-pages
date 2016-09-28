@@ -1,7 +1,7 @@
 <?php
 
 
-namespace packages\ShawnSandy\PageKit\src\Classes;
+namespace \ShawnSandy\PageKit\Classes\;
 
 use Auth;
 use App\User;
@@ -18,7 +18,7 @@ class Socializer
     /**
      * Find or register user based on socialite credentials
      * checks to see if the user exists
-     * or create a new user from user credentials
+     * or create a new user from user socialite credentials
      *
      * @param $user
      * @return User object
