@@ -2,12 +2,12 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9/mini.png)](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/31fe3b80a4b74e68b2d06a5859a42615)](https://www.codacy.com/app/shawnsandy04/ui-pages?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shawnsandy/ui-pages&amp;utm_campaign=Badge_Grade)
 
-Laravel UI.Pages originally (PageKit) is a quick and easy way to upgrade the standard Laravel UI to with a clean and modern Starter website or default pages-- Home Abut Contact. Allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes. Allowing you to focus on the design and development from the get go. 
-
-> If you are looking for the original PageKit package you can still find it here at [Pagekit Original](https://github.com/shawnsandy/pagekit). I have moved PageKit to and new repository and changed the name to avoid conflict with PageKit, a php cms. I also used the opportunity to reboot to fix/update versioning to better meet semver standards. Sorry for the inconvenience I hope you find the package useful.
-
+Pages (ui-pages) is a simple, easy to use drop in replacement for the default Laravel "Welcome Page". Providing a clean and modern set of bootstrap compatible starter pages -- Home About Contact. Along with static flat file system form markdown content management, easy configuration and customization and starter admin dashboard.  Allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes. Allowing you to focus on the design and development from the get go. 
 
 ![PageKit Screenshot](pagekit.png)
+
+
+> If you are looking for the original PageKit package you can still find it here at [Pagekit Original](https://github.com/shawnsandy/pagekit). I have moved PageKit to and new repository and changed the name to avoid conflict with PageKit, a php cms. I also used the opportunity to reboot to fix/update versioning to better meet semver standards. Sorry for the inconvenience I hope you find the package useful.
 
 ## Installation (traditional)
 

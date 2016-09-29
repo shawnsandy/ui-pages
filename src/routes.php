@@ -8,7 +8,7 @@
  */
 
 
-Route::group(['middleware' => 'web'], function(){
+Route::group(['middleware' => ['web']], function(){
 
     Route::group(['prefix' => 'page'], function () {
         Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@index');
@@ -22,6 +22,17 @@ Route::group(['middleware' => 'web'], function(){
         Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
     });
 
+    Route::group(['prefix' => 'github'], function(){
+        Route::get('login', 'ShawnSandy\PageKit\Controllers\GithubLoginController@handleAuth');
+        Route::get('auth', 'ShawnSandy\PageKit\Controllers\GithubLoginController@auth');
+
+    });
+
     Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
+    Route::get('dash-login', 'ShawnSandy\PageKit\Controllers\LoginController@index');
+    Route::get('test-login', function (){
+        var_dump($request->session()->all());
+        return "logged in";
+    })->middleware(['pagekit_login']);
 
 });
