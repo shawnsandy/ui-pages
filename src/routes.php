@@ -1,12 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shawnsandy
- * Date: 7/28/16
- * Time: 10:02 AM
- *
- */
-
 
 Route::group(['middleware' => ['web']], function(){
 
@@ -29,8 +21,16 @@ Route::group(['middleware' => ['web']], function(){
     });
 
     Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
+
+
+    /**
+     * Demo routes not production ready
+     */
+
+
     Route::get('dash-login', 'ShawnSandy\PageKit\Controllers\LoginController@index');
-    Route::get('test-login', function (){
+
+    Route::get('test-login', function (Request $request){
         var_dump($request->session()->all());
         return "logged in";
     })->middleware(['pagekit_login']);
