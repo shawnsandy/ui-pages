@@ -1,7 +1,7 @@
 <?php
 
 
-namespace \ShawnSandy\PageKit\Classes\;
+namespace ShawnSandy\PageKit\Classes;
 
 use Auth;
 use App\User;
