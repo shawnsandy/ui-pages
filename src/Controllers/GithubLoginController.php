@@ -5,6 +5,7 @@ namespace ShawnSandy\PageKit\Controllers;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Session\Store as Session;
 use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite as Socialite;
 
@@ -16,13 +17,19 @@ use Laravel\Socialite\Facades\Socialite as Socialite;
  */
 class GithubLoginController extends Controller
 {
+    protected $session;
+
+    public function __construct(Session $session)
+    {
+        $this->session = $session ;
+    }
 
     public function auth()
     {
         return Socialite::driver('github')->scopes(['gist', 'user'])->redirect();
     }
 
-    public function handleAuth()
+    public function handleAuth(Request $request)
     {
         try {
             $user = Socialite::with('github')->stateless()->user();
@@ -31,7 +38,13 @@ class GithubLoginController extends Controller
         }
 
 //      $user = Socialite::driver('github')->stateless()->user()
-        $this->loginUser($user);
+        \Illuminate\Support\Facades\Session::put(
+            config('pagekit.session_key', 'pagekit_session'), [
+            'github_id' => $user->id,
+            'github_name' => $user->name,
+            'github_email' => $user->email
+        ]);
+        \Illuminate\Support\Facades\Session::save();
         var_dump($user);
         return $user->user['login'];
 
@@ -39,13 +52,15 @@ class GithubLoginController extends Controller
 
     protected function loginUser($user)
     {
-        session([
-            config('pagekit_session_key', 'pagekit_session') => [
+        // $request->session()->put('key', 'value');
+
+        $this->session->put(
+            config('pagekit.session_key', 'pagekit_session'), [
                 'github_id' => $user->id,
-                'github_nickname' => $user->nickname,
-                'git_hub' => $user->email
-            ]
-        ]);
+                'github_name' => $user->name,
+                'github_email' => $user->email
+            ]);
+        $this->session->save();
 
     }
 

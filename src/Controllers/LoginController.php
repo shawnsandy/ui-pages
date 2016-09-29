@@ -2,6 +2,7 @@
 
 namespace ShawnSandy\PageKit\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 /**
@@ -12,8 +13,9 @@ use Illuminate\Routing\Controller;
 class LoginController extends Controller
 {
 
-    public function index(){
-        return 'ss<a href="/github/auth">Login</a>' ;
+    public function index(Request $request){
+        var_dump($request->session()->all());
+        return '<a href="/github/auth">Login</a>' ;
     }
 
 }

@@ -53,6 +53,9 @@ class PageKitServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/pagekit.php', 'pagekit'
+        );
         $this->app->bind('Breadcrumbs', function(){
            return new Breadcrumbs();
         });
