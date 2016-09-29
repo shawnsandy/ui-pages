@@ -1,7 +1,7 @@
 <?php
 
 
-namespace \ShawnSandy\PageKit\Classes\;
+namespace ShawnSandy\PageKit\Classes;
 
 use Auth;
 use App\User;
@@ -17,14 +17,22 @@ class Socializer
 
     /**
      * Find or register user based on socialite credentials
-     * checks to see if the user exists
-     * or create a new user from user socialite credentials
+     * checks if a user exists with email provided in response
+     * If the user is not found register a user using socailite credentials
      *
-     * @param $user
+     * @param $response
+     * @param bool $formatted
      * @return User object
+     * @internal param $string $response
+     * @internal param array $user
      */
-    public function findOrRegister($user)
+    public function findOrRegister($response, $formatted = false)
     {
+        $user = $response;
+
+        if(!$formatted)
+        $user = $this->formatSocialiteResponse($response);
+
         if ($userExist = User::where($user['email'])->first())
             return $userExist;
 
@@ -33,27 +41,65 @@ class Socializer
 
     /**
      * Login user via socialite credentials
-     * @param $user
-     * @param $redirect
+     *
+     * @param array $response
+     * @param string $redirect
+     * @param bool $formatted
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @internal param array $user
      * @internal param $redirectUrl
      */
-    public function login($user, $redirect)
+    public function login($response, $redirect = null, $formatted = false)
     {
+        $user = $response ;
+
+        if(!$formatted)
+        $user = $this->formatSocialiteResponse($user);
+
         Auth::login($user);
-        redirect($redirect);
+        if (isset($redirect))
+            return redirect($redirect);
     }
 
     /**
      * Registers and login the user via socialite / oauth credentials
-     * @param $user
-     * @param $redirect
+     *
+     * @param string $response
+     * @param string $redirect
+     * @param bool $formatted
      * @return bool
+     * @internal param array $user
      */
-    public function registerAndLogin($user, $redirect)
+    public function registerAndLogin($response, $redirect, $formatted = false)
     {
+        $user = $response;
+        if(!$formatted)
+        $user = $this->formatSocialiteResponse($response);
         $loginUser = $this->findOrRegister($user);
         $this->login($loginUser, $redirect);
         return false;
+    }
+
+    /**
+     * Formats the user response to the default to match default user schema
+     * adds additional fields [nickname, avatar, token, token_expiration, provider]
+     *
+     * @param array $response
+     * @return mixed
+     */
+    public function formatSocialiteResponse($response)
+    {
+        $user_details['social_id'] = $response->getId();
+        $user_details['nickname'] = $response->getNickName();
+        $user_details['name'] = $response->getName();
+        $user_details['email'] = $response->getEmail();
+        $user_details['avatar'] = $response->getAvatar();
+        $user_details['token'] = $response->token;
+        $user_details['token_expiration'] = $response->expiresIn;
+        $user_details['provider'] = 'linkedin';
+
+        return $user_details;
+
     }
 
 }

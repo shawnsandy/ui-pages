@@ -8,7 +8,7 @@
  */
 
 
-Route::group(['middleware' => 'web'], function(){
+Route::group(['middleware' => ['web']], function(){
 
     Route::group(['prefix' => 'page'], function () {
         Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@index');
@@ -30,5 +30,9 @@ Route::group(['middleware' => 'web'], function(){
 
     Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
     Route::get('dash-login', 'ShawnSandy\PageKit\Controllers\LoginController@index');
+    Route::get('test-login', function (){
+        var_dump($request->session()->all());
+        return "logged in";
+    })->middleware(['pagekit_login']);
 
 });
