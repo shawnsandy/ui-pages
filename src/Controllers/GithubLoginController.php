@@ -29,7 +29,7 @@ class GithubLoginController extends Controller
         return Socialite::driver('github')->scopes(['gist', 'user'])->redirect();
     }
 
-    public function handleAuth(Request $request)
+    public function handleAuth()
     {
         try {
             $user = Socialite::with('github')->stateless()->user();
