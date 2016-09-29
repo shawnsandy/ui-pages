@@ -29,7 +29,15 @@ Route::group(['middleware' => ['web']], function(){
     });
 
     Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
+
+
+    /**
+     * Demo routes not production ready
+     */
+
+
     Route::get('dash-login', 'ShawnSandy\PageKit\Controllers\LoginController@index');
+
     Route::get('test-login', function (){
         var_dump($request->session()->all());
         return "logged in";
