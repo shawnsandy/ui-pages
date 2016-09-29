@@ -68,13 +68,39 @@ class Markdown
          */
         
         $array = explode('/', $file_path);
-        $data['dir'] = $array[0];
-        $data['name'] = trim($array[1], '.md');
-        $data['url'] = '/' . $data['dir'] . '?page=' . $data['name'];
-        $data['display_name'] = ucwords(str_replace_array('_', ' ', $data['name']));
-        $data['link'] = '<a href="' . $data["url"] . '" class="markdown-link">' . $data['display_name'] . '</a>';
-        return $data;
+        $dir = $array[0];
+        $name = trim($array[1], '.md');
+
+        $url = '/' . $dir;
+
+        if(count($array) > 1)
+        $url = '/' . $dir . '?page=' . $name;
+
+        $display_name = ucwords(str_replace_array('_', ' ', $name ));
+        $link = '<a href="md/' . $url . '" class="markdown-link">' . $display_name . '</a>';
+        return $link;
 
     }
+
+
+    /**
+     * Returns an list or directory of array of markdown files
+     * 
+     * @param string $dir
+     * @return array
+     */
+    public function markdownMenu($dir){
+
+        $md_files = $this->markdownFiles($dir);
+        $links = [];
+
+        foreach($md_files as  $file){
+            $links[] = $this->markdownLink($file);
+        }
+
+        return $links ;
+
+    }
+
 
 }
