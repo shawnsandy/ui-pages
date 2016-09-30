@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Session;
+
 Route::group(['middleware' => ['web']], function(){
 
     Route::group(['prefix' => 'page'], function () {
@@ -32,4 +34,16 @@ Route::group(['middleware' => ['web']], function(){
         return "logged in";
     })->middleware(['pagekit_login']);
 
+});
+
+
+Route::get('session-save', function(){
+    Session::put('test', 'session test');
+    Session::save();
+    return 'session saved';
+});
+
+Route::get('session-saved', function(){
+    var_dump(Session::all());
+return 'saved';
 });
