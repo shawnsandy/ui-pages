@@ -29,22 +29,22 @@ class GithubLoginController extends Controller
         return Socialite::driver('github')->scopes(['gist', 'user'])->redirect();
     }
 
-    public function handleAuth()
+    public function handleAuth(Request $request)
     {
         try {
             $user = Socialite::with('github')->stateless()->user();
         } catch (Exception $e) {
-            return Redirect::to('/dash-login');
+            return redirect('/dash-login');
         }
 
 //      $user = Socialite::driver('github')->stateless()->user()
-        \Illuminate\Support\Facades\Session::put(
+        $request->session()->put(
             config('pagekit.session_key', 'pagekit_session'), [
             'github_id' => $user->id,
             'github_name' => $user->name,
             'github_email' => $user->email
         ]);
-        \Illuminate\Support\Facades\Session::save();
+        $request->session()->save();
         var_dump($user);
         return $user->user['login'];
 
