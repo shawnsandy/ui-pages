@@ -34,7 +34,7 @@ class GithubLoginController extends Controller
         try {
             $user = Socialite::with('github')->stateless()->user();
         } catch (Exception $e) {
-            return Redirect::to('/dash-login');
+            return redirect('/dash-login');
         }
 
 //      $user = Socialite::driver('github')->stateless()->user()
