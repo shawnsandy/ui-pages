@@ -40,7 +40,7 @@ Route::group(['middleware' => ['web']], function(){
 Route::get('session-save', function(){
     Session::put('test', 'session test');
     Session::save();
-    return 'session saved';
+    return redirect('/session-saved');
 });
 
 Route::get('session-saved', function(){
