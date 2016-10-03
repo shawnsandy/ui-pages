@@ -37,7 +37,6 @@ class GithubLoginController extends Controller
             return redirect('/dash-login');
         }
 
-//      $user = Socialite::driver('github')->stateless()->user()
         $request->session()->put(
             config('pagekit.session_key', 'pagekit_session'), [
             'github_id' => $user->id,
@@ -52,8 +51,6 @@ class GithubLoginController extends Controller
 
     protected function loginUser($user)
     {
-        // $request->session()->put('key', 'value');
-
         $this->session->put(
             config('pagekit.session_key', 'pagekit_session'), [
                 'github_id' => $user->id,
