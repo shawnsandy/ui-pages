@@ -46,3 +46,8 @@ gulp.task('images', function(){
         .pipe(gulp.dest('src/img/'))
 });
 
+gulp.task('copy:fonts', function(){
+    gulp.src('./node_modules/bootstrap-sass/assets/**/*.*')
+        .pipe(gulp.dest('./src/public/css/fonts/'));
+} );
+
