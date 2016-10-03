@@ -36,14 +36,3 @@ Route::group(['middleware' => ['web']], function(){
 
 });
 
-
-Route::get('session-save', function(){
-    Session::put('test', 'session test');
-    Session::save();
-    return redirect('/session-saved');
-});
-
-Route::get('session-saved', function(){
-    var_dump(Session::all());
-return 'saved';
-});
