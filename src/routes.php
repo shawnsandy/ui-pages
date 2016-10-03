@@ -28,6 +28,7 @@ Route::group(['middleware' => ['web']], function(){
      * Demo routes not production ready
      */
     Route::get('dash-login', 'ShawnSandy\PageKit\Controllers\LoginController@index');
+    Route::get('log', 'ShawnSandy\PageKit\Controllers\PagesController@log');
 
     Route::get('test-login', function (Request $request){
         var_dump($request->session()->all());
@@ -35,4 +36,5 @@ Route::group(['middleware' => ['web']], function(){
     })->middleware(['pagekit_login']);
 
 });
+
 

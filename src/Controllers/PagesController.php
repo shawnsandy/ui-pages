@@ -3,6 +3,7 @@
 namespace ShawnSandy\PageKit\Controllers;
 
 use Illuminate\Routing\Controller;
+use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
 
 /**
  * Class PagesController
@@ -30,11 +31,16 @@ class PagesController extends Controller
         return $this->theView('admin.'.$name);
     }
 
+    public function log(LaravelLogViewer $logViewer){
+        $collect = collect($logViewer->all());
+
+        return $collect->take(2);
+    }
+
     public function resetLogin()
     {
         $token = hash_hmac('sha256', str_random(40), config('app.key'));
         return view('page::login-reset', compact('token'));
-
     }
 
     /**
