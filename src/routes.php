@@ -12,8 +12,10 @@ Route::group(['middleware' => ['web']], function(){
     });
 
     Route::group(['prefix' => 'dash'], function () {
-        Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
-        Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
+        Route::get('', 'ShawnSandy\PageKit\Controllers\DashController@index');
+        Route::get('logs', 'ShawnSandy\PageKit\Controllers\DashController@logs');
+        Route::get('{name}', 'ShawnSandy\PageKit\Controllers\DashController@admin');
+
     });
 
     Route::group(['prefix' => 'github'], function(){

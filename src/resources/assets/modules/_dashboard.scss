@@ -37,4 +37,14 @@
   a {
     text-decoration: none;
   }
+
+  h1, h2, h3, h4, h5, p {
+    margin: 5px 0 5px;
+  }
+}
+
+.dash-box {
+  padding: 10px 20px 20px;
+  border-radius: 5px;
+  border: 5px solid #DDDDDD;
 }

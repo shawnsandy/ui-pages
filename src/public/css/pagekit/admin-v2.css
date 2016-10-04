@@ -22,9 +22,6 @@ body {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
-    #wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5, #wrapper h6 {
-        margin-top: 5px;
-        margin-bottom: 20px; }
 
 #wrapper.toggled {
     padding-left: 200px; }
@@ -169,6 +166,13 @@ body {
         font-size: 28px; }
     .admin-nav a {
         text-decoration: none; }
+    .admin-nav h1, .admin-nav h2, .admin-nav h3, .admin-nav h4, .admin-nav h5, .admin-nav p {
+        margin: 5px 0 5px; }
+
+.dash-box {
+    padding: 10px 20px 20px;
+    border-radius: 5px;
+    border: 5px solid #DDDDDD; }
 
 .widgets .social {
     font-size: 16px; }

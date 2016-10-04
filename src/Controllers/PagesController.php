@@ -13,6 +13,13 @@ use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
 class PagesController extends Controller
 {
 
+    protected $logs;
+
+    public function __construct(LaravelLogViewer $logViewer)
+    {
+        $this->logs = $logViewer ;
+    }
+
     public function index()
     {
         return view('page::index');
@@ -27,13 +34,14 @@ class PagesController extends Controller
 
     public function admin($name = 'dashboard')
     {
+        $collect = collect($this->logs->all());
+        $logs = $collect->take(2);
 
-        return $this->theView('admin.'.$name);
+        return $this->theView('admin.'.$name, compact('logs'));
     }
 
-    public function log(LaravelLogViewer $logViewer){
-        $collect = collect($logViewer->all());
-
+    public function log(){
+        $collect = collect($this->logs->all());
         return $collect->take(2);
     }
 
