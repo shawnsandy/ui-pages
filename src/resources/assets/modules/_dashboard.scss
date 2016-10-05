@@ -6,6 +6,7 @@
     main {
       padding: 0 10px;
     }
+
   }
   .dashboard-sidebar {
     width: 20%;
@@ -20,6 +21,7 @@
       margin-top: 5px;
     }
   }
+
 }
 
 .admin-nav {
@@ -46,8 +48,20 @@
 .dash-box {
   padding: 20px;
   border-radius: 5px;
-  border: 5px solid #DDDDDD;
+  border: 5px solid $gray-lighter;
   margin: 30px 0;
+
+  p {
+    margin: 0 0 0;
+  }
+
+  &.widget {
+    background-color: $gray-lighter;
+
+    .material {
+      font-size: 36px;
+    }
+  }
 }
 
 .dash-box-heading {

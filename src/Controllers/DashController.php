@@ -23,7 +23,7 @@ class DashController
     public function index()
     {
         //$collect = collect($this->logs->all());
-        $logs = $this->log_collection->take(5);
+        $logs = $this->log_collection;
         return view('page::admin.index', compact('logs'));
     }
 

@@ -2,25 +2,27 @@
 
 @section('content')
     <div class="container-fluid">
-    <h3>Error Logs</h3>
+
         <div class="dash-box">
-            <table class="table table-hover">
+            <h3 class="text-capitalize"><i class="material material_info"></i> Error Logs</h3>
+            <hr>
+            <table id="logs" class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Date</th>
                     <th>Error Message</th>
+                    <th>Date</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($logs as $log)
                     <tr>
                         <td>
-                            {{ $log['date'] }}
+                            <p class="text-danger ">
+                                {!! $log['text'] !!}
+                            </p>
                         </td>
                         <td>
-                            <code>
-                                {!! $log['text'] !!}
-                            </code>
+                            {{ $log['date'] }}
                         </td>
                     </tr>
                 @endforeach
@@ -30,3 +32,16 @@
 
     </div>
 @endsection()
+@push('styles')
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+@endpush
+@push('scripts')
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#logs').DataTable( {
+
+        } );
+    } );
+</script>
+@endpush
