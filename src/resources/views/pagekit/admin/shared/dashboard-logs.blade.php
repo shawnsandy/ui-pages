@@ -1,7 +1,7 @@
 <div class="dash-box">
     <h4 class="dash-box-heading text-uppercase">
-        Error Logs
-        <small>( last five errors )</small>
+       <i class="material material_error_outline"></i> Error Logs
+        <small>Recent Errors</small>
     </h4>
     <table class="table table-hover">
         <tbody>

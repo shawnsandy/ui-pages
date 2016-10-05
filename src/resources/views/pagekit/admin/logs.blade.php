@@ -4,7 +4,7 @@
     <div class="container-fluid">
 
         <div class="dash-box">
-            <h3 class="text-capitalize"><i class="material material_info"></i> Error Logs</h3>
+            <h3 class="text-capitalize dash-box-heading"><i class="material material_info"></i> Error Logs</h3>
             <hr>
             <table id="logs" class="table table-hover">
                 <thead>
