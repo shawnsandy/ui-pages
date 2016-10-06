@@ -3,17 +3,17 @@
 @section('content')
     <div class="container-fluid">
         <div class="row section">
-            <div class="col-md-3 text-center">
+            <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget')
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget')
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget')
             </div>
-            <div class="col-md-3 text-center">
-                @include('page::admin.shared.dash-info-widget', ['content' => $logs->count()." System Errors", "icon" => "info"])
+            <div class="col-md-3">
+                @include('page::admin.shared.dash-info-widget', ['content' => " System Errors", "icon" => "info", "info" => $logs->count()])
             </div>
         </div>
 
