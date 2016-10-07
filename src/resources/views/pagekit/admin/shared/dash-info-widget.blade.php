@@ -1,4 +1,4 @@
-<div class="widget widget-small">
+<div class="info-widget widget-small">
     <div class="content">
         <div class="widget-heading">{{ $heading or 'Sample Title' }}</div>
         <div class="widget-body text-uppercase">{{ $content or 'Content here' }}</div>

@@ -1,39 +1,40 @@
-.widget {
-  margin: 20px 0;
-  background-color: #fff;
-  box-sizing: border-box;
-  padding: 10px 20px;
-  color: $aluminum;
-  font-weight: 500;
-  @include border-radius(5px);
-  display: table;
-  width: 100%;
+@mixin widgets($default-font-size: 14, $body-font-size: 24) {
 
-  .content {
-    display: table-cell;
-    vertical-align: middle;
-  }
+    margin: 20px 0;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-weight: 500;
+    @include border-radius(5px);
+    display: table;
+    width: 100%;
 
-  div, p {
-    padding: 5px;
-    margin: 0;
-  }
+    .content {
+      display: table-cell;
+      vertical-align: middle;
+    }
 
-  &.widget-small {
-    height: 120px;
-  }
+    div, p {
+      padding: 5px;
+      margin: 0;
+    }
 
-  .widget-heading, .widget-footer {
-    @include fontSize(14);
-    padding: 5px;
-  }
 
-  .widget-body {
-    @include fontSize(24)
-  }
+    .widget-heading, .widget-footer {
+      @include fontSize($default-font-size);
+      padding: 5px;
+    }
 
-  i {
-    @include fontSize(36)
-  }
+    .widget-body {
+      @include fontSize($body-font-size)
+    }
+
 
 }
+
+.info-widget {
+  @include widgets();
+  height: 120px;
+  background-color: #fff;
+  color: $aluminum;
+}
+

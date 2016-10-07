@@ -199,34 +199,30 @@ body {
     .widgets .social-large {
         font-size: 72px; }
 
-.widget {
+.info-widget {
     margin: 20px 0;
-    background-color: #fff;
     box-sizing: border-box;
     padding: 10px 20px;
-    color: #999999;
     font-weight: 500;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */
     display: table;
-    width: 100%; }
-    .widget .content {
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    color: #999999; }
+    .info-widget .content {
         display: table-cell;
         vertical-align: middle; }
-    .widget div, .widget p {
+    .info-widget div, .info-widget p {
         padding: 5px;
         margin: 0; }
-    .widget.widget-small {
-        height: 120px; }
-    .widget .widget-heading, .widget .widget-footer {
+    .info-widget .widget-heading, .info-widget .widget-footer {
         font-size: 14px;
         font-size: 0.875em;
         padding: 5px; }
-    .widget .widget-body {
+    .info-widget .widget-body {
         font-size: 24px;
         font-size: 1.5em; }
-    .widget i {
-        font-size: 36px;
-        font-size: 2.25em; }
