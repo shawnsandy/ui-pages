@@ -2,6 +2,11 @@
 @import "modules/mixins";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 
+@import "modules/tbls";
+@import "modules/dashboard";
+@import "modules/components";
+@import "modules/widget";
+
 body {
   overflow-x: hidden;
 }
@@ -173,7 +178,15 @@ body {
   }
 }
 
-@import "modules/tbls";
-@import "modules/dashboard";
-@import "modules/components";
-@import "modules/widget";
+
+.widgets {
+  @include widgets();
+  height: 120px;
+  background-color: #fff;
+  color: $aluminum;
+}
+
+.dashboards {
+  @include widgets(24, 14);
+
+}

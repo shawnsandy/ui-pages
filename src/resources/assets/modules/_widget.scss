@@ -31,10 +31,3 @@
 
 }
 
-.info-widget {
-  @include widgets();
-  height: 120px;
-  background-color: #fff;
-  color: $aluminum;
-}
-

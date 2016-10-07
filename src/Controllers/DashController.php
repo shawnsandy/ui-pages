@@ -34,10 +34,8 @@ class DashController
 
     public function logs()
     {
-
         $logs = $this->log_collection;
         return view('page::admin.logs', compact('logs'));
-
     }
 
 }
