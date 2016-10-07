@@ -237,7 +237,8 @@ body {
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */
     display: table;
-    width: 100%; }
+    width: 100%;
+    background-color: #fff; }
     .dashboards .content {
         display: table-cell;
         vertical-align: middle; }
@@ -251,3 +252,5 @@ body {
     .dashboards .widget-body {
         font-size: 14px;
         font-size: 0.875em; }
+    .dashboards p {
+        font-weight: normal; }

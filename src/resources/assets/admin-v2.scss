@@ -180,13 +180,21 @@ body {
 
 
 .widgets {
+
   @include widgets();
   height: 120px;
   background-color: #fff;
   color: $aluminum;
+
 }
 
 .dashboards {
+
   @include widgets(24, 14);
+  background-color: #fff;
+
+  p {
+    font-weight: normal;
+  }
 
 }
