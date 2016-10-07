@@ -1,8 +1,7 @@
-<div class="dash-box widget">
-    <div class="tbl">
-        <div class="tbl-cell">
-                <h4 class="dash-box-heading">{{ $info or "00"}} <br> <small>{!! $content or "Widget Title."  !!}</small> </h4>
-
-        </div>
+<div class="widget widget-small">
+    <div class="content">
+        <div class="widget-heading">{{ $heading or 'Sample Title' }}</div>
+        <div class="widget-body text-uppercase">{{ $content or 'Content here' }}</div>
+        <div class="widget-footer">{{ $footer or '' }}</div>
     </div>
 </div>

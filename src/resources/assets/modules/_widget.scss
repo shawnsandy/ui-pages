@@ -1,0 +1,39 @@
+.widget {
+  margin: 20px 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  color: $aluminum;
+  font-weight: 500;
+  @include border-radius(5px);
+  display: table;
+  width: 100%;
+
+  .content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  div, p {
+    padding: 5px;
+    margin: 0;
+  }
+
+  &.widget-small {
+    height: 120px;
+  }
+
+  .widget-heading, .widget-footer {
+    @include fontSize(14);
+    padding: 5px;
+  }
+
+  .widget-body {
+    @include fontSize(24)
+  }
+
+  i {
+    @include fontSize(36)
+  }
+
+}

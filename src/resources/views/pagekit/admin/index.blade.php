@@ -2,19 +2,29 @@
 
 @section('content')
     <div class="container-fluid">
+
         <div class="row section">
+
             <div class="col-md-3">
-                @include('page::admin.shared.dash-info-widget')
+                @include('page::admin.shared.dash-info-widget',
+                ['heading' => "System Errors", "content" => $logs->count().' Errors Reported'])
             </div>
+
             <div class="col-md-3">
-                @include('page::admin.shared.dash-info-widget')
+                @include('page::admin.shared.dash-info-widget',
+                ['heading' => "System Errors", "content" => $logs->count().' Errors Reported'])
             </div>
+
             <div class="col-md-3">
-                @include('page::admin.shared.dash-info-widget')
+                @include('page::admin.shared.dash-info-widget',
+                ['heading' => "System Errors", "content" => $logs->count().' Errors Reported'])
             </div>
+
             <div class="col-md-3">
-                @include('page::admin.shared.dash-info-widget', ['content' => " System Errors", "icon" => "info", "info" => $logs->count()])
+                @include('page::admin.shared.dash-info-widget',
+                ['heading' => "System Errors", "content" => $logs->count().' Errors Reported'])
             </div>
+
         </div>
 
         <div class="row section">
@@ -22,5 +32,6 @@
                @include('page::admin.shared.dashboard-logs')
             </div>
         </div>
+
     </div>
 @endsection
