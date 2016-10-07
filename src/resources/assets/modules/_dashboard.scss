@@ -27,24 +27,9 @@
 }
 
 .admin-nav {
-  height: 60px;
-  padding: 0 20px;
-  border-bottom: 1px solid $off-white;
-  .branding {
-    width: 280px;
-    border-right: 1px solid $off-white;
-  }
 
-  .material {
-    font-size: 28px;
-  }
-  a {
-    text-decoration: none;
-  }
+  @include menus(80px);
 
-  h1, h2, h3, h4, h5, p {
-    margin: 5px 0 5px;
-  }
 }
 
 .dash-box {

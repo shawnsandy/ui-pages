@@ -7,22 +7,22 @@
 
             <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget',
-                ['heading' => "System Errors", "content" => $logs->count().' Errors Reported'])
+                ['heading' => "System Errors", "content" => $logs->count().' Reported'])
             </div>
 
             <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget',
-                ['heading' => "System Errors", "content" => $logs->count().' Errors Reported'])
+                ['heading' => "System Errors", "content" => $logs->count().' Reported'])
             </div>
 
             <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget',
-                ['heading' => "System Errors", "content" => $logs->count().' Errors Reported'])
+                ['heading' => "System Errors", "content" => $logs->count().' Reported'])
             </div>
 
             <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget',
-                ['heading' => "System Errors", "content" => $logs->count().' Errors Reported'])
+                ['heading' => "System Errors", "content" => $logs->count().' Reported'])
             </div>
 
         </div>
