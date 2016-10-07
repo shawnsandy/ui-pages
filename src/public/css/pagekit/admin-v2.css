@@ -21,7 +21,7 @@
         .dashboard-wrapper .dashboard main {
             padding: 0 10px; }
     .dashboard-wrapper .dashboard-sidebar {
-        width: 20%;
+        width: 30%;
         min-width: 280px;
         background-color: #F5F8F9; }
         .dashboard-wrapper .dashboard-sidebar > * {
@@ -229,7 +229,7 @@ body {
         font-size: 24px;
         font-size: 1.5em; }
 
-.dashboards {
+.boards {
     margin: 20px 0;
     box-sizing: border-box;
     padding: 10px 20px;
@@ -241,20 +241,20 @@ body {
     display: table;
     width: 100%;
     background-color: #fff; }
-    .dashboards .content {
+    .boards .content {
         display: table-cell;
         vertical-align: middle; }
-    .dashboards div, .dashboards p {
+    .boards div, .boards p {
         padding: 5px;
         margin: 0; }
-    .dashboards hr {
+    .boards hr {
         margin: 0; }
-    .dashboards .widget-heading, .dashboards .widget-footer {
+    .boards .widget-heading, .boards .widget-footer {
         font-size: 24px;
         font-size: 1.5em;
         padding: 5px; }
-    .dashboards .widget-body {
+    .boards .widget-body {
         font-size: 14px;
         font-size: 0.875em; }
-    .dashboards p {
+    .boards p {
         font-weight: normal; }

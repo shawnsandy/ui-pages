@@ -1,4 +1,4 @@
-<div class="dashboards">
+<div class="boards">
     <div class="widget-heading text-uppercase"><i class="material material_error"></i> Error Logs </div>
     <div class="widget-body">
         <table class="table table-hover">

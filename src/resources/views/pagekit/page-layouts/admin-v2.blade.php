@@ -38,7 +38,7 @@
                     </div>
                     <div class="tbl-cell tbl-top dashboard-sidebar">
                         <div class="">
-                            <div class="dashboards">
+                            <div class="boards">
                                 <div class="widget-heading"><h3 class="text-uppercase"><i
                                                 class="material material_info"></i></h3></div>
                                 <hr>
