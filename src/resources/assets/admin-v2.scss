@@ -4,11 +4,9 @@
 @import "mixins/menu";
 @import "mixins/sidebar-nav";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-
 @import "modules/tbls";
 @import "modules/dashboard";
 @import "modules/components";
-
 
 body {
   overflow-x: hidden;
@@ -59,18 +57,6 @@ body {
   margin-right: 80px;
 }
 
-/* Sidebar Styles */
-
-.sidebar-nav {
-  @include sidebarNav();
-
-
-}
-
-
-.sidebar-right {
-  height: 100%;
-}
 
 @media(min-width: 768px) {
   #wrapper {
@@ -98,8 +84,21 @@ body {
     position: relative;
     margin-right: 0;
   }
+
 }
 
+/* Sidebar Styles */
+
+.sidebar-nav {
+  @include sidebarNav;
+  @include sidebarLinks;
+}
+
+.sidebar-right {
+  height: 100%;
+}
+
+/* Widgets */
 
 .widgets {
 

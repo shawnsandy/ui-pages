@@ -1,11 +1,12 @@
-@mixin sidebarNav(){
+@mixin sidebarNav($width-closed: $sidebar-width-closed, $width: $sidebar-width  ){
 
   position: absolute;
   top: 0;
-  width: $sidebar-width-closed;
+  width: $width-closed;
   margin: 0;
   padding: 0;
   list-style: none;
+  background: #333333;
 
   .material {
     font-size: 24px;
@@ -16,7 +17,7 @@
 
   li a {
     text-align: center;
-    width: $sidebar-width;
+    width: $width;
     padding: 15px 0 15px;
     .toggled & {
       width: 80px;
@@ -51,6 +52,11 @@
     transition: all 0.5s ease;
   }
 
+
+}
+
+@mixin sidebarLinks(){
+
   li a {
     display: block;
     text-decoration: none;
@@ -72,18 +78,10 @@
     text-decoration: none;
   }
 
-  > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-  }
+}
 
-  > .sidebar-brand a {
-    color: #999999;
-  }
-
-  > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
+@mixin wrapperBg($background-color: $gray-dark){
+  #sidebar-wrapper {
+    background-color: $background-color;
   }
 }
