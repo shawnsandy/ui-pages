@@ -1,5 +1,5 @@
 <div class="dashboards">
-    <div class="widget-heading"><i class="material material_error_outline"></i> Error Logs </div>
+    <div class="widget-heading text-uppercase"><i class="material material_error"></i> Error Logs </div>
     <div class="widget-body">
         <table class="table table-hover">
             <tbody>

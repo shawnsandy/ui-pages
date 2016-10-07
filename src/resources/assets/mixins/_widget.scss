@@ -18,6 +18,10 @@
       margin: 0;
     }
 
+  hr {
+    margin: 0;
+  }
+
 
     .widget-heading, .widget-footer {
       @include fontSize($default-font-size);
