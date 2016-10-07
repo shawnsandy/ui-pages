@@ -6,7 +6,6 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 @include('page::page-layouts.shared.sidebar-nav')
-
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

@@ -7,7 +7,12 @@
 
             <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget',
-                ['heading' => "System Errors", "content" => $logs->count().' Reported'])
+                ['heading' => "Markdown Content", "content" => count($markdown).' Pages'])
+            </div>
+
+            <div class="col-md-3">
+                @include('page::admin.shared.dash-info-widget',
+                ['heading' => "Env Settings", "content" => count($env).' Variables'])
             </div>
 
             <div class="col-md-3">
@@ -17,12 +22,7 @@
 
             <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget',
-                ['heading' => "System Errors", "content" => $logs->count().' Reported'])
-            </div>
-
-            <div class="col-md-3">
-                @include('page::admin.shared.dash-info-widget',
-                ['heading' => "System Errors", "content" => $logs->count().' Reported'])
+                ['heading' => "Laravel Version", "content" => 'Ver. ' .App::VERSION() ])
             </div>
 
         </div>
