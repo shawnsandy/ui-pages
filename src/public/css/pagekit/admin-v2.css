@@ -115,7 +115,7 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    background: #333333; }
+    background-color: transparent; }
     .sidebar-nav .material {
         font-size: 24px;
         padding: 0 10px 0 10px;
