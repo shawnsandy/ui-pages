@@ -87,6 +87,12 @@ body {
 
 }
 
+
+.admin-nav {
+  @include menus(75px);
+}
+
+
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -113,6 +119,7 @@ body {
 
   @include widgets(24, 14);
   background-color: #fff;
+  color: $aluminum;
 
   p {
     font-weight: normal;
