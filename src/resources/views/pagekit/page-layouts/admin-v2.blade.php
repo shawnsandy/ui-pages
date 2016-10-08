@@ -6,7 +6,6 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 @include('page::page-layouts.shared.sidebar-nav')
-
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -38,10 +37,18 @@
                     </div>
                     <div class="tbl-cell tbl-top dashboard-sidebar">
                         <div class="">
-                            <h3 class="text-uppercase"><i class="material material_info_outline"></i></h3>
-                            <p>PageKit admin starter is an easy to use bootstrap compatible admin dashboard created to
-                                help you build better backends for your laravel applications. Please visit our
-                                <a href="//github.com/shawnsandy/pagekit">Github page for setup instructions.</a></p>
+                            <div class="boards">
+                                <div class="widget-heading"><h3 class="text-uppercase"><i
+                                                class="material material_info"></i></h3></div>
+                                <hr>
+                                <div class="widget-body">
+                                    <p>PageKit admin starter is an easy to use bootstrap compatible admin dashboard
+                                        created to
+                                        help you build better backends for your laravel applications. Please visit our
+                                        <a href="//github.com/shawnsandy/pagekit">Github page for setup
+                                            instructions.</a></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
