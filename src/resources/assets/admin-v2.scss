@@ -1,5 +1,12 @@
 @import "variables";
+@import "mixins/mixins";
+@import "mixins/widget";
+@import "mixins/menu";
+@import "mixins/sidebar-nav";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "modules/tbls";
+@import "modules/dashboard";
+@import "modules/components";
 
 body {
   overflow-x: hidden;
@@ -9,7 +16,7 @@ body {
   z-index: 1000;
   position: fixed;
   left: $sidebar-width;
-  width: 80;
+  width: $sidebar-width-closed;
   height: 100%;
   margin-left: -$sidebar-width;
   overflow-y: auto;
@@ -28,11 +35,6 @@ body {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-
 }
 
 #wrapper.toggled {
@@ -47,107 +49,14 @@ body {
   width: 100%;
   position: absolute;
   height: 100%;
-  /*padding: 15px;*/
-}
+  background-color: $black-haze
+ }
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
   margin-right: 80px;
 }
 
-/* Sidebar Styles */
-
-.sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: $sidebar-width-closed;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  .material {
-    font-size: 24px;
-    padding: 0 10px 0 10px;
-    display: block;
-    text-shadow: #000 1px 1px 3px;
-  }
-
-  li a {
-    text-align: center;
-    width: $sidebar-width;
-    padding: 15px 0 15px;
-    .toggled & {
-      width: 80px;
-    }
-  }
-
-  .closed {
-    display: none;
-  }
-
-  .nav-title {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    font-size: 14px;
-    display: block;
-    .toggled & {
-      display: none;
-    }
-
-  }
-
-}
-
-.sidebar-nav li {
-  //text-indent: 20px;
-  //line-height: 40px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.sidebar-nav li a {
-  display: block;
-  text-decoration: none;
-  color: #999999;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.sidebar-nav li a:hover {
-  text-decoration: none;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-  text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-  height: 65px;
-  font-size: 18px;
-  line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-  color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
-  background: none;
-}
-
-.sidebar-right {
-  height: 100%;
-}
 
 @media(min-width: 768px) {
   #wrapper {
@@ -155,7 +64,7 @@ body {
   }
 
   #wrapper.toggled {
-    padding-left: 80px;
+    padding-left: $sidebar-width-closed;
   }
 
   #sidebar-wrapper {
@@ -163,7 +72,7 @@ body {
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    width: 80px;
+    width: $sidebar-width-closed;
   }
 
   #page-content-wrapper {
@@ -175,8 +84,77 @@ body {
     position: relative;
     margin-right: 0;
   }
+
 }
 
-@import "modules/tbls";
-@import "modules/dashboard";
-@import "modules/components";
+@media(max-width: 767px) {
+
+  #wrapper {
+    padding-left: $sidebar-width-closed;
+  }
+
+  #wrapper.toggled {
+    padding-left: $sidebar-width-closed;
+  }
+
+  #sidebar-wrapper {
+    width: $sidebar-width-closed;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: $sidebar-width-closed;
+  }
+
+  #page-content-wrapper {
+    padding: 0px;
+    position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+
+}
+
+
+.admin-nav {
+  background-color: #fff;
+  @include menus(75px);
+
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  @include sidebarNav;
+  @include sidebarLinks;
+}
+
+.sidebar-right {
+  height: 100%;
+}
+
+/* Widgets */
+
+.widgets {
+
+  @include widgets();
+  height: 120px;
+  background-color: #fff;
+  color: $aluminum;
+
+}
+
+.boards {
+
+  @include widgets(24, 14);
+  background-color: #fff;
+  color: $aluminum;
+
+  p {
+    font-weight: normal;
+  }
+
+}

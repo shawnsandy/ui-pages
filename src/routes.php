@@ -12,8 +12,10 @@ Route::group(['middleware' => ['web']], function(){
     });
 
     Route::group(['prefix' => 'dash'], function () {
-        Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
-        Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@admin');
+        Route::get('', 'ShawnSandy\PageKit\Controllers\DashController@index');
+        Route::get('logs', 'ShawnSandy\PageKit\Controllers\DashController@logs');
+        Route::get('{name}', 'ShawnSandy\PageKit\Controllers\DashController@admin');
+
     });
 
     Route::group(['prefix' => 'github'], function(){
@@ -28,6 +30,7 @@ Route::group(['middleware' => ['web']], function(){
      * Demo routes not production ready
      */
     Route::get('dash-login', 'ShawnSandy\PageKit\Controllers\LoginController@index');
+    Route::get('log', 'ShawnSandy\PageKit\Controllers\PagesController@log');
 
     Route::get('test-login', function (Request $request){
         var_dump($request->session()->all());
@@ -37,13 +40,3 @@ Route::group(['middleware' => ['web']], function(){
 });
 
 
-Route::get('session-save', function(){
-    Session::put('test', 'session test');
-    Session::save();
-    return redirect('/session-saved');
-});
-
-Route::get('session-saved', function(){
-    var_dump(Session::all());
-return 'saved';
-});

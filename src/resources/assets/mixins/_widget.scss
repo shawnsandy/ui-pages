@@ -1,0 +1,37 @@
+@mixin widgets($default-font-size: 14, $body-font-size: 24) {
+
+    margin: 20px 0;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-weight: 500;
+    @include border-radius(5px);
+    display: table;
+    width: 100%;
+
+    .content {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    div, p {
+      padding: 5px;
+      margin: 0;
+    }
+
+  hr {
+    margin: 0;
+  }
+
+
+    .widget-heading, .widget-footer {
+      @include fontSize($default-font-size);
+      padding: 5px;
+    }
+
+    .widget-body {
+      @include fontSize($body-font-size)
+    }
+
+
+}
+

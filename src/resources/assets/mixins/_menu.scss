@@ -1,0 +1,20 @@
+@mixin menus($height: 70px, $branding-width:280px){
+
+    height: $height;
+    padding: 0 20px;
+    .branding {
+      width: $branding-width;
+    }
+
+    .material {
+      font-size: 28px;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    h1, h2, h3, h4, h5, p {
+      margin: 5px 0 5px;
+    }
+
+}
