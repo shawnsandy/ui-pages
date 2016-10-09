@@ -16,7 +16,7 @@ body {
   z-index: 1000;
   position: fixed;
   left: $sidebar-width;
-  width: 80px;
+  width: $sidebar-width-closed;
   height: 100%;
   margin-left: -$sidebar-width;
   overflow-y: auto;
@@ -49,8 +49,8 @@ body {
   width: 100%;
   position: absolute;
   height: 100%;
-  /*padding: 15px;*/
-}
+  background-color: $black-haze
+ }
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
@@ -64,7 +64,7 @@ body {
   }
 
   #wrapper.toggled {
-    padding-left: 80px;
+    padding-left: $sidebar-width-closed;
   }
 
   #sidebar-wrapper {
@@ -72,7 +72,37 @@ body {
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    width: 80px;
+    width: $sidebar-width-closed;
+  }
+
+  #page-content-wrapper {
+    padding: 0px;
+    position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+
+}
+
+@media(max-width: 767px) {
+
+  #wrapper {
+    padding-left: $sidebar-width-closed;
+  }
+
+  #wrapper.toggled {
+    padding-left: $sidebar-width-closed;
+  }
+
+  #sidebar-wrapper {
+    width: $sidebar-width-closed;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: $sidebar-width-closed;
   }
 
   #page-content-wrapper {
@@ -89,7 +119,9 @@ body {
 
 
 .admin-nav {
+  background-color: #fff;
   @include menus(75px);
+
 }
 
 

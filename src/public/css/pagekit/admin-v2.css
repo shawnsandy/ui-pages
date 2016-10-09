@@ -12,22 +12,22 @@
     .tbl-bottom {
         vertical-align: bottom; }
 
-.dashboard-wrapper {
-    height: 100%; }
-    .dashboard-wrapper .dashboard {
-        width: 100%;
-        background-color: #F5F8F9;
-        padding: 15px 0; }
-        .dashboard-wrapper .dashboard main {
-            padding: 0 10px; }
-    .dashboard-wrapper .dashboard-sidebar {
-        width: 30%;
-        min-width: 280px;
-        background-color: #F5F8F9; }
-        .dashboard-wrapper .dashboard-sidebar > * {
-            padding: 10px 20px; }
-        .dashboard-wrapper .dashboard-sidebar h3 {
-            margin-top: 5px; }
+#dashboard {
+    margin: 0;
+    padding: 0; }
+    #dashboard .dashboard-wrapper {
+        height: 100%; }
+        #dashboard .dashboard-wrapper .dashboard {
+            background-color: #F5F8F9;
+            padding: 15px 0; }
+            #dashboard .dashboard-wrapper .dashboard main {
+                padding: 0 10px; }
+        #dashboard .dashboard-wrapper .dashboard-sidebar {
+            background-color: #F5F8F9; }
+            #dashboard .dashboard-wrapper .dashboard-sidebar > * {
+                padding: 10px 20px; }
+            #dashboard .dashboard-wrapper .dashboard-sidebar h3 {
+                margin-top: 5px; }
 
 .widgets .social {
     font-size: 16px; }
@@ -73,7 +73,7 @@ body {
     width: 100%;
     position: absolute;
     height: 100%;
-    /*padding: 15px;*/ }
+    background-color: #F5F8F9; }
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
@@ -95,7 +95,24 @@ body {
         position: relative;
         margin-right: 0; } }
 
+@media (max-width: 767px) {
+    #wrapper {
+        padding-left: 80px; }
+    #wrapper.toggled {
+        padding-left: 80px; }
+    #sidebar-wrapper {
+        width: 80px; }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 80px; }
+    #page-content-wrapper {
+        padding: 0px;
+        position: relative; }
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0; } }
+
 .admin-nav {
+    background-color: #fff;
     height: 75px;
     padding: 0 20px; }
     .admin-nav .branding {

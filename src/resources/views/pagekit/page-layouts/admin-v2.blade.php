@@ -12,49 +12,52 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <nav class="admin-nav">
-                <div class="tbl">
-                    <div class="tbl-row">
-                        <div class="tbl-cell branding">
-                            <h4 class="text-uppercase">
+            <div id="dashboard" class="container-fluid">
+                <nav class="admin-nav">
+                    <div class="tbl">
+                        <div class="tbl-row">
+                            <div class="tbl-cell branding">
+                                <h4 class="text-uppercase">
 
-                                PageKit
-                                <small>Admin Starter</small>
-                            </h4>
-                        </div>
-                        <div class="tbl-cell profile text-right">
-                            <p>
-                                Shawn Sandy
-                            </p>
+                                    PageKit
+                                    <small>Admin Starter</small>
+                                </h4>
+                            </div>
+                            <div class="tbl-cell profile text-right">
+                                <p>
+                                    Shawn Sandy
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-            <div class="dashboard-wrapper">
-                <div class="tbl">
-                    <div class="tbl-cell tbl-top dashboard">
-                        <main class=""> @yield('content')</main>
-                    </div>
-                    <div class="tbl-cell tbl-top dashboard-sidebar">
-                        <div class="">
-                            <div class="boards">
-                                <div class="widget-heading"><h3 class="text-uppercase"><i
-                                                class="material material_info"></i></h3></div>
-                                <hr>
-                                <div class="widget-body">
-                                    <p>PageKit admin starter is an easy to use bootstrap compatible admin dashboard
-                                        created to
-                                        help you build better backends for your laravel applications. Please visit our
-                                        <a href="//github.com/shawnsandy/pagekit">Github page for setup
-                                            instructions.</a></p>
+                </nav>
+                <div class="dashboard-wrapper">
+                    <div class="tbl">
+                        <div class="dashboard col-md-9">
+                            <main class=""> @yield('content')</main>
+                        </div>
+                        <div class="dashboard-sidebar col-md-3">
+                            <div class="">
+                                <div class="boards">
+                                    <div class="widget-heading">
+                                        <h3 class="text-uppercase"><i class="material material_info"></i></h3></div>
+                                    <hr>
+                                    <div class="widget-body">
+                                        <p>PageKit admin starter is an easy to use bootstrap compatible admin
+                                            dashboard
+                                            created to
+                                            help you build better backends for your laravel applications. Please
+                                            visit our
+                                            <a href="//github.com/shawnsandy/ui-pages">Github page for setup
+                                                instructions.</a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
         <!-- /#page-content-wrapper -->
     </div>
