@@ -33,9 +33,7 @@
                 </nav>
                 <div class="dashboard-wrapper">
                     <div class="tbl">
-                        <div class="dashboard col-md-9">
-                            <main class=""> @yield('content')</main>
-                        </div>
+                        <div class="dashboard col-md-9"> <main class=""> @yield('content')</main> </div>
                         <div class="dashboard-sidebar col-md-3">
                             <div class="">
                                 <div class="boards">
