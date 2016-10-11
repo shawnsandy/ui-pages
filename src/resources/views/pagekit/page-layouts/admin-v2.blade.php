@@ -46,7 +46,7 @@
                                             created to
                                             help you build better backends for your laravel applications. Please
                                             visit our
-                                            <a href="//github.com/shawnsandy/ui-pages">Github page for setup
+                                            <a href="//github.com/shawnsandy/ui-pages" target="_blank">Github page for setup
                                                 instructions.</a>
                                         </p>
                                     </div>
