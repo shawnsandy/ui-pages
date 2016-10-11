@@ -10,7 +10,9 @@ Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default
 
 ### Admin Dashboard
 
-![Pages Screenshot](pages-dash.png)
+![Pages Screenshot](pages-dash.png)!
+
+[Pages Screenshot](pages-nav-open.png)
 
 #### PageKit
 
