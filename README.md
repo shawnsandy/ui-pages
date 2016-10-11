@@ -4,7 +4,14 @@
 
 Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default Laravel "Welcome Page". It provides a clean and modern set of bootstrap compatible starter pages -- Home About Contact and starter admin/dashboard template. Along with a static flat file system for quickly adding and using markdown as content. Setup, configuration and customization is quick and easy, allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes so you can focus on the development. 
 
-![PageKit Screenshot](pagekit.png)
+![Pages Screenshot](pagekit.png)
+
+----------------------
+
+![Pages Screenshot](pages-dash.png)
+
+--------------
+
 
 > If you are looking for the original PageKit package you can still find it here at [Pagekit Original](https://github.com/shawnsandy/pagekit). I have moved PageKit to and new repository and changed the name to avoid conflict with PageKit CMS. I also used the opportunity to reboot versioning to better meet semver standards. Sorry for the inconvenience, I hope you find the package useful.
 
@@ -24,7 +31,33 @@ Add PageKitServiceProvider to the providers array in `config/app.php`
 
 ShawnSandy\PageKit\PageKitServiceProvider::class
 
+
 ```
+
+__Add the following (required) vendor service providers and aliases for pre-installed Laravel packages.__
+
+Vendor Service providers 
+
+```php
+
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        JeroenG\Packager\PackagerServiceProvider::class,
+        Sven\EnvProviders\EnvServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Brotzka\DotenvEditor\DotenvEditorServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        
+```
+ 
+Vendor Aliases
+ 
+ ```php
+ 
+        'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
+        'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+         
+ ```
 
 __Publish the pagekit assets__
 
@@ -99,7 +132,7 @@ You can custom brand pagekit by editing the values in the `config/pagekit.php`
 Turn branding on:
 
 ```php
-'branding' => false,
+    'branding' => true,
 ``` 
 
 Customize :
@@ -125,11 +158,12 @@ Customize :
 **Custom Header**
 
 ```php
+
 header-background-image' => "https://static.pexels.com/photos/129569/pexels-photo-129569-large.jpeg",
 
 ```
 
-!['Costom Header Background'](pagekit-custom-header.png)
+!['Custom Header Background'](pagekit-custom-header.png)
 
 ## TODO
 
