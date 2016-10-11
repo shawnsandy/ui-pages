@@ -2,16 +2,17 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9/mini.png)](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/31fe3b80a4b74e68b2d06a5859a42615)](https://www.codacy.com/app/shawnsandy04/ui-pages?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shawnsandy/ui-pages&amp;utm_campaign=Badge_Grade)
 
-Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default Laravel "Welcome Page". It provides a clean and modern set of bootstrap compatible starter pages -- Home About Contact and starter admin/dashboard template. Along with a static flat file system for quickly adding and using markdown as content. Setup, configuration and customization is quick and easy, allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes so you can focus on the development. 
+Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default Laravel "Welcome Page". It provides a clean and modern set of bootstrap compatible starter pages -- Home, About, Contact and a starter admin/dashboard template. Along with a static flat file system for quickly adding and using markdown files as content. Setup, configuration and customization is quick and easy, allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes so you can focus on the development. 
+
+### Home Page Screen Shot
 
 ![Pages Screenshot](pagekit.png)
 
-----------------------
+### Admin Dashboard
 
 ![Pages Screenshot](pages-dash.png)
 
---------------
-
+#### PageKit
 
 > If you are looking for the original PageKit package you can still find it here at [Pagekit Original](https://github.com/shawnsandy/pagekit). I have moved PageKit to and new repository and changed the name to avoid conflict with PageKit CMS. I also used the opportunity to reboot versioning to better meet semver standards. Sorry for the inconvenience, I hope you find the package useful.
 
@@ -59,7 +60,7 @@ Vendor Aliases
          
  ```
 
-__Publish the pagekit assets__
+__Publish the pagekit vendor files / assets__
 
 ```php
 
@@ -69,7 +70,7 @@ php artisan vendor:publish --provider="ShawnSandy\PageKit\PageKitServiceProvider
 
 __Publish tags__
 
-You can publish individual pagekit tags using `--tags`, *please note* that the `--pagekit-asssets` tag is required for page to display correctly. **BTW this is my preferred method of install**.
+You can publish individual pagekit tags using `--tags` option, *please note* that the `--pagekit-asssets` tag is required for page to display correctly. **BTW this is my preferred method of install**.
 
 ```php
 
