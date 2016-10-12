@@ -30,11 +30,12 @@ class Breadcrumbs
      */
     public function breadcrumbs()
     {
-        $link = [];
+        $links = [];
         $breadcrumbs = $this->crumbs($this->request->segments());
         foreach ($breadcrumbs as $name => $url):
-            $link[] = '<a href="' . $url . '" class="breadcrumb">' . ucwords($name) . '</a>';
-        endforeach;
+            $links[] = '<a href="' . $url . '" class="breadcrumb">' . ucwords($name) . '</a>';
+        endforeach ;
+        return $links;
     }
 
 
