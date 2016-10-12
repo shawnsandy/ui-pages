@@ -1,4 +1,4 @@
-@extends('dotenv-editor::master')
+@extends('page::page-layouts.admin-v2')
 
 {{--
 Feel free to extend your custom wrapping view.
