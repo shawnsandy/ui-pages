@@ -19,7 +19,8 @@ class MarkdownController extends Controller
 
     /**
      * MarkdownController constructor.
-     * @param Markdown $pageKit
+     *
+     * @param    Markdown $pageKit
      * @internal param PageKit $kit
      */
     public function __construct(Markdown $pageKit)
@@ -51,12 +52,13 @@ class MarkdownController extends Controller
 
         $view = "page::missing-page";
 
-        if ($request->has('page')):
+        if ($request->has('page')) :
             $markdown = $this->pagekit->markdown($request->page, $posts);
         endif;
 
-        if(!empty($markdown))
-            $view = 'page::markdown.show';
+        if(!empty($markdown)) {
+            $view = 'page::markdown.show'; 
+        }
 
         return view($view, compact('markdown'));
 

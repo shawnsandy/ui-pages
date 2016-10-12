@@ -17,7 +17,7 @@ class PagesController extends Controller
 
     public function __construct(LaravelLogViewer $logViewer)
     {
-        $this->logs = $logViewer ;
+        $this->logs = $logViewer;
     }
 
     public function index()
@@ -37,14 +37,21 @@ class PagesController extends Controller
         $collect = collect($this->logs->all());
         $logs = $collect->take(2);
 
-        return $this->theView('admin.'.$name, compact('logs'));
+        return $this->theView('admin.' . $name, compact('logs'));
     }
 
-    public function log(){
+    public function log()
+    {
         $collect = collect($this->logs->all());
         return $collect->take(2);
     }
 
+
+    /**
+     * Reset Login
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function resetLogin()
     {
         $token = hash_hmac('sha256', str_random(40), config('app.key'));
@@ -52,7 +59,9 @@ class PagesController extends Controller
     }
 
     /**
-     * @param $name
+     * TheView
+     *
+     * @param string $name
      * @param array $data
      * @return mixed
      */
@@ -60,8 +69,9 @@ class PagesController extends Controller
     {
         $view = 'missing-page';
 
-        if (view()->exists('page::' . $name))
+        if (view()->exists('page::' . $name)) {
             $view = $name;
+        }
 
         return view('page::' . $view, $data);
     }
