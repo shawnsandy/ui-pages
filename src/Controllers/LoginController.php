@@ -13,7 +13,8 @@ use Illuminate\Routing\Controller;
 class LoginController extends Controller
 {
 
-    public function index(Request $request){
+    public function index(Request $request)
+    {
 
     }
 

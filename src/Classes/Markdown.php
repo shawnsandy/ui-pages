@@ -18,6 +18,7 @@ class Markdown
 
     /**
      * Create a new Skeleton Instance
+     *
      * @param MarkdownExtra $markdown
      */
     public function __construct(MarkdownExtra $markdown)
@@ -29,7 +30,7 @@ class Markdown
     /**
      * @param $markdown
      *
-     * @param null $page
+     * @param null     $page
      * @return string
      */
     public function markdown($markdown, $page = null)
@@ -37,11 +38,13 @@ class Markdown
 
         $file = $markdown . '.md';
 
-        if (isset($page))
-            $file = $page . '/' . $markdown . '.md';
+        if (isset($page)) {
+            $file = $page . '/' . $markdown . '.md'; 
+        }
 
-        if (!Storage::disk('markdown')->exists($file))
-            return false;
+        if (!Storage::disk('markdown')->exists($file)) {
+            return false; 
+        }
 
         $file = Storage::disk('markdown')->get($file);
         return $this->markdown->transform($file);
@@ -60,11 +63,9 @@ class Markdown
     public function markdownLink($file_path)
     {
         /**
-         *
          * split the $file_path into an array
          * parse the segments of the $array into the data array
          * if the $array count is > 0 link should contain url params
-         *
          */
         
         $array = explode('/', $file_path);
@@ -73,10 +74,11 @@ class Markdown
 
         $url = '/' . $dir;
 
-        if(count($array) > 1)
-        $url = '/' . $dir . '?page=' . $name;
+        if(count($array) > 1) {
+            $url = '/' . $dir . '?page=' . $name; 
+        }
 
-        $display_name = ucwords(str_replace_array('_', ' ', $name ));
+        $display_name = ucwords(str_replace_array('_', ' ', $name));
         $link = '<a href="md/' . $url . '" class="markdown-link">' . $display_name . '</a>';
         return $link;
 
@@ -86,10 +88,11 @@ class Markdown
     /**
      * Returns an list or directory of array of markdown files
      * 
-     * @param string $dir
+     * @param  string $dir
      * @return array
      */
-    public function markdownMenu($dir){
+    public function markdownMenu($dir)
+    {
 
         $md_files = $this->markdownFiles($dir);
         $links = [];

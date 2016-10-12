@@ -14,10 +14,12 @@ class PageKitController extends Controller
      */
     public function contactUs(Request $request)
     {
-        Mail::send('page::emails.contact-info', ['data' => $request->all()], function (Message $message) use ($request) {
-            $message->from($request->email, ': Contact request');
-            $message->to('shawnsandy04@gmail.com', 'shawn sandy')->subject('Contact request');
-        });
+        Mail::send(
+            'page::emails.contact-info', ['data' => $request->all()], function (Message $message) use ($request) {
+                $message->from($request->email, ': Contact request');
+                $message->to('shawnsandy04@gmail.com', 'shawn sandy')->subject('Contact request');
+            }
+        );
         return back();
     }
 

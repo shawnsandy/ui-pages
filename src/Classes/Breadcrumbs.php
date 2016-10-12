@@ -12,34 +12,44 @@ use Illuminate\Http\Request;
 class Breadcrumbs
 {
 
-    protected $request ;
+    protected $request;
 
+    /**
+     * Breadcrumbs constructor.
+     */
     public function __construct()
     {
-        $this->request = new Request(); ;
+        $this->request = new Request();
     }
 
+
+    /**
+     * Breadcrumbs
+     *
+     * @return array
+     */
     public function breadcrumbs()
     {
-
-        $breadcrumbs = $this->crumbs();
-        return view("page::shared.breadcrumbs", [
-            'breadcrumbs' => $breadcrumbs
-        ]);
-
+        return $breadcrumbs = $this->crumbs($this->request->segments());
     }
 
-    public function crumbs($Rsegments)
+
+    /**
+     * Crumbs
+     *
+     * @param  $segments
+     * @return array
+     */
+    public function crumbs($segments)
     {
-        $segments = $Rsegments;
+
         $item = '';
         $crumbs = [];
         foreach ($segments as $segment):
             $item = $item . "/" . $segment;
             $crumbs["{$segment}"] = $item;
         endforeach;
-        return $crumbs ;
-
+        return $crumbs;
     }
 
 }

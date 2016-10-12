@@ -1,6 +1,4 @@
-<?php
-
-namespace ShawnSandy\PageKit\Controllers;
+<?php namespace ShawnSandy\PageKit\Controllers;
 
 
 use Illuminate\Routing\Controller;
@@ -18,7 +16,8 @@ class PostsController extends Controller
      * Display a list of saved post
      * Create or edit post
      */
-    public function index(){
+    public function index()
+    {
         return view('page::post.post');
     }
 

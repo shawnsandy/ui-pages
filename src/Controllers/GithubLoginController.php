@@ -42,10 +42,11 @@ class GithubLoginController extends Controller
             'github_id' => $user->id,
             'github_name' => $user->name,
             'github_email' => $user->email
-        ]);
-        $request->session()->save();
-        var_dump($user);
-        return $user->user['login'];
+            ]
+        );
+            $request->session()->save();
+            var_dump($user);
+            return $user->user['login'];
 
     }
 
@@ -56,8 +57,9 @@ class GithubLoginController extends Controller
                 'github_id' => $user->id,
                 'github_name' => $user->name,
                 'github_email' => $user->email
-            ]);
-        $this->session->save();
+            ]
+        );
+            $this->session->save();
 
     }
 

@@ -20,21 +20,23 @@ class Socializer
      * checks to see if the user exists
      * or create a new user from user socialite credentials
      *
-     * @param $user
+     * @param  $user
      * @return User object
      */
     public function findOrRegister($user)
     {
-        if ($userExist = User::where($user['email'])->first())
-            return $userExist;
+        if ($userExist = User::where($user['email'])->first()) {
+            return $userExist; 
+        }
 
         return $newUser = User::create($user);
     }
 
     /**
      * Login user via socialite credentials
-     * @param $user
-     * @param $redirect
+     *
+     * @param    $user
+     * @param    $redirect
      * @internal param $redirectUrl
      */
     public function login($user, $redirect)
@@ -45,8 +47,9 @@ class Socializer
 
     /**
      * Registers and login the user via socialite / oauth credentials
-     * @param $user
-     * @param $redirect
+     *
+     * @param  $user
+     * @param  $redirect
      * @return bool
      */
     public function registerAndLogin($user, $redirect)
