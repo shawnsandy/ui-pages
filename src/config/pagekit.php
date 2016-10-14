@@ -2,6 +2,8 @@
 
 return [
 
+    'login_env' => 'production',
+
     'page_title' => 'Laravel PageKit ',
 
     'page_slug' => 'Quick start pages for Laravel.',

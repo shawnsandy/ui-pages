@@ -40,13 +40,6 @@ class PagesController extends Controller
         return $this->theView('admin.' . $name, compact('logs'));
     }
 
-    public function log()
-    {
-        $collect = collect($this->logs->all());
-        return $collect->take(2);
-    }
-
-
     /**
      * Reset Login
      *
