@@ -35,9 +35,9 @@ use Illuminate\Support\Facades\Session;
 
     Route::get('test-login', function (Request $request){
 //        Auth::onceBasic('shawnsandy04@gmail.com');
-        $request->session()->put('test', 'valuesssssss');
-        return redirect('/dash');
-    });
+        session('test', 'valuesssssss');
+        return redirect('/page');
+    })->middleware('web');
 
 
 
