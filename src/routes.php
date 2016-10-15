@@ -3,8 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-
-
     Route::group(['prefix' => 'page'], function () {
         Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@index');
         Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@page');
@@ -37,8 +35,4 @@ use Illuminate\Support\Facades\Session;
 //        Auth::onceBasic('shawnsandy04@gmail.com');
         session('test', 'valuesssssss');
         return redirect('/page');
-    })->middleware('web');
-
-
-
-
+    })->middleware('shield');

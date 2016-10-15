@@ -25,8 +25,8 @@ class DashController extends Controller
 
         $env = config('pagekit.login_env');
 
-//        if (App::environment($env))
-//        $this->middleware('shield');
+        if (App::environment($env))
+        $this->middleware('shield');
 
         $this->env = $dotenvEditor;
         $this->logs = $logViewer;
