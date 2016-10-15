@@ -32,7 +32,7 @@ Add PageKitServiceProvider to the providers array in `config/app.php`
 
 ```php
 
-ShawnSandy\PageKit\PageKitServiceProvider::class
+    ShawnSandy\PageKit\PageKitServiceProvider::class
 
 
 ```
@@ -49,6 +49,7 @@ Vendor Service providers
         Barryvdh\Debugbar\ServiceProvider::class,
         Brotzka\DotenvEditor\DotenvEditorServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Vinkla\Shield\ShieldServiceProvider::class,
         
 ```
  
@@ -60,6 +61,14 @@ Vendor Aliases
         'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
          
+ ```
+ 
+ Middleware
+ 
+ ```php
+ 
+        'shield' => \Vinkla\Shield\ShieldMiddleware::class,
+ 
  ```
 
 __Publish the pagekit vendor files / assets__
@@ -127,6 +136,12 @@ Route::get('/', function () {
         return view('page::index');
     });
 ```
+
+### Enable dashboard in production
+
+Since Pages does not require a database of any sort  *youtsite.dev/dash* dashboad ) does not require you to login on you local / dev machine. You can enable statless login using the [Laravel Shield](https://github.com/vinkla/laravel-shield) package. 
+
+
 
 ### Custom Branding
 
