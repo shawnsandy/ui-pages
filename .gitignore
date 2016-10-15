@@ -9,3 +9,5 @@ bower_components
 /src/public/vendor-1/
 /src/public/bkvendor-1/
 
+/.idea/workspace.xml
+/.idea/PageKit.iml

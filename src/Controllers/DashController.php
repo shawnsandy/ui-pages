@@ -3,6 +3,8 @@
 namespace ShawnSandy\PageKit\Controllers;
 
 use Brotzka\DotenvEditor\DotenvEditor;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
 
@@ -11,7 +13,7 @@ use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
  *
  * @package \ShawnSandy\PageKit\Controllers
  */
-class DashController
+class DashController extends Controller
 {
 
     protected $logs;
@@ -20,6 +22,12 @@ class DashController
 
     public function __construct(LaravelLogViewer $logViewer, DotenvEditor $dotenvEditor)
     {
+
+        $env = config('pagekit.login_env');
+
+        if (App::environment($env))
+        $this->middleware('shield');
+
         $this->env = $dotenvEditor;
         $this->logs = $logViewer;
         $this->log_collection = collect($this->logs->all());

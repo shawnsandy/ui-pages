@@ -25,8 +25,13 @@ class PageKitServiceProvider extends ServiceProvider
         $this->publishes(
             [
                 __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page'),
-                __DIR__ . '/resources/assets' => resource_path('assets/sass/pagekit')],
-            'pagekit-views'
+            ], 'pagekit-views'
+        );
+
+        $this->publishes(
+            [
+                __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page')
+            ], 'pagekit-enveditor'
         );
 
         $this->publishes(
@@ -35,7 +40,6 @@ class PageKitServiceProvider extends ServiceProvider
                 __DIR__ . '/public/css/fonts' => public_path('css/pagekit/fonts'),
                 __DIR__ . '/public/img' => public_path('img'),
                 __DIR__ . '/public/packages' => public_path('packages')
-
             ], 'pagekit-assets'
         );
 
@@ -56,8 +60,8 @@ class PageKitServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/config/pagekit.php', 'pagekit'
         );
-        $this->app->bind('Breadcrumbs', function(){
-           return new Breadcrumbs();
+        $this->app->bind('Breadcrumbs', function () {
+            return new Breadcrumbs();
         });
     }
 

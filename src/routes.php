@@ -1,8 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
-Route::group(['middleware' => ['web']], function(){
 
     Route::group(['prefix' => 'page'], function () {
         Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@index');
@@ -33,10 +32,7 @@ Route::group(['middleware' => ['web']], function(){
     Route::get('log', 'ShawnSandy\PageKit\Controllers\PagesController@log');
 
     Route::get('test-login', function (Request $request){
-        var_dump($request->session()->all());
-        return "logged in";
-    })->middleware(['pagekit_login']);
-
-});
-
-
+//        Auth::onceBasic('shawnsandy04@gmail.com');
+        session('test', 'valuesssssss');
+        return redirect('/page');
+    })->middleware('shield');
