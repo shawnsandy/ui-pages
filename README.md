@@ -137,11 +137,51 @@ Route::get('/', function () {
     });
 ```
 
-### Enable dashboard in production
+### Enable dashboard in login
 
-Since Pages does not require a database of any sort  *youtsite.dev/dash* dashboad ) does not require you to login on you local / dev machine. You can enable statless login using the [Laravel Shield](https://github.com/vinkla/laravel-shield) package. 
+Pages comes database free by default, as a result your admin Dash(board) won't require any login. However you can enable statless login using the [Laravel Shield](https://github.com/vinkla/laravel-shield) package that is bundled with Pages. 
+
+Please insure the you have added the provider to your `config\app.php` (Vendor Providers).
+
+```
+
+Vinkla\Shield\ShieldServiceProvider::class,
+
+```
+
+Add the middleware to the $routeMiddleware array in your Kernel.php file.
+
+```
+
+'shield' => \Vinkla\Shield\ShieldMiddleware::class,
+
+```
+
+Publish the vendor assets using the provider tag. 
+
+```
+
+php artisan vendor:publish --provider="Vinkla\Shield\ShieldServiceProvider"
+
+```
+
+*Using `php artisan vendor:publish' can have some unintended affects* 
 
 
+Run the php artisan command to generate your shield passwords `php artisan shield:hash username password`
+
+Add the password to your '/config/shield.php' file
+
+```
+
+  'users' => [
+        'main' => ['$2y$10$wBoPEW4WJO5kTlzwkF4vw.hfGnImJV2kla4UALPNKhMLEoYUWDFL6',
+            '$2y$10$kk9u9VdzoXAh/hL/sy6BFuUP.Prf/761rbuPMVhCBaXsYKgymS232'],
+    ],
+
+```
+
+Visit [Laravel Shield](https://github.com/vinkla/laravel-shield) for more info.
 
 ### Custom Branding
 
