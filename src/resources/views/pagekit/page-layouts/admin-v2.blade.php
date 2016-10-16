@@ -3,7 +3,7 @@
 
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
-         <div id="sidebar-wrapper" class="{{ config('pagekit.theme_style') }}">
+         <div id="sidebar-wrapper" class="{{ config('pagekit.sidebar-theme_style') }}">
             <ul class="sidebar-nav">
                 @include('page::page-layouts.shared.sidebar-nav')
             </ul>
