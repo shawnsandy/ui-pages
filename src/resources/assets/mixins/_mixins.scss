@@ -12,6 +12,18 @@
 
 }
 
+@mixin linkColors($color: $gray, $hover-color: $gray-light){
+  a {
+    color: $color;
+    &:link:visited:active:focus {
+      $color;
+    }
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;

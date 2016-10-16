@@ -61,7 +61,8 @@ body {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    overflow: hidden; }
 
 #wrapper.toggled {
     padding-left: 200px; }
@@ -245,7 +246,7 @@ body {
     border: 1px solid #eeeeee; }
     #sidebar-wrapper.black-haze-lite .sidebar-nav li a {
         text-shadow: none; }
-        #sidebar-wrapper.black-haze-lite .sidebar-nav li a:link:active {
+        #sidebar-wrapper.black-haze-lite .sidebar-nav li a:link:active:visited {
             color: #333333; }
         #sidebar-wrapper.black-haze-lite .sidebar-nav li a:hover {
-            color: #eeeeee; }
+            color: #666666; }

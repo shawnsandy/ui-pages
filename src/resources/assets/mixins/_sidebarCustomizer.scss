@@ -9,12 +9,12 @@
     li a {
       text-shadow: none;
 
-      &:link:active {
+      &:link:active:visited {
         color: $color;
       }
 
       &:hover {
-        color: $border-color;
+        color: lighten($color, 20%);
       }
 
     }
