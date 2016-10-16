@@ -7,29 +7,36 @@ use Illuminate\Support\Facades\Storage;
 
 
 /**
- * Class DefaultClass
+ * Class Markdown
+ * Methods to generate links from markdown files
  *
  * @package \ShawnSandy\PageKit\Classes
  */
 class Markdown
 {
 
+    /**
+     * @var MarkdownExtra
+     */
     protected $markdown;
+
+    protected $type = 'link';
 
     /**
      * Create a new Skeleton Instance
      *
-     * @param MarkdownExtra $markdown
+     * @internal param MarkdownExtra $markdown
      */
-    public function __construct(MarkdownExtra $markdown)
+    public function __construct()
     {
-        $this->markdown = $markdown;
+        $this->markdown = new MarkdownExtra();
     }
 
 
     /**
-     * @param $markdown
+     * Parse a output a markdown file
      *
+     * @param $markdown
      * @param null     $page
      * @return string
      */
@@ -51,16 +58,23 @@ class Markdown
 
     }
 
+    /**
+     *
+     * @param null $dir
+     * @return mixed
+     */
     public function markdownFiles($dir = null)
     {
         return Storage::disk('markdown')->allFiles($dir);
     }
 
     /**
+     * Converts a give md file path to a link
+     *
      * @param $file_path
      * @return mixed
      */
-    public function markdownLink($file_path)
+    public function markdownLink($file_path, $type = '')
     {
         /**
          * split the $file_path into an array
@@ -70,16 +84,19 @@ class Markdown
         
         $array = explode('/', $file_path);
         $dir = $array[0];
-        $name = trim($array[1], '.md');
+
+        $replace = array('-', '_');
 
         $url = '/' . $dir;
+        $display_name = str_replace($replace, ' ', trim($dir, '.md'));
 
         if(count($array) > 1) {
-            $url = '/' . $dir . '?page=' . $name; 
+            $name = trim($array[1], '.md');
+            $url = '/' . $dir . '?page=' . $name;
+            $display_name = str_replace($replace, ' ', $name);
         }
 
-        $display_name = ucwords(str_replace_array('_', ' ', $name));
-        $link = '<a href="md/' . $url . '" class="markdown-link">' . $display_name . '</a>';
+        $link =  ($type == 'url') ? $url : '<a href="/md' . $url . '" class="markdown-link">' . $display_name . '</a>';
         return $link;
 
     }
@@ -91,18 +108,27 @@ class Markdown
      * @param  string $dir
      * @return array
      */
-    public function markdownMenu($dir)
+    public function markdownMenu($dir = null)
     {
 
         $md_files = $this->markdownFiles($dir);
         $links = [];
 
         foreach($md_files as  $file){
-            $links[] = $this->markdownLink($file);
+            $links[] = $this->markdownLink($file, $this->type);
         }
-
         return $links ;
 
+    }
+
+    /**
+     * Return the type of links
+     *
+     * @param string $type
+     * @return string
+     */
+    protected function type($type ){
+        return $this->type = $type;
     }
 
 
