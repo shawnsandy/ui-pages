@@ -17,18 +17,36 @@ use Laravel\Socialite\Facades\Socialite as Socialite;
  */
 class GithubLoginController extends Controller
 {
+    /**
+     * @var Session
+     */
     protected $session;
 
+    /**
+     * GithubLoginController constructor.
+     *
+     * @param Session $session
+     */
     public function __construct(Session $session)
     {
         $this->session = $session ;
     }
 
+    /**
+     * Auth sends off the request to the provider
+     * @return mixed
+     */
     public function auth()
     {
         return Socialite::driver('github')->scopes(['gist', 'user'])->redirect();
     }
 
+    /**
+     * Handles the request from the provider
+     *
+     * @param Request $request
+     * @return Redirect
+     */
     public function handleAuth(Request $request)
     {
         try {
@@ -50,6 +68,12 @@ class GithubLoginController extends Controller
 
     }
 
+    /**
+     * Checks if the user credentials matches the credentials stored
+     * in the config
+     *
+     * @param $user
+     */
     protected function loginUser($user)
     {
         $this->session->put(

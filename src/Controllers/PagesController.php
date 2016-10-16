@@ -4,6 +4,7 @@ namespace ShawnSandy\PageKit\Controllers;
 
 use Illuminate\Routing\Controller;
 use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
+use ShawnSandy\PageKit\Classes\Pages;
 
 /**
  * Class PagesController
@@ -13,32 +14,50 @@ use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
 class PagesController extends Controller
 {
 
+    /**
+     * @var LaravelLogViewer
+     */
     protected $logs;
 
-    public function __construct(LaravelLogViewer $logViewer)
+    /**
+     * @var Pages
+     */
+    protected $view;
+
+    /**
+     * PagesController constructor.
+     *
+     * @param LaravelLogViewer $logViewer
+     * @param Pages $pages
+     */
+    public function __construct(LaravelLogViewer $logViewer, Pages $pages)
     {
         $this->logs = $logViewer;
+        $this->view = $pages;
     }
 
+    /**
+     * Index page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('page::index');
     }
 
+    /**
+     * Pages controller -- static page loading
+     *
+     * @param $name
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function page($name)
     {
 
-        return $this->theView($name);
+        return $this->view->getView($name);
     }
 
-
-    public function admin($name = 'dashboard')
-    {
-        $collect = collect($this->logs->all());
-        $logs = $collect->take(2);
-
-        return $this->theView('admin.' . $name, compact('logs'));
-    }
 
     /**
      * Reset Login
@@ -49,24 +68,6 @@ class PagesController extends Controller
     {
         $token = hash_hmac('sha256', str_random(40), config('app.key'));
         return view('page::login-reset', compact('token'));
-    }
-
-    /**
-     * TheView
-     *
-     * @param string $name
-     * @param array $data
-     * @return mixed
-     */
-    public function theView($name, $data = [])
-    {
-        $view = 'missing-page';
-
-        if (view()->exists('page::' . $name)) {
-            $view = $name;
-        }
-
-        return view('page::' . $view, $data);
     }
 
 

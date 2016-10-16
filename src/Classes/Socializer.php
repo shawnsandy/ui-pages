@@ -7,9 +7,18 @@ use Auth;
 use App\User;
 
 
+/**
+ * Class Socializer
+ *
+ * @package ShawnSandy\PageKit\Classes
+ */
 class Socializer
 {
 
+    /**
+     * Socializer constructor.
+     *
+     */
     public function __construct()
     {
 

@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
+use ShawnSandy\PageKit\Classes\Pages;
 
 /**
  * Class DashController
@@ -16,11 +17,30 @@ use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
 class DashController extends Controller
 {
 
+    protected $view;
+
+    /**
+     * @var LaravelLogViewer
+     */
     protected $logs;
+
+    /**
+     * @var \Illuminate\Support\Collection
+     */
     protected $log_collection;
+
+    /**
+     * @var DotenvEditor
+     */
     protected $env;
 
-    public function __construct(LaravelLogViewer $logViewer, DotenvEditor $dotenvEditor)
+    /**
+     * DashController constructor.
+     *
+     * @param LaravelLogViewer $logViewer
+     * @param DotenvEditor $dotenvEditor
+     */
+    public function __construct(LaravelLogViewer $logViewer, DotenvEditor $dotenvEditor, Pages $pages)
     {
 
         $env = config('pagekit.login_env');
@@ -29,10 +49,16 @@ class DashController extends Controller
         $this->middleware('shield');
 
         $this->env = $dotenvEditor;
+        $this->view = $pages;
         $this->logs = $logViewer;
         $this->log_collection = collect($this->logs->all());
     }
 
+    /**
+     * Index page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         //$collect = collect($this->logs->all());
@@ -42,15 +68,28 @@ class DashController extends Controller
         return view('page::admin.index', compact('logs', 'markdown', 'env'));
     }
 
-    public function admin($name = 'dashboard')
-    {
-        return $this->theView('admin.' . $name, compact('logs'));
-    }
-
+    /**
+     * Logs page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function logs()
     {
         $logs = $this->log_collection;
-        return view('page::admin.logs', compact('logs'));
+        return $this->view->getView('admin.logs', compact('logs'));
     }
+
+
+    /**
+     * Static admin pages
+     *
+     * @param string $name
+     * @return mixed
+     */
+    public function admin($name = 'dashboard')
+    {
+        return $this->view->getView('admin.' . $name);
+    }
+
 
 }
