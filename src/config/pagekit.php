@@ -18,6 +18,9 @@ return [
 
     'address' => '0000 Street, City, State zip',
 
+    'theme_style' => '',
+    'sidebar-theme_style' => '',
+
     'branding' => false,
 
     'brand' => [

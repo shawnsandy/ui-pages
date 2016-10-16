@@ -12,6 +12,43 @@
 
 }
 
+@mixin linkColors($color: $gray, $hover-color: $gray-light, $active-color){
+  a {
+    color: $color;
+    &:link:visited:active:focus {
+      color: $color;
+    }
+    &:hover {
+      color: $hover-color;
+    }
+
+  }
+}
+
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin absolutecenter($axis: "both"){
+  position:absolute;
+  @if $axis == "y"{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $axis == "x"{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $axis == "both"{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+}
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
