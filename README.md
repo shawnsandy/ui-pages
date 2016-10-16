@@ -34,7 +34,6 @@ Add PageKitServiceProvider to the providers array in `config/app.php`
 
     ShawnSandy\PageKit\PageKitServiceProvider::class
 
-
 ```
 
 __Add the following (required) vendor service providers and aliases for pre-installed Laravel packages.__
@@ -55,21 +54,21 @@ Vendor Service providers
  
 Vendor Aliases
  
- ```php
- 
-        'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
-        'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-         
- ```
+```php
+
+    'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
+    'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+     
+```
  
  Middleware
  
- ```php
- 
-        'shield' => \Vinkla\Shield\ShieldMiddleware::class,
- 
- ```
+```php
+
+    'shield' => \Vinkla\Shield\ShieldMiddleware::class,
+
+```
 
 __Publish the pagekit vendor files / assets__
 
@@ -108,7 +107,7 @@ You can also use the `--force` to overwrite previously published files - `--tag=
 
 To customize or use the package to start your own.
 
-* Install [Laravel Packager](https://github.com/Jeroen-G/laravel-packager#laravel-packager) `composer require jeroen-g/laravel-packager`. Make sure to add the provider to your `config\app.php` provider array `eroenG\Packager\PackagerServiceProvider::class,`.
+* Install [Laravel Packager](https://github.com/Jeroen-G/laravel-packager#laravel-packager) `composer require jeroen-g/laravel-packager`. Make sure to add the provider to your `config\app.php` provider array `JeroenG\Packager\PackagerServiceProvider::class,`.
 * Import the repository `php artisan packager:git https://github.com/shawnsandy/pagekit YourVendorName YourPackgeName`. This will create and download the package to `/packages/YourVendorName/YourPackageName`. It will also add your package to composer autoload parameter and add it to `config/app.php` provider array.
 * Customize and push to you repo
 * Enjoy
