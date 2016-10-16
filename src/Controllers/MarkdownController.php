@@ -15,6 +15,9 @@ use ShawnSandy\PageKit\Classes\Markdown;
 class MarkdownController extends Controller
 {
 
+    /**
+     * @var Markdown
+     */
     protected $pagekit;
 
     /**
@@ -28,6 +31,11 @@ class MarkdownController extends Controller
         $this->pagekit = $pageKit;
     }
 
+    /**
+     * Index shows a list of pages
+     *
+     * @return array|string
+     */
     public function index()
     {
         $files = Storage::disk('markdown')->directories();
@@ -40,6 +48,8 @@ class MarkdownController extends Controller
     }
 
     /**
+     * Show a specific page params
+     *
      * @param $posts
      * @param Request $request
      * @return string

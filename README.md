@@ -32,8 +32,7 @@ Add PageKitServiceProvider to the providers array in `config/app.php`
 
 ```php
 
-ShawnSandy\PageKit\PageKitServiceProvider::class
-
+    ShawnSandy\PageKit\PageKitServiceProvider::class
 
 ```
 
@@ -49,18 +48,27 @@ Vendor Service providers
         Barryvdh\Debugbar\ServiceProvider::class,
         Brotzka\DotenvEditor\DotenvEditorServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Vinkla\Shield\ShieldServiceProvider::class,
         
 ```
  
 Vendor Aliases
  
- ```php
+```php
+
+    'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
+    'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+     
+```
  
-        'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
-        'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-         
- ```
+ Middleware
+ 
+```php
+
+    'shield' => \Vinkla\Shield\ShieldMiddleware::class,
+
+```
 
 __Publish the pagekit vendor files / assets__
 
@@ -99,7 +107,7 @@ You can also use the `--force` to overwrite previously published files - `--tag=
 
 To customize or use the package to start your own.
 
-* Install [Laravel Packager](https://github.com/Jeroen-G/laravel-packager#laravel-packager) `composer require jeroen-g/laravel-packager`. Make sure to add the provider to your `config\app.php` provider array `eroenG\Packager\PackagerServiceProvider::class,`.
+* Install [Laravel Packager](https://github.com/Jeroen-G/laravel-packager#laravel-packager) `composer require jeroen-g/laravel-packager`. Make sure to add the provider to your `config\app.php` provider array `JeroenG\Packager\PackagerServiceProvider::class,`.
 * Import the repository `php artisan packager:git https://github.com/shawnsandy/pagekit YourVendorName YourPackgeName`. This will create and download the package to `/packages/YourVendorName/YourPackageName`. It will also add your package to composer autoload parameter and add it to `config/app.php` provider array.
 * Customize and push to you repo
 * Enjoy
@@ -127,6 +135,52 @@ Route::get('/', function () {
         return view('page::index');
     });
 ```
+
+### Enable dashboard in login
+
+Pages comes database free by default, as a result your admin Dash(board) won't require any login. However you can enable statless login using the [Laravel Shield](https://github.com/vinkla/laravel-shield) package that is bundled with Pages. 
+
+Please insure the you have added the provider to your `config\app.php` (Vendor Providers).
+
+```
+
+Vinkla\Shield\ShieldServiceProvider::class,
+
+```
+
+Add the middleware to the $routeMiddleware array in your Kernel.php file.
+
+```
+
+'shield' => \Vinkla\Shield\ShieldMiddleware::class,
+
+```
+
+Publish the vendor assets using the provider tag. 
+
+```
+
+php artisan vendor:publish --provider="Vinkla\Shield\ShieldServiceProvider"
+
+```
+
+*Using `php artisan vendor:publish' can have some unintended affects* 
+
+
+Run the php artisan command to generate your shield passwords `php artisan shield:hash username password`
+
+Add the password to your '/config/shield.php' file
+
+```
+
+  'users' => [
+        'main' => ['$2y$10$wBoPEW4WJO5kTlzwkF4vw.hfGnImJV2kla4UALPNKhMLEoYUWDFL6',
+            '$2y$10$kk9u9VdzoXAh/hL/sy6BFuUP.Prf/761rbuPMVhCBaXsYKgymS232'],
+    ],
+
+```
+
+Visit [Laravel Shield](https://github.com/vinkla/laravel-shield) for more info.
 
 ### Custom Branding
 

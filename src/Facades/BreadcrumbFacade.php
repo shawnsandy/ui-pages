@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Facade;
 class BreadcrumbFacade extends Facade
 {
 
+
+    /**
+     * Facade
+     *
+     * @return string
+     */
     public static function getFacadeAccessor()
     {
         return 'Breadcrumbs';

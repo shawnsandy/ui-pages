@@ -4,6 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Mail;
 
+/**
+ * Class PageKitController
+ * @package ShawnSandy\PageKit\Controllers
+ */
 class PageKitController extends Controller
 {
 
