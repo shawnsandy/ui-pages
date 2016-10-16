@@ -127,8 +127,9 @@ class Markdown
      * @param string $type
      * @return string
      */
-    protected function type($type ){
-        return $this->type = $type;
+    public function type($type ){
+        $this->type = $type;
+        return $this;
     }
 
 
