@@ -12,7 +12,7 @@
 
 }
 
-@mixin linkColors($color: $gray, $hover-color: $gray-light){
+@mixin linkColors($color: $gray, $hover-color: $gray-light, $active-color){
   a {
     color: $color;
     &:link:visited:active:focus {
@@ -21,6 +21,7 @@
     &:hover {
       color: $hover-color;
     }
+
   }
 }
 

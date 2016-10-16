@@ -18,6 +18,8 @@ return [
 
     'address' => '0000 Street, City, State zip',
 
+    'theme_style' => '',
+
     'branding' => false,
 
     'brand' => [
