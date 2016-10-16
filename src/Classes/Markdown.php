@@ -98,7 +98,7 @@ class Markdown
             $display_name = str_replace($replace, ' ', $name);
         }
 
-        $link =  ($type == 'url') ? $url :
+        $link =  ($type == 'url') ? '/md'.$url :
             '<a href="/md' . $url . '" class="markdown-link">' . $display_name .
             '</a>';
         return $link;
