@@ -2,6 +2,7 @@
 @import "mixins/mixins";
 @import "mixins/widget";
 @import "mixins/menu";
+@import "mixins/sidebarCustomizer";
 @import "mixins/sidebar-nav";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "modules/tbls";
@@ -125,11 +126,10 @@ body {
 }
 
 
-/* Sidebar Styles */
-
 .sidebar-nav {
   @include sidebarNav;
   @include sidebarLinks;
+
 }
 
 .sidebar-right {
@@ -140,7 +140,7 @@ body {
 
 .widgets {
 
-  @include widgets();
+  @include widgets(13, 21);
   height: 120px;
   background-color: #fff;
   color: $aluminum;
@@ -157,4 +157,8 @@ body {
     font-weight: normal;
   }
 
+}
+
+#sidebar-wrapper.black-haze-lite {
+  @include sidebarWrapper();
 }
