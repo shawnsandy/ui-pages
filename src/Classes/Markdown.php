@@ -36,8 +36,8 @@ class Markdown
     /**
      * Parse a output a markdown file
      *
-     * @param $markdown
-     * @param null     $page
+     * @param  string $markdown File name
+     * @param  null   $page     File directory
      * @return string
      */
     public function markdown($markdown, $page = null)
@@ -59,8 +59,9 @@ class Markdown
     }
 
     /**
+     * Returns a list of file from a dir
      *
-     * @param null $dir
+     * @param  null $dir directory
      * @return mixed
      */
     public function markdownFiles($dir = null)
@@ -71,7 +72,8 @@ class Markdown
     /**
      * Converts a give md file path to a link
      *
-     * @param $file_path
+     * @param  string $file_path file path
+     * @param  string $type      url/link
      * @return mixed
      */
     public function markdownLink($file_path, $type = '')
@@ -90,13 +92,15 @@ class Markdown
         $url = '/' . $dir;
         $display_name = str_replace($replace, ' ', trim($dir, '.md'));
 
-        if(count($array) > 1) {
+        if (count($array) > 1) {
             $name = trim($array[1], '.md');
             $url = '/' . $dir . '?page=' . $name;
             $display_name = str_replace($replace, ' ', $name);
         }
 
-        $link =  ($type == 'url') ? $url : '<a href="/md' . $url . '" class="markdown-link">' . $display_name . '</a>';
+        $link =  ($type == 'url') ? $url :
+            '<a href="/md' . $url . '" class="markdown-link">' . $display_name .
+            '</a>';
         return $link;
 
     }
@@ -105,7 +109,7 @@ class Markdown
     /**
      * Returns an list or directory of array of markdown files
      * 
-     * @param  string $dir
+     * @param  string $dir file dir
      * @return array
      */
     public function markdownMenu($dir = null)
@@ -114,7 +118,7 @@ class Markdown
         $md_files = $this->markdownFiles($dir);
         $links = [];
 
-        foreach($md_files as  $file){
+        foreach ($md_files as  $file) {
             $links[] = $this->markdownLink($file, $this->type);
         }
         return $links ;
@@ -124,10 +128,11 @@ class Markdown
     /**
      * Return the type of links
      *
-     * @param string $type
+     * @param  string $type return type of markDown() link
      * @return string
      */
-    public function type($type ){
+    public function type($type )
+    {
         $this->type = $type;
         return $this;
     }
