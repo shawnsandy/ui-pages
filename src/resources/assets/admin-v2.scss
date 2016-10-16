@@ -71,6 +71,7 @@ body {
 
   #sidebar-wrapper {
     width: $sidebar-width;
+    overflow: hidden;
   }
 
   #wrapper.toggled #sidebar-wrapper {

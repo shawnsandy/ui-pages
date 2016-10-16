@@ -18,6 +18,8 @@ Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default
 
 ![Pages Screenshot](black-haze-lite.png)
 
+![Pages Screenshot](black-haze-lite-toggled.png)
+
 #### PageKit
 
 > If you are looking for the original PageKit package you can still find it here at [Pagekit Original](https://github.com/shawnsandy/pagekit). I have moved PageKit to and new repository and changed the name to avoid conflict with PageKit CMS. I also used the opportunity to reboot versioning to better meet semver standards. Sorry for the inconvenience, I hope you find the package useful.

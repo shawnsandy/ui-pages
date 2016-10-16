@@ -86,7 +86,8 @@ body {
     #wrapper.toggled {
         padding-left: 80px; }
     #sidebar-wrapper {
-        width: 200px; }
+        width: 200px;
+        overflow: hidden; }
     #wrapper.toggled #sidebar-wrapper {
         width: 80px; }
     #page-content-wrapper {
