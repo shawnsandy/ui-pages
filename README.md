@@ -230,11 +230,7 @@ header-background-image' => "https://static.pexels.com/photos/129569/pexels-phot
 
 ## TODO
 
-- [x] Contact form
-- [ ] Social media links
-- [ ] Add a static page editor
-- [ ] Addon style selectors
-- [ ] Custom artisan command
+...
 
 ## Contributing
 
