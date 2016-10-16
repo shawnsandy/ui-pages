@@ -8,11 +8,15 @@ Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default
 
 ![Pages Screenshot](pagekit.png)
 
-### Admin Dashboard
+### Admin Dashboard (Black Haze)
 
 ![Pages Screenshot](pages-dash.png)
 
 ![Pages Screenshot](pages-nav-open.png)
+
+#### Black Haze Lite
+
+![Pages Screenshot](black-haze-lite.png)
 
 #### PageKit
 

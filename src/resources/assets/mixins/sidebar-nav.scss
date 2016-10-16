@@ -1,4 +1,4 @@
-@mixin sidebarNav($width-closed: $sidebar-width-closed, $width: $sidebar-width  ){
+@mixin sidebarNav($width-closed: $sidebar-width-closed, $width: $sidebar-width  ) {
 
   position: absolute;
   top: 0;
@@ -12,13 +12,14 @@
     font-size: 24px;
     padding: 0 10px 0 10px;
     display: block;
-    text-shadow: #000 1px 1px 3px;
+
   }
 
   li a {
     text-align: center;
     width: $width;
     padding: 15px 0 15px;
+    text-shadow: #000 1px 1px 3px;
     .toggled & {
       width: 80px;
     }
@@ -50,10 +51,9 @@
     transition: all 0.5s ease;
   }
 
-
 }
 
-@mixin sidebarLinks(){
+@mixin sidebarLinks() {
 
   li a {
     display: block;
@@ -78,8 +78,4 @@
 
 }
 
-@mixin wrapperBg($background-color: $gray-dark){
-  #sidebar-wrapper {
-    background-color: $background-color;
-  }
-}
+

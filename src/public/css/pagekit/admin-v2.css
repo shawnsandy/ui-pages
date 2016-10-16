@@ -124,7 +124,6 @@ body {
     .admin-nav h1, .admin-nav h2, .admin-nav h3, .admin-nav h4, .admin-nav h5, .admin-nav p {
         margin: 5px 0 5px; }
 
-/* Sidebar Styles */
 .sidebar-nav {
     position: absolute;
     top: 0;
@@ -136,12 +135,12 @@ body {
     .sidebar-nav .material {
         font-size: 24px;
         padding: 0 10px 0 10px;
-        display: block;
-        text-shadow: #000 1px 1px 3px; }
+        display: block; }
     .sidebar-nav li a {
         text-align: center;
         width: 200px;
-        padding: 15px 0 15px; }
+        padding: 15px 0 15px;
+        text-shadow: #000 1px 1px 3px; }
         .toggled .sidebar-nav li a {
             width: 80px; }
     .sidebar-nav .closed {
@@ -203,12 +202,12 @@ body {
     .widgets hr {
         margin: 0; }
     .widgets .widget-heading, .widgets .widget-footer {
-        font-size: 14px;
-        font-size: 0.875em;
+        font-size: 13px;
+        font-size: 0.8125em;
         padding: 5px; }
     .widgets .widget-body {
-        font-size: 24px;
-        font-size: 1.5em; }
+        font-size: 21px;
+        font-size: 1.3125em; }
 
 .boards {
     margin: 20px 0;
@@ -240,3 +239,13 @@ body {
         font-size: 0.875em; }
     .boards p {
         font-weight: normal; }
+
+#sidebar-wrapper.black-haze-lite {
+    background-color: #fff;
+    border: 1px solid #eeeeee; }
+    #sidebar-wrapper.black-haze-lite .sidebar-nav li a {
+        text-shadow: none; }
+        #sidebar-wrapper.black-haze-lite .sidebar-nav li a:link:active {
+            color: #333333; }
+        #sidebar-wrapper.black-haze-lite .sidebar-nav li a:hover {
+            color: #eeeeee; }

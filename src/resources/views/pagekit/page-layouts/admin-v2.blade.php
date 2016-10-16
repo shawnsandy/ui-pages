@@ -3,7 +3,7 @@
 
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+         <div id="sidebar-wrapper" class="black-haze-lite">
             <ul class="sidebar-nav">
                 @include('page::page-layouts.shared.sidebar-nav')
             </ul>
