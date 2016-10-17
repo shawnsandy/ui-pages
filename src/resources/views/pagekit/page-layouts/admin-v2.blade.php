@@ -3,7 +3,7 @@
 
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
-         <div id="sidebar-wrapper" class="{{ config('pagekit.sidebar-theme_style') }}">
+        <div id="sidebar-wrapper" class="{{ config('pagekit.sidebar-theme_style') }}">
             <ul class="sidebar-nav">
                 @include('page::page-layouts.shared.sidebar-nav')
             </ul>
@@ -33,7 +33,9 @@
                 </nav>
                 <div class="dashboard-wrapper">
                     <div class="tbl">
-                        <div class="dashboard col-md-9"> <main class=""> @yield('content')</main> </div>
+                        <div class="dashboard col-md-9">
+                            <main class=""> @yield('content')</main>
+                        </div>
                         <div class="dashboard-sidebar col-md-3">
                             <div class="">
                                 <div class="boards">
@@ -46,9 +48,16 @@
                                             created to
                                             help you build better backends for your laravel applications. Please
                                             visit our
-                                            <a href="//github.com/shawnsandy/ui-pages" target="_blank">Github page for setup
+                                            <a href="//github.com/shawnsandy/ui-pages" target="_blank">Github page for
+                                                setup
                                                 instructions.</a>
-                                        </p>
+
+                                            @if($links = MKD::markdownMenu())
+                                                @foreach($links as $link)
+                                                    <p>{!! $link  !!} </p>
+                                                @endforeach
+                                            @endif
+
                                     </div>
                                 </div>
                             </div>

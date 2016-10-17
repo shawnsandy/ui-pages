@@ -34,6 +34,6 @@ Route::get(
     'test-login', function (Request $request) {
     $md = new \ShawnSandy\PageKit\Classes\Markdown();
     $files = $md->markdownFiles();
-    return  $md->type('url')->markdownMenu();
+    return  MKD::type('url')->markdownMenu();
 }
 );

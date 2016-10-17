@@ -65,7 +65,7 @@ class PageKitServiceProvider extends ServiceProvider
             return new Breadcrumbs();
         });
 
-        $this->app->bind('MD', function() {
+        $this->app->bind('MKD', function() {
             return new Markdown();
         } );
     }

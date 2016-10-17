@@ -15,7 +15,7 @@ class MarkdownFacade extends Facade
      *
      */
     public static function getFacadeAccessor(){
-        return 'MD';
+        return 'MKD';
     }
 
 }
