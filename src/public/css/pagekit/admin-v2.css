@@ -161,6 +161,9 @@ body {
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease; }
+    .sidebar-nav .toggle-btn {
+        height: 50px;
+        line-height: 50px; }
     .sidebar-nav li a {
         display: block;
         text-decoration: none;

@@ -51,6 +51,11 @@
     transition: all 0.5s ease;
   }
 
+  .toggle-btn {
+    height: 50px;
+    line-height: 50px;
+  }
+
 }
 
 @mixin sidebarLinks() {
