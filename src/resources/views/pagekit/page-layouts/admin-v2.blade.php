@@ -51,12 +51,7 @@
                                             <a href="//github.com/shawnsandy/ui-pages" target="_blank">Github page for
                                                 setup
                                                 instructions.</a>
-
-                                            @if($links = MKD::markdownMenu())
-                                                @foreach($links as $link)
-                                                    <p>{!! $link  !!} </p>
-                                                @endforeach
-                                            @endif
+                                        @include('page::shared.md-links')
 
                                     </div>
                                 </div>
