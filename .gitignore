@@ -11,3 +11,5 @@ bower_components
 
 /.idea/workspace.xml
 /.idea/PageKit.iml
+jsLibraryMappings.xml
+modules.xml
