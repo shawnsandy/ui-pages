@@ -44,7 +44,7 @@ Add PageKitServiceProvider to the providers array in `config/app.php`
 
 __Add the following (required) vendor service providers and aliases for pre-installed Laravel packages.__
 
-Vendor Service providers 
+Vendor Service providers `config/app/php`
 
 ```php
 
@@ -68,7 +68,7 @@ Vendor Aliases
      
 ```
  
- Middleware
+ Middleware `app/Http/Kernel.php` `routeMiddlware`
  
 ```php
 
