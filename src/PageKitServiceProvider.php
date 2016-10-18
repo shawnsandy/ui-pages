@@ -4,6 +4,7 @@ namespace ShawnSandy\PageKit;
 
 use Illuminate\Support\ServiceProvider;
 use ShawnSandy\PageKit\Classes\Breadcrumbs;
+use ShawnSandy\PageKit\Classes\Markdown;
 
 
 class PageKitServiceProvider extends ServiceProvider
@@ -63,6 +64,10 @@ class PageKitServiceProvider extends ServiceProvider
         $this->app->bind('Breadcrumbs', function () {
             return new Breadcrumbs();
         });
+
+        $this->app->bind('MKD', function() {
+            return new Markdown();
+        } );
     }
 
 

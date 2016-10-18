@@ -89,17 +89,17 @@ class Markdown
 
         $replace = array('-', '_');
 
-        $url = '/' . $dir;
-        $display_name = str_replace($replace, ' ', trim($dir, '.md'));
+        $url =  trim($dir, '.md');
+        $display_name = str_replace($replace, ' ',  trim($dir,'.md'));
 
         if (count($array) > 1) {
             $name = trim($array[1], '.md');
-            $url = '/' . $dir . '?page=' . $name;
+            $url = $dir . '?page=' . $name;
             $display_name = str_replace($replace, ' ', $name);
         }
 
-        $link =  ($type == 'url') ? '/md'.$url :
-            '<a href="/md' . $url . '" class="markdown-link">' . $display_name .
+        $link =  ($type == 'url') ? '/md/'.$url :
+            '<a href="/md/' . $url . '" class="markdown-link">' . $display_name .
             '</a>';
         return $link;
 

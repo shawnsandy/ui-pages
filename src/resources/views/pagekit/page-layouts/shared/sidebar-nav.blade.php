@@ -6,6 +6,12 @@
 </li>
 @section('sidebar-links')
     <li>
+        <a href="/"  target="_blank" >
+            <i class="fa material material_home"aria-hidden="true"></i>
+            <span class="nav-title">Site</span>
+        </a>
+    </li>
+    <li>
         <a href="/dash">
             <i class="fa material material_apps" aria-hidden="true"></i>
             <span class="nav-title">Dashboard</span>
