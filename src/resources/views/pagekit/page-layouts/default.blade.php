@@ -12,7 +12,9 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <title>{{ config('pagekit.title', 'Page Title - PageKit.') }} </title>
+    <title> @yield('title', config('pagekit.title', 'Page Title - PageKit.')) </title>
+
+    @stack('beforeStyles')
     <link rel="stylesheet" href="/css/pagekit/app.css">
     <link rel="stylesheet" href="/css/pagekit/page.css">
     <link rel="stylesheet" href="/vendor/aos/aos.css"/>
