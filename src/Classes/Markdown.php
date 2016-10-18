@@ -89,7 +89,7 @@ class Markdown
 
         $replace = array('-', '_');
 
-        $url =  trim($dir,'.md');
+        $url =  trim($dir, '.md');
         $display_name = str_replace($replace, ' ',  trim($dir,'.md'));
 
         if (count($array) > 1) {

@@ -1,6 +1,7 @@
 <?php
 
 namespace ShawnSandy\PageKit\Facades;
+
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -14,7 +15,8 @@ class MarkdownFacade extends Facade
     /**
      *
      */
-    public static function getFacadeAccessor(){
+    public static function getFacadeAccessor()
+    {
         return 'MKD';
     }
 
