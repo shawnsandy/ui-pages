@@ -1,4 +1,4 @@
-@if($links = MKD::markdownMenu())
+@if($links = collect(MKD::markdownMenu()))
     @foreach($links as $link)
         <p>{!! $link  !!}</p>
     @endforeach
