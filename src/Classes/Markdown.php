@@ -191,5 +191,9 @@ class Markdown
 
     }
 
+    public function testView(){
+        return view('page::shared.no-content')->render();
+    }
+
 
 }
