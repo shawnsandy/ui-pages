@@ -85,7 +85,7 @@ class Markdown
         $replace = array('-', '_');
 
         $url =  trim($dir, '.md');
-        $display_name = str_replace($replace, ' ',  trim($dir,'.md'));
+        $display_name = str_replace($replace, ' ',  trim($dir, '.md'));
 
         if (count($array) > 1) {
             $name = trim($array[1], '.md');
@@ -134,14 +134,20 @@ class Markdown
 
 
     /**
-     * @param null $dir
-     * @param int  $limit
-     * @return static
+     * Return and array of markdown     *
+     *
+     * @param  null $dir
+     * @param  int  $limit
+     * @return array
      */
     public function markdownPosts($dir = null, $limit = 250)
     {
 
         $source = collect($this->markdownFiles($dir));
+
+        if (empty($source)) {
+            return false; 
+        }
 
         //map files
         $files = $source->map(
@@ -159,8 +165,6 @@ class Markdown
                 $arr['title'] = $contentArray[0];
                 $arr['excerpt'] = $contentArray[2];
                 $arr['markdown'] = str_replace($arr['title'], '', $markdown);
-
-
                 return $arr;
 
             }
