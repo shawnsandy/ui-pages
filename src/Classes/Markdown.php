@@ -134,13 +134,13 @@ class Markdown
 
 
     /**
-     * Return and array of markdown     *
+     * Return and array of markdown
      *
      * @param  string $dir
      * @param  int    $limit
      * @return array
      */
-    public function markdownPosts($dir = null, $limit = 250)
+    public function markdownPosts($dir = null)
     {
 
         $source = collect($this->markdownFiles($dir));
@@ -151,7 +151,7 @@ class Markdown
 
         //map files
         $files = $source->map(
-            function ($file) use ($limit) {
+            function ($file) {
 
                 $markdown = $this->markdown->transform(
                     Storage::disk('markdown')
@@ -161,7 +161,8 @@ class Markdown
                 $contentArray = explode("\n", $markdown);
 
                 $arr['url'] = $this->markdownLink($file, 'url');
-                $arr['last_modified'] = date('Y-m-d H:i:s', Storage::disk('markdown')->lastModified($file));
+                $arr['last_modified'] = date('Y-m-d H:i:s',
+                    Storage::disk('markdown')->lastModified($file));
                 $arr['link'] = $this->markdownLink($file);
                 $arr['title'] = $contentArray[0];
                 $arr['excerpt'] = $contentArray[2];
