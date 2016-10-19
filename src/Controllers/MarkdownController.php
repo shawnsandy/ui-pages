@@ -38,13 +38,8 @@ class MarkdownController extends Controller
      */
     public function index()
     {
-        $files = Storage::disk('markdown')->directories();
-        $arr = [];
-        foreach ($files as $file):
-            $arr = trim($file, '.md');
-        endforeach;
+        return view('page::markdown.index');
 
-        return $arr;
     }
 
     /**
