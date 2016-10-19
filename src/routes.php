@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 Route::group(
     ['prefix' => 'page'], function () {
@@ -31,13 +30,6 @@ Route::group(
 Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
 
 Route::get('test-login', function (Request $request) {
-
-    $files = collect(MKD::markdownFiles());
-    $m = new \Michelf\MarkdownExtra();
-    $out = $files->map(function ($file) use ($m) {
-        $arr = explode("\n", $m->transform(Storage::disk('markdown')->get($file)));
-        return $arr[0];
-    });
 
     return MKD::markdownPosts();
 
