@@ -61,7 +61,7 @@ class DashController extends Controller
      */
     public function index()
     {
-        //$collect = collect($this->logs->all());
+
         $logs = $this->log_collection;
         $markdown = Storage::disk('markdown')->allFiles();
         $env = $this->env->getContent();
