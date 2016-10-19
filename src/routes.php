@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 Route::group(
     ['prefix' => 'page'], function () {
