@@ -37,8 +37,8 @@ class Socializer
         if ($userExist = User::where($user['email'])->first()) {
             return $userExist; 
         }
-
-        return $newUser = User::create($user);
+        $newUser = User::create($user);
+        return $newUser;
     }
 
     /**
