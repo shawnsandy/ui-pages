@@ -12,7 +12,8 @@
                     <div class="panel-body">
                         <h3>Recent News</h3>
                         <hr>
-                        @each('page::markdown.markdown-links', collect(MKD::markdownPosts()), 'links')
+                        @each('page::markdown.markdown-links', collect(MKD::markdownPosts()),
+                        'links', 'page::shared.no-content')
                     </div>
                 </div>
             </div>
