@@ -1,9 +1,7 @@
 <?php namespace ShawnSandy\PageKit\Controllers;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Storage;
 use ShawnSandy\PageKit\Classes\Markdown;
 
 
@@ -38,20 +36,16 @@ class MarkdownController extends Controller
      */
     public function index()
     {
-        $files = Storage::disk('markdown')->directories();
-        $arr = [];
-        foreach ($files as $file):
-            $arr = trim($file, '.md');
-        endforeach;
 
-        return $arr;
+        return view('page::markdown.index');
+
     }
 
     /**
      * Show a specific page params
      *
-     * @param $posts
-     * @param Request $request
+     * @param  $posts
+     * @param  Request $request
      * @return string
      */
     public function show($posts, Request $request)
@@ -66,9 +60,9 @@ class MarkdownController extends Controller
             $markdown = $this->pagekit->markdown($request->page, $posts);
         endif;
 
-        if(!empty($markdown)) {
+        if (!empty($markdown)) :
             $view = 'page::markdown.show'; 
-        }
+        endif ;
 
         return view($view, compact('markdown'));
 

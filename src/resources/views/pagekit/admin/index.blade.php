@@ -1,5 +1,5 @@
 @extends('page::page-layouts.admin-v2')
-
+@section('title', 'Dashboard')
 @section('content')
     <div class="container-fluid">
 

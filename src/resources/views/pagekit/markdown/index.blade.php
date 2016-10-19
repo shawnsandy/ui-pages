@@ -1,13 +1,11 @@
 @extends('page::page-layouts.main-page')
-
+@section('title', 'News and Articles')
 @section('content')
     <div class="container">
         <div class="row">
-            <article>
-                <h2>
-                    Articles
-                </h2>
-            </article>
+            <div class="col-md-10 col-md-offset-1">
+                @each('page::markdown.markdown-posts', collect(MKD::markdownPosts()), 'post')
+            </div>
         </div>
     </div>
 @endsection

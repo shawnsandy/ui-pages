@@ -1,4 +1,5 @@
 @extends('page::page-layouts.main-page')
+@section('title', 'Contact us')
 @section('content')
 
     <div class="container">

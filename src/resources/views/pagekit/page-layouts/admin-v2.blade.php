@@ -51,9 +51,7 @@
                                             <a href="//github.com/shawnsandy/ui-pages" target="_blank">Github page for
                                                 setup
                                                 instructions.</a>
-                                        <hr>
-                                        @include('page::shared.markdown-links')
-
+                                        </p>
                                     </div>
                                 </div>
                             </div>

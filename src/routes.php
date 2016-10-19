@@ -30,10 +30,17 @@ Route::group(
 
 Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
 
-Route::get(
-    'test-login', function (Request $request) {
-    $md = new \ShawnSandy\PageKit\Classes\Markdown();
-    $files = $md->markdownFiles();
-    return  MKD::type('url')->markdownMenu();
-}
-);
+Route::get('test-login', function (Request $request) {
+//    $md = new \ShawnSandy\PageKit\Classes\Markdown();
+    $files = collect(MKD::markdownFiles());
+    $m = new \Michelf\MarkdownExtra();
+    $out = $files->map(function ($file) use ($m) {
+        $arr = explode("\n", $m->transform(Storage::disk('markdown')->get($file)));
+        return $arr[0];
+    });
+
+    return MKD::markdownPosts();
+
+//    return  MKD::type('url')->markdownMenu();
+
+});

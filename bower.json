@@ -24,7 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "typicons.font": "typicons#^2.0.7",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "typicons.font": "typicons#^2.0.7"
   }
 }
