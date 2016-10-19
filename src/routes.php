@@ -31,7 +31,7 @@ Route::group(
 Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
 
 Route::get('test-login', function (Request $request) {
-//    $md = new \ShawnSandy\PageKit\Classes\Markdown();
+
     $files = collect(MKD::markdownFiles());
     $m = new \Michelf\MarkdownExtra();
     $out = $files->map(function ($file) use ($m) {
@@ -40,7 +40,5 @@ Route::get('test-login', function (Request $request) {
     });
 
     return MKD::markdownPosts();
-
-//    return  MKD::type('url')->markdownMenu();
 
 });
