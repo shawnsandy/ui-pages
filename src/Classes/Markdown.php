@@ -156,9 +156,10 @@ class Markdown
 
                 $arr['url'] = $this->markdownLink($file, 'url');
                 $arr['link'] = $this->markdownLink($file);
-                $arr['title'] = collect($contentArray)->first();
-                $arr['title'] = collect($contentArray)->first();
+                $arr['title'] = $contentArray[0];
+                $arr['excerpt'] = $contentArray[2];
                 $arr['markdown'] = str_replace($arr['title'], '', $markdown);
+
 
                 return $arr;
 
