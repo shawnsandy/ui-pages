@@ -59,6 +59,20 @@ class Markdown
     }
 
     /**
+     * Convert a md file outside the markdown disk to html
+     *
+     * @param  $file
+     * @return string
+     */
+    public function markdownRead($file)
+    {
+
+        $contents = file_get_contents($file);
+        return $this->markdown->transform($contents);
+
+    }
+
+    /**
      * Returns a list of file from a dir
      *
      * @param  string $dir directory
@@ -84,8 +98,8 @@ class Markdown
 
         $replace = array('-', '_');
 
-        $url =  trim($dir, '.md');
-        $display_name = str_replace($replace, ' ',  trim($dir, '.md'));
+        $url = trim($dir, '.md');
+        $display_name = str_replace($replace, ' ', trim($dir, '.md'));
 
         if (count($array) > 1) {
             $name = trim($array[1], '.md');
@@ -145,7 +159,7 @@ class Markdown
         $source = collect($this->markdownFiles($dir));
 
         if (empty($source)) {
-            return false; 
+            return false;
         }
 
         //map files
@@ -154,14 +168,16 @@ class Markdown
 
                 $markdown = $this->markdown->transform(
                     Storage::disk('markdown')
-                    ->get($file)
+                        ->get($file)
                 );
 
                 $contentArray = explode("\n", $markdown);
 
                 $arr['url'] = $this->markdownLink($file, 'url');
-                $arr['last_modified'] = date('Y-m-d H:i:s',
-                    Storage::disk('markdown')->lastModified($file));
+                $arr['last_modified'] = date(
+                    'Y-m-d H:i:s',
+                    Storage::disk('markdown')->lastModified($file)
+                );
                 $arr['link'] = $this->markdownLink($file);
                 $arr['title'] = $contentArray[0];
                 $arr['excerpt'] = $contentArray[2];
