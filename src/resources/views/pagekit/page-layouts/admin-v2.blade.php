@@ -56,7 +56,7 @@
                                         <div class="widget-heading text-uppercase">
                                             Latest News
                                         </div>
-                                      
+
 
                                     </div>
                                 </div>
