@@ -1,8 +1,8 @@
 @extends('page::page-layouts.main-page')
+@section('title', 'Missing Page')
 @section('content')
     <div class="container">
         <div class="row">
-
             <div class="col-md-12 text-center">
                 <h1>Oops, Seems you found our missing page.</h1>
                 <p>

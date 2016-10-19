@@ -1,5 +1,5 @@
 @extends('page::page-layouts.main-page')
-@section('title', 'News Blog')
+@section('title', 'News and Articles')
 @section('content')
     <div class="container">
         <div class="row">
