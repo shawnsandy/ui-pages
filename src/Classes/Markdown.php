@@ -61,7 +61,7 @@ class Markdown
     /**
      * Returns a list of file from a dir
      *
-     * @param  null $dir directory
+     * @param  string $dir directory
      * @return mixed
      */
     public function markdownFiles($dir = null)
@@ -136,8 +136,8 @@ class Markdown
     /**
      * Return and array of markdown     *
      *
-     * @param  null $dir
-     * @param  int  $limit
+     * @param  string $dir
+     * @param  int    $limit
      * @return array
      */
     public function markdownPosts($dir = null, $limit = 250)
@@ -161,6 +161,7 @@ class Markdown
                 $contentArray = explode("\n", $markdown);
 
                 $arr['url'] = $this->markdownLink($file, 'url');
+                $arr['last_modified'] = date('Y-m-d H:i:s', Storage::disk('markdown')->lastModified($file));
                 $arr['link'] = $this->markdownLink($file);
                 $arr['title'] = $contentArray[0];
                 $arr['excerpt'] = $contentArray[2];
