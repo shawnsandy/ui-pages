@@ -51,8 +51,12 @@
                                             <a href="//github.com/shawnsandy/ui-pages" target="_blank">Github page for
                                                 setup
                                                 instructions.</a>
+                                        </p>
                                         <hr>
-                                        @include('page::shared.markdown-links')
+                                        <div class="widget-heading text-uppercase">
+                                            Latest News
+                                        </div>
+                                        @each('page::shared.markdown-links', collect(MKD::markdownMenu()), 'links')
 
                                     </div>
                                 </div>
