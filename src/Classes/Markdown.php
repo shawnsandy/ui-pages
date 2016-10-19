@@ -34,7 +34,7 @@ class Markdown
 
 
     /**
-     * Parse a output a markdown file
+     * Parses and output a markdown file
      *
      * @param  string $markdown File name
      * @param  null   $page     File directory
@@ -46,11 +46,11 @@ class Markdown
         $file = $markdown . '.md';
 
         if (isset($page)) {
-            $file = $page . '/' . $markdown . '.md'; 
+            $file = $page . '/' . $markdown . '.md';
         }
 
         if (!Storage::disk('markdown')->exists($file)) {
-            return false; 
+            return false;
         }
 
         $file = Storage::disk('markdown')->get($file);
@@ -78,19 +78,14 @@ class Markdown
      */
     public function markdownLink($file_path, $type = '')
     {
-        /**
-         * split the $file_path into an array
-         * parse the segments of the $array into the data array
-         * if the $array count is > 0 link should contain url params
-         */
-        
+
         $array = explode('/', $file_path);
         $dir = $array[0];
 
         $replace = array('-', '_');
 
-        $url =  trim($dir,'.md');
-        $display_name = str_replace($replace, ' ',  trim($dir,'.md'));
+        $url = trim($dir, '.md');
+        $display_name = str_replace($replace, ' ', trim($dir, '.md'));
 
         if (count($array) > 1) {
             $name = trim($array[1], '.md');
@@ -98,7 +93,7 @@ class Markdown
             $display_name = str_replace($replace, ' ', $name);
         }
 
-        $link =  ($type == 'url') ? '/md/'.$url :
+        $link = ($type == 'url') ? '/md/' . $url :
             '<a href="/md/' . $url . '" class="markdown-link">' . $display_name .
             '</a>';
         return $link;
@@ -108,7 +103,7 @@ class Markdown
 
     /**
      * Returns an list or directory of array of markdown files
-     * 
+     *
      * @param  string $dir file dir
      * @return array
      */
@@ -118,10 +113,10 @@ class Markdown
         $md_files = $this->markdownFiles($dir);
         $links = [];
 
-        foreach ($md_files as  $file) {
+        foreach ($md_files as $file) {
             $links[] = $this->markdownLink($file, $this->type);
         }
-        return $links ;
+        return $links;
 
     }
 
@@ -131,10 +126,47 @@ class Markdown
      * @param  string $type return type of markDown() link
      * @return string
      */
-    public function type($type )
+    public function type($type)
     {
         $this->type = $type;
         return $this;
+    }
+
+
+    /**
+     * @param null $dir
+     * @param int  $limit
+     * @return static
+     */
+    public function markdownPosts($dir = null, $limit = 250)
+    {
+
+        $source = collect($this->markdownFiles($dir));
+
+        //map files
+        $files = $source->map(
+            function ($file) use ($limit) {
+
+                $markdown = $this->markdown->transform(
+                    Storage::disk('markdown')
+                    ->get($file)
+                );
+
+                $contentArray = explode("\n", $markdown);
+
+                $arr['url'] = $this->markdownLink($file, 'url');
+                $arr['link'] = $this->markdownLink($file);
+                $arr['title'] = collect($contentArray)->first();
+                $arr['title'] = collect($contentArray)->first();
+                $arr['markdown'] = str_replace($arr['title'], '', $markdown);
+
+                return $arr;
+
+            }
+        );
+
+        return $files;
+
     }
 
 
