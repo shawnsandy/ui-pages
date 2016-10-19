@@ -63,7 +63,6 @@ class GithubLoginController extends Controller
             ]
         );
             $request->session()->save();
-            var_dump($user);
             return $user->user['login'];
 
     }
