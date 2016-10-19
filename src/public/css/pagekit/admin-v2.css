@@ -61,8 +61,7 @@ body {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    overflow: hidden; }
+    transition: all 0.5s ease; }
 
 #wrapper.toggled {
     padding-left: 200px; }
@@ -86,8 +85,7 @@ body {
     #wrapper.toggled {
         padding-left: 80px; }
     #sidebar-wrapper {
-        width: 200px;
-        overflow: hidden; }
+        width: 200px; }
     #wrapper.toggled #sidebar-wrapper {
         width: 80px; }
     #page-content-wrapper {

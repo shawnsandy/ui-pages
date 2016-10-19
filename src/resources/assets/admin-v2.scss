@@ -35,7 +35,6 @@ body {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  overflow: hidden;
 
 }
 
@@ -71,7 +70,6 @@ body {
 
   #sidebar-wrapper {
     width: $sidebar-width;
-    overflow: hidden;
   }
 
   #wrapper.toggled #sidebar-wrapper {
