@@ -56,7 +56,7 @@
                                         <div class="widget-heading text-uppercase">
                                             Latest News
                                         </div>
-                                        @each('page::shared.markdown-links', collect(MKD::markdownMenu()), 'links')
+                                      
 
                                     </div>
                                 </div>
