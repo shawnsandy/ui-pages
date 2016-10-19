@@ -136,8 +136,7 @@ class Markdown
     /**
      * Return and array of markdown
      *
-     * @param  string $dir
-     * @param  int    $limit
+     * @param  string $dir location of md directory
      * @return array
      */
     public function markdownPosts($dir = null)
