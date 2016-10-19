@@ -52,12 +52,6 @@
                                                 setup
                                                 instructions.</a>
                                         </p>
-                                        <hr>
-                                        <div class="widget-heading text-uppercase">
-                                            Latest News
-                                        </div>
-
-
                                     </div>
                                 </div>
                             </div>
