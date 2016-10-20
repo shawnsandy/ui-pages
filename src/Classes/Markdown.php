@@ -55,6 +55,7 @@ class Markdown
         }
 
         $file = Storage::disk('markdown')->get($file);
+
         return $this->markdown->transform($file);
 
     }
@@ -179,9 +180,8 @@ class Markdown
                     'Y-m-d',
                     Storage::disk('markdown')->lastModified($file)
                 );
-                $now = Carbon::now();
-                $posted = Carbon::parse($arr['last_modified']);
-                $arr['time_ago'] = $now->diffForHumans($posted);
+                $posted =  Carbon::now()->parse($arr['last_modified'])->diffForHumans();
+                $arr['time_ago'] = $posted;
                 $arr['link'] = $this->markdownLink($file);
                 $arr['title'] = $contentArray[0];
                 $arr['excerpt'] = $contentArray[2];

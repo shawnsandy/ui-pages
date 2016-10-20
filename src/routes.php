@@ -38,6 +38,6 @@ Route::get('test-login', function (Request $request) {
 
     $now = Carbon::now();
 
-    return Carbon::now()->subDays(30)->diffForHumans();
+    return Carbon::now()->parse('2015-12-20')->diffForHumans();
 
 });
