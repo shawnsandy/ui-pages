@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 Route::group(
@@ -31,6 +32,12 @@ Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
 
 Route::get('test-login', function (Request $request) {
 
-    return MKD::markdownPosts();
+    //return MKD::markdownPosts();
+
+
+
+    $now = Carbon::now();
+
+    return Carbon::now()->subDays(30)->diffForHumans();
 
 });

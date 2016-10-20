@@ -2,6 +2,7 @@
 
 namespace ShawnSandy\PageKit\Classes;
 
+use Carbon\Carbon;
 use Michelf\MarkdownExtra;
 use Illuminate\Support\Facades\Storage;
 
@@ -175,9 +176,12 @@ class Markdown
 
                 $arr['url'] = $this->markdownLink($file, 'url');
                 $arr['last_modified'] = date(
-                    'Y-m-d H:i:s',
+                    'Y-m-d',
                     Storage::disk('markdown')->lastModified($file)
                 );
+                $now = Carbon::now();
+                $posted = Carbon::parse($arr['last_modified']);
+                $arr['time_ago'] = $now->diffForHumans($posted);
                 $arr['link'] = $this->markdownLink($file);
                 $arr['title'] = $contentArray[0];
                 $arr['excerpt'] = $contentArray[2];

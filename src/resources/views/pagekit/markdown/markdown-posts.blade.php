@@ -1,6 +1,6 @@
 <div class="markdown-posts">
     <h2>{!! strip_tags($post['title'])  !!}</h2>
-    <p class="meta"><small>Updated {{ $post['last_modified'] }}</small></p>
+    <p class="meta"><small>Updated {{ $post['last_modified'] }} {{ $post['time_ago'] }}</small></p>
     <p>{{ strip_tags($post['excerpt']) }}</p>
     <div class="read-more text-right">
         <a href="{{ $post['url'] }}" class="btn btn-link btn-sm text-capitalize">Read full article</a>
