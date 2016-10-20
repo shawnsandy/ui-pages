@@ -32,12 +32,6 @@ Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
 
 Route::get('test-login', function (Request $request) {
 
-    //return MKD::markdownPosts();
-
-
-
-    $now = Carbon::now();
-
     return Carbon::now()->parse('2015-12-20')->diffForHumans();
 
 });
