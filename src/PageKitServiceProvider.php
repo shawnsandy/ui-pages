@@ -49,7 +49,7 @@ class PageKitServiceProvider extends ServiceProvider
             'pagekit-config'
         );
 
-        require_once __DIR__ .'/helpers/helper.php';
+        require_once __DIR__ .'/Helpers/helper.php';
 
     }
 

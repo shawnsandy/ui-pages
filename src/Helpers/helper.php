@@ -7,6 +7,7 @@
  */
 
 
-function pages() {
+function pages() 
+{
     return 'Pages Helper';
 }
