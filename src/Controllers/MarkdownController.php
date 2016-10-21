@@ -61,8 +61,8 @@ class MarkdownController extends Controller
         endif;
 
         if (!empty($markdown)) :
-            $view = 'page::markdown.show'; 
-        endif ;
+            $view = 'page::markdown.show';
+        endif;
 
         return view($view, compact('markdown'));
 

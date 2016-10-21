@@ -25,15 +25,13 @@ class PageKitServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__ . '/resources/views/pagekit' =>
-                    resource_path('views/vendor/page'),
+                __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page'),
             ], 'pagekit-views'
         );
 
         $this->publishes(
             [
-                __DIR__ . '/resources/views/pagekit' =>
-                    resource_path('views/vendor/page')
+                __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page')
             ], 'pagekit-enveditor'
         );
 
@@ -51,10 +49,9 @@ class PageKitServiceProvider extends ServiceProvider
             'pagekit-config'
         );
 
-        if (!$this->app->runningInConsole()) {
-            include_once __DIR__ .'/helpers/helper.php';
-        }
-
+        if (!$this->app->runningInConsole()) :
+            include_once __DIR__ . '/Helpers/helper.php';
+        endif;
 
     }
 
@@ -77,7 +74,7 @@ class PageKitServiceProvider extends ServiceProvider
         $this->app->bind(
             'MKD', function () {
                 return new Markdown();
-            } 
+            }
         );
     }
 

@@ -54,8 +54,8 @@ class Markdown
             return false;
         }
 
-        $file = Storage::disk('markdown')->get($file);
-        return $this->markdown->transform($file);
+        $array = $this->markdownToArray($file);
+        return $array ;
 
     }
 
@@ -152,7 +152,7 @@ class Markdown
      * Return and array of markdown
      *
      * @param  string $dir location of md directory
-     * @return array
+     * @return mixed
      */
     public function markdownPosts($dir = null)
     {
@@ -167,26 +167,15 @@ class Markdown
         $files = $source->map(
             function ($file) {
 
-                $markdown = $this->markdown->transform(
-                    Storage::disk('markdown')
-                        ->get($file)
-                );
-
-                $contentArray = explode("\n", $markdown);
-
-                $arr['url'] = $this->markdownLink($file, 'url');
-                $arr['last_modified'] = date(
-                    'Y-m-d',
-                    Storage::disk('markdown')->lastModified($file)
-                );
-                $now = Carbon::now();
-                $posted = Carbon::parse($arr['last_modified']);
-                $arr['time_ago'] = $now->diffForHumans($posted);
-                $arr['link'] = $this->markdownLink($file);
-                $arr['title'] = $contentArray[0];
-                $arr['excerpt'] = $contentArray[2];
-                $arr['markdown'] = str_replace($arr['title'], '', $markdown);
-                return $arr;
+                    $array = $this->markdownToArray($file);
+                    $arr['url'] = $array['url'];
+                    $arr['last_modified'] = $array['last_modified'];
+                    $arr['time_ago'] = $array['time_ago'];
+                    $arr['link'] = $array['link'];
+                    $arr['title'] = $array['title'];
+                    $arr['excerpt'] = $array['excerpt'];
+                    $arr['content'] = $array['content'];
+                    return $arr;
 
             }
         );
@@ -195,6 +184,44 @@ class Markdown
 
     }
 
+
+    /**
+     * Takes a markdown and converts it to array
+     *
+     * @param  string $file
+     * @return array
+     */
+    public function markdownToArray($file)
+    {
+
+        $markdown = $this->markdown->transform(
+            Storage::disk('markdown')
+                ->get($file)
+        );
+
+        $array = explode("\n", $markdown);
+
+        $data['url'] = $this->markdownLink($file, 'url');
+        $data['last_modified'] = date(
+            'Y-m-d',
+            Storage::disk('markdown')->lastModified($file)
+        );
+        $posted =  Carbon::now()->parse($data['last_modified'])->diffForHumans();
+        $data['time_ago'] = $posted;
+        $data['link'] = $this->markdownLink($file);
+        $data['title'] = $array[0];
+        $data['excerpt'] = $array[2];
+        $data['content'] = str_replace($data['title'], '', $markdown);
+
+        return $data ;
+
+    }
+
+    /**
+     * Test method
+     *
+     * @return string
+     */
     public function testView()
     {
         return view('page::shared.no-content')->render();
