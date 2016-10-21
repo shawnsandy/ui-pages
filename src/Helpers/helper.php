@@ -9,5 +9,6 @@
  */
 function pages($something)
 {
-    return 'Pages Helper';
+    $pages = 'Pages Helper'
+    return $pages;
 }
