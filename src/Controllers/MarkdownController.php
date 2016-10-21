@@ -52,7 +52,7 @@ class MarkdownController extends Controller
     {
 
         $file = $posts;
-        $markdown = $this->pagekit->markdown($file);
+       $markdown = $this->pagekit->markdown($file);
 
         $view = "page::missing-page";
 
@@ -61,8 +61,8 @@ class MarkdownController extends Controller
         endif;
 
         if (!empty($markdown)) :
-            $view = 'page::markdown.show'; 
-        endif ;
+            $view = 'page::markdown.show';
+        endif;
 
         return view($view, compact('markdown'));
 
