@@ -4,7 +4,9 @@
         <div class="row">
             <div class="col-md-9">
                 <article class="markdown">
-                    {!! $markdown !!}
+                    {!! $markdown['title'] !!}
+                    <p class="meta"><small><em>Posted : {{ $markdown['time_ago'] }}</em></small></p>
+                    {!! $markdown['content'] !!}
                 </article>
             </div>
             <div class="col-md-3">
