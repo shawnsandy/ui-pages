@@ -1,13 +1,13 @@
 <?php
+
+
 /**
- * Created by PhpStorm.
- * User: shawnsandy
- * Date: 10/20/16
- * Time: 10:59 AM
+ * Test functions
+ * 
+ * @param $something
+ * @return string
  */
-
-
-function pages() 
+function pages($something)
 {
     return 'Pages Helper';
 }
