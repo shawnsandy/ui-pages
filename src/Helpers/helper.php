@@ -7,8 +7,8 @@
  * @param $something
  * @return string
  */
-function pages($something)
+function pages($something = 'Pages Helper')
 {
-    $pages = 'Pages Helper';
+    $pages = $something;
     return $pages;
 }
