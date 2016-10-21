@@ -18,7 +18,7 @@ class PageKitServiceProvider extends ServiceProvider
     public function boot()
     {
         if (!$this->app->routesAreCached()) {
-            require __DIR__ . '/routes.php';
+            include __DIR__ . '/routes.php';
         }
 
         $this->loadViewsFrom(__DIR__ . '/resources/views/pagekit', 'page');
@@ -49,7 +49,9 @@ class PageKitServiceProvider extends ServiceProvider
             'pagekit-config'
         );
 
-        require_once __DIR__ .'/Helpers/helper.php';
+        if (!$this->app->runningInConsole()) :
+            include_once __DIR__ . '/Helpers/helper.php';
+        endif;
 
     }
 
@@ -63,13 +65,17 @@ class PageKitServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/config/pagekit.php', 'pagekit'
         );
-        $this->app->bind('Breadcrumbs', function () {
-            return new Breadcrumbs();
-        });
+        $this->app->bind(
+            'Breadcrumbs', function () {
+                return new Breadcrumbs();
+            }
+        );
 
-        $this->app->bind('MKD', function() {
-            return new Markdown();
-        } );
+        $this->app->bind(
+            'MKD', function () {
+                return new Markdown();
+            }
+        );
     }
 
 
