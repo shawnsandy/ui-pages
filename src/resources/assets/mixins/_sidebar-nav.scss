@@ -58,7 +58,7 @@
 
 }
 
-@mixin sidebarLinks() {
+@mixin sidebarLinks($color: #999999) {
 
   li a {
     display: block;

@@ -1,10 +1,5 @@
 @import "variables";
-@import "mixins/mixins";
-@import "mixins/widget";
-@import "mixins/menu";
-@import "mixins/sidebarCustomizer";
-@import "mixins/sidebar-nav";
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "mixins";
 @import "modules/tbls";
 @import "modules/dashboard";
 @import "modules/components";
@@ -35,6 +30,7 @@ body {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  background-color: $black-haze;
 
 }
 
