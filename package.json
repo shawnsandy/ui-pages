@@ -47,6 +47,7 @@
   "dependencies": {
     "bourbon": "^4.2.7",
     "node-notifier": "^4.6.1",
+    "node-sass": "^3.10.1",
     "toastr": "^2.1.2"
   }
 }
