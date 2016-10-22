@@ -18,15 +18,13 @@
                         <div class="tbl-row">
                             <div class="tbl-cell branding">
                                 <h4 class="text-uppercase">
-
-                                    PageKit
-                                    <small>Admin Starter</small>
+                                    {{ config('pagekit.page_title') }}
                                 </h4>
                             </div>
                             <div class="tbl-cell profile text-right">
-                                <p>
-                                    Shawn Sandy
-                                </p>
+                                <small>
+                                    {{ config('pagekit.company_name') }}
+                                </small>
                             </div>
                         </div>
                     </div>
