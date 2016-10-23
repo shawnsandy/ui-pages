@@ -2,7 +2,9 @@
 
 namespace ShawnSandy\PageKit ;
 
-class Test extends \PHPUnit_Framework_TestCase
+use PHPUnit_Framework_TestCase;
+
+class Test extends PHPUnit_Framework_TestCase
 {
     /**
      * Test that true does in fact equal true
