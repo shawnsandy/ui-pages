@@ -17,8 +17,8 @@
         </a>
     </li>
     <li>
-        <a href="#"><i class="fa material material_people" aria-hidden="true"></i><span
-                    class="nav-title">Users</span></a>
+        <a href="/dash/logs"><i class="fa material material_error" aria-hidden="true"></i><span
+                    class="nav-title">Logs</span></a>
     </li>
 @show
 <li>
