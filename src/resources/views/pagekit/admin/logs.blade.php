@@ -7,7 +7,7 @@
             <div class="widget-heading text-uppercase"><i class="material material_info"></i> Error Logs</div>
             <hr>
             <div class="widget-body">
-                <table id="logs" class="table table-hover">
+                <table id="logs" class="table table-hover" data-order='[[1, "desc" ]]' >
                     <thead>
                     <tr>
                         <th>Error Message</th>
