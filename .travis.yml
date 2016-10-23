@@ -9,4 +9,4 @@ sudo: false
 
 install: travis_retry composer install --no-interaction --prefer-dist
 
-script: vendor/bin/phpunit --verbose
+script: vendor/bin/phpunit --debug
