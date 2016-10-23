@@ -7,7 +7,7 @@
             <div class="widget-heading text-uppercase"><i class="material material_info"></i> Error Logs</div>
             <hr>
             <div class="widget-body">
-                <table id="logs" class="table table-hover">
+                <table id="logs" class="table table-hover borderless datatable" data-order='[[1, "desc" ]]' >
                     <thead>
                     <tr>
                         <th>Error Message</th>
@@ -16,8 +16,8 @@
                     </thead>
                     <tbody>
                     @foreach ($logs as $log)
-                        <tr>
-                            <td> <p class="text-danger "> {!! $log['text'] !!}  </p> </td>
+                        <tr class="">
+                            <td> <p class="text-danger text-capitalize"> {!! str_limit($log['text'], 200) !!}  </p> </td>
                             <td class="date"><p>{{ $log['date'] }}</p></td>
                         </tr>
                     @endforeach
@@ -40,7 +40,7 @@
 <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#logs').DataTable( {
+        $('.datatable').DataTable( {
 
         } );
     } );

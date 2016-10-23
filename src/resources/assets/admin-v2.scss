@@ -157,3 +157,15 @@ body {
 #sidebar-wrapper.black-haze-lite {
   @include sidebarWrapper();
 }
+
+.datable {
+  @include borderless();
+  td {
+    min-width: 300px;
+  }
+
+}
+
+.borderless {
+  @include borderless();
+}
