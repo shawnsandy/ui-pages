@@ -253,3 +253,12 @@ body {
             color: #333333; }
         #sidebar-wrapper.black-haze-lite .sidebar-nav li a:hover {
             color: #666666; }
+
+.datable * {
+    border: none !important; }
+
+.datable td {
+    min-width: 300px; }
+
+.borderless * {
+    border: none !important; }
