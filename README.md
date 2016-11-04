@@ -181,7 +181,15 @@ php artisan vendor:publish --provider="Vinkla\Shield\ShieldServiceProvider"
 
 ```
 
-*Using `php artisan vendor:publish' can have some unintended affects* 
+__Larael ENV editor__ 
+
+Required for env file editing
+
+``` bash
+php artisan vendor:publish --provider="Brotzka\DotenvEditor\DotenvEditorServiceProvider"
+```
+
+*Using `php artisan vendor:publish' can have some unintended affects, DON'T DO IT!!!* 
 
 
 Run the php artisan command to generate your shield passwords `php artisan shield:hash username password`
