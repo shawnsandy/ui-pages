@@ -46,7 +46,7 @@ __Add the following (required) vendor service providers and aliases for pre-inst
 
 Vendor Service providers `config/app/php`
 
-```php
+``` php
 
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         JeroenG\Packager\PackagerServiceProvider::class,
@@ -66,6 +66,17 @@ Vendor Aliases
     'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
     'Socialite' => Laravel\Socialite\Facades\Socialite::class,
      
+```
+
+If you would like to use Markdown for post, add the following to `config/filesystem.php`
+
+``` php
+
+        'markdown' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/markdown/'),
+            'visibility' => 'public',
+        ],
 ```
  
  Middleware `app/Http/Kernel.php` `routeMiddlware`
@@ -88,7 +99,7 @@ __Publish tags__
 
 You can publish individual pagekit tags using `--tags` option, *please note* that the `--pagekit-asssets` tag is required for page to display correctly. **BTW this is my preferred method of install**.
 
-```php
+``` php
 
 php artisan vendor:publish --provider="ShawnSandy\PageKit\PageKitServiceProvider" --tag=name
 
@@ -96,7 +107,7 @@ php artisan vendor:publish --provider="ShawnSandy\PageKit\PageKitServiceProvider
 
 or shortcut
 
-```
+``` bash
 php artisan vendor:publish --tag=name
 
 ```
