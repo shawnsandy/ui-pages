@@ -181,14 +181,6 @@ php artisan vendor:publish --provider="Vinkla\Shield\ShieldServiceProvider"
 
 ```
 
-__Larael ENV editor__ 
-
-Required for env file editing
-
-``` bash
-php artisan vendor:publish --provider="Brotzka\DotenvEditor\DotenvEditorServiceProvider"
-```
-
 *Using `php artisan vendor:publish' can have some unintended affects, DON'T DO IT!!!* 
 
 
@@ -206,6 +198,15 @@ Add the password to your '/config/shield.php' file
 ```
 
 Visit [Laravel Shield](https://github.com/vinkla/laravel-shield) for more info.
+
+
+__Laravel .ENV editor__ 
+
+Required for editing editing the settings of you .env file
+
+``` bash
+php artisan vendor:publish --provider="Brotzka\DotenvEditor\DotenvEditorServiceProvider"
+```
 
 ### Custom Branding
 
