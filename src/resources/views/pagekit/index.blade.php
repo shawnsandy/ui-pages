@@ -38,5 +38,4 @@ AOS.init();
         $('.logo').fadeToggle( 5000, "linear" );
     })
 </script>
-
 @endpush

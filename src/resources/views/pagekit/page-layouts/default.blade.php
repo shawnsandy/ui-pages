@@ -23,6 +23,8 @@
 
     @stack('styles')
 
+    @toastCSS('toastr')
+
     @if(config('pagekit.branding'))
         <style>
 
@@ -62,9 +64,8 @@
 </head>
 
 
-<body>
-@yield('page')
-</body>
+@yield('body')
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -76,7 +77,7 @@
 <script>
     AOS.init();
 </script>
-
+@toastJS()
 <script>
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
