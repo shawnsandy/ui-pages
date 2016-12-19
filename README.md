@@ -66,6 +66,7 @@ Vendor Aliases
     'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,    
     'MD' => ShawnSandy\PageKit\Facades\MarkdownFacade::class,    
     'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+    'Debugbar' => Barryvdh\Debugbar\Facade::class,
      
 ```
 
