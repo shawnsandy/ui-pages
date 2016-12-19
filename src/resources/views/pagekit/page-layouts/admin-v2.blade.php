@@ -1,6 +1,6 @@
 @extends('page::page-layouts.default')
-@section('page')
-
+@section('body')
+<body>
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
         <div id="sidebar-wrapper" class="{{ config('pagekit.sidebar-theme_style') }}">
@@ -60,6 +60,7 @@
         </div>
         <!-- /#page-content-wrapper -->
     </div>
+</body>
 @endsection
 @push('styles')
 <link rel="stylesheet" href="{{ asset('/css/pagekit/admin-v2.css') }}">
