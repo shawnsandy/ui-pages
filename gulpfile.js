@@ -51,3 +51,10 @@ gulp.task('copy:fonts', function(){
         .pipe(gulp.dest('./src/public/css/fonts/'));
 } );
 
+gulp.task('build', function(){
+    gulp.src([
+        './node_modules/aos/dist/**/*.*',
+    ], { 'base' : 'node_modules'})
+        .pipe(gulp.dest('src/public/assets/'))
+});
+
