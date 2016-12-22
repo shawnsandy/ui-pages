@@ -1,17 +1,13 @@
 @extends('page::page-layouts.default')
 
-@section('page')
+@section('body')
 
 @section('navbar')
-
     @include('page::shared.nav')
-
 @show
 
 @section('header')
-
     @include('page::shared.header')
-
 @show
 
 <!-- main page content  -->

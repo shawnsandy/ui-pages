@@ -63,8 +63,10 @@ Vendor Aliases
 ```php
 
     'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
-    'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
+    'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,    
+    'MD' => ShawnSandy\PageKit\Facades\MarkdownFacade::class,    
     'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+    'Debugbar' => Barryvdh\Debugbar\Facade::class,
      
 ```
 
