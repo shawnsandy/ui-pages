@@ -48,8 +48,10 @@
   "dependencies": {
     "bourbon": "^4.2.7",
     "grunticon-lib": "^1.2.1",
+    "gulp-imagemin": "^3.1.1",
     "node-notifier": "^4.6.1",
     "node-sass": "^3.10.1",
-    "toastr": "^2.1.2"
+    "toastr": "^2.1.2",
+    "underscore": "^1.8.3"
   }
 }
