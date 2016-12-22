@@ -10,6 +10,7 @@ var _ = require('underscore');
 var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
 var notify = require('gulp-notify');
+var changed = require('gulp-changed');
 
 const icons = function (iconsDir, outputDir) {
     var deferred = q.defer(),
@@ -60,8 +61,12 @@ gulp.task('build', function(){
         .pipe(gulp.dest('src/public/assets/'))
 });
 
+
+
+var scss_files = ['./src/resources/assets/**/*.scss']
 gulp.task('sass', function() {
     return gulp.src('./src/resources/assets/**/*.scss', {'base' : './src/resources/assets/'})
+    .pipe(changed('./src/resources/assets/**/*.scss'))
     .pipe(sass().on('error', sass.logError))
     .pipe(notify('Sass compiled...'))
     .pipe(gulp.dest('./src/resources/assets'))
