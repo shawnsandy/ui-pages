@@ -9,6 +9,7 @@ var Grunticon = require('grunticon-lib');
 var _ = require('underscore');
 var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
+var notify = require('gulp-notify');
 
 const icons = function (iconsDir, outputDir) {
     var deferred = q.defer(),
@@ -62,6 +63,11 @@ gulp.task('build', function(){
 gulp.task('sass', function() {
     return gulp.src('./src/resources/assets/**/*.scss', {'base' : './src/resources/assets/'})
     .pipe(sass().on('error', sass.logError))
+    .pipe(notify('Sass compiled...'))
     .pipe(gulp.dest('./src/resources/assets'))
+})
+
+gulp.task('watch:sass', function(){
+    gulp.watch('./src/resources/assets/**/*.scss', ['sass']);
 })
 
