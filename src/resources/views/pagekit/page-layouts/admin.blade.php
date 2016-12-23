@@ -1,5 +1,7 @@
 @extends('page::page-layouts.default')
-@section('page')
+@section('body')
+    <body>
+
     <div id="wrapper" class="table sidebar-closed">
         <div class="table-row">
             <div class="table-cell">
@@ -92,6 +94,8 @@
             @show
         </div>
     </div>
+
+    </body>
 @endsection
 
 @push('styles')

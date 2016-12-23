@@ -1,6 +1,6 @@
 @extends('page::page-layouts.default')
 @section('title', 'Laravel Pages')
-@section('page')
+@section('body')
 
 @include('page::shared.header', ["class_name" => "landing bg-5"])
 
@@ -31,12 +31,9 @@
 </style>
 @endpush
 @push('scripts')
-<script src="/packages/aos/aos.js"></script>
 <script>
-AOS.init();
     $(document).ready(function(){
         $('.logo').fadeToggle( 5000, "linear" );
     })
 </script>
-
 @endpush

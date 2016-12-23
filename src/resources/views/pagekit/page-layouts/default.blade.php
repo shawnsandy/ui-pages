@@ -17,7 +17,7 @@
     @stack('beforeStyles')
     <link rel="stylesheet" href="/css/pagekit/app.css">
     <link rel="stylesheet" href="/css/pagekit/page.css">
-    <link rel="stylesheet" href="/vendor/aos/aos.css"/>
+    <link rel="stylesheet" href="/assets/aos/dist/aos.css"/>
     <link href="/css/pagekit/fonts/material-icons/style.css" rel="stylesheet">
     <link href="/css/pagekit/fonts/social/style.css" rel="stylesheet">
 
@@ -62,21 +62,20 @@
 </head>
 
 
-<body>
-@yield('page')
-</body>
+@yield('body')
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/assets/aos/dist/aos.js"></script>
 
 @stack('scripts')
 
-<script src="/packages/aos/aos.js"></script>
+
 <script>
     AOS.init();
 </script>
-
 <script>
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;

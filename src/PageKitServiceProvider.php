@@ -40,7 +40,7 @@ class PageKitServiceProvider extends ServiceProvider
                 __DIR__ . '/public/css/pagekit' => public_path('css/pagekit'),
                 __DIR__ . '/public/css/fonts' => public_path('css/pagekit/fonts'),
                 __DIR__ . '/public/img' => public_path('img'),
-                __DIR__ . '/public/packages' => public_path('packages')
+                __DIR__ . '/public/assets' => public_path('assets')
             ], 'pagekit-assets'
         );
 
