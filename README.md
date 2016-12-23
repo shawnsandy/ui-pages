@@ -89,21 +89,31 @@ If you would like to use Markdown for post, add the following to `config/filesys
 
 ```
 
-__Publish the pagekit vendor files / assets__
+__Publish the vendor files / assets__
 
-```php
+You can publish all vendor files or simply publish the package assets (styles/js/images)  
+
+**All files**
+``` bash
 
 php artisan vendor:publish --provider="ShawnSandy\PageKit\PageKitServiceProvider"
 
 ```
 
+**Assets**
+
+``` bash
+php artisan vendor:publish --tag=pagekit-assets
+```
+
+
 __Publish tags__
 
 You can publish individual pagekit tags using `--tags` option, *please note* that the `--pagekit-asssets` tag is required for page to display correctly. **BTW this is my preferred method of install**.
 
-``` php
+``` bash
 
-php artisan vendor:publish --provider="ShawnSandy\PageKit\PageKitServiceProvider" --tag=name
+php artisan vendor:publish --provider="ShawnSandy\PageKit\PageKitServiceProvider"
 
 ```
 
@@ -118,7 +128,7 @@ php artisan vendor:publish --tag=name
 
 * `--tag=pagekit-assets` publishes your pagekit public assets / files to `/public/` 
 * `--tag=pagekit-views` publishes your views to `vendor\pagekit`
-* `--tag=pagekit-config` publishes `config\pagekit` to `config`
+* `--tag=pagekit-config` publishes configuration file `config\pagekit` to `config`
 
 You can also use the `--force` to overwrite previously published files - `--tag=pagekit-assets --force`.
 
@@ -132,11 +142,9 @@ To customize or use the package to start your own.
 * Enjoy
           
 
-
-
 ## Usage
 
-Once installed correctly you should be able to goto  `http://yoursite.app/pagekit` 
+Once installed correctly you should be able to goto  `http://yoursite.com/page` 
 
 ### Default index page
 
