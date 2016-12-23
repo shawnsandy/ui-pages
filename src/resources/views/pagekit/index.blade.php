@@ -31,9 +31,7 @@
 </style>
 @endpush
 @push('scripts')
-<script src="/packages/aos/aos.js"></script>
 <script>
-AOS.init();
     $(document).ready(function(){
         $('.logo').fadeToggle( 5000, "linear" );
     })
