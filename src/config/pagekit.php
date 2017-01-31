@@ -14,6 +14,8 @@ return [
 
     'email' => 'email@acmeinc.com',
 
+    'contact_us_response' => 'Your message has been sent. Thank you!',
+
     'ga_tracker' => 'UA_0000000_0',
 
     'address' => '0000 Street, City, State zip',

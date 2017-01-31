@@ -11,8 +11,7 @@
                 <div class="row">
 
                     <section>
-
-
+                        @include('page::partials.messages')
                     </section>
                     <div class="col-md-6">
                         {{--<h2 class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> Visit Us</h2>--}}

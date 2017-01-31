@@ -4,7 +4,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 Route::group(
-    ['prefix' => 'page'], function () {
+    ['prefix' => 'page', 'middleware' => ['web']], function () {
     Route::get('', 'ShawnSandy\PageKit\Controllers\PagesController@index');
     Route::get('{name}', 'ShawnSandy\PageKit\Controllers\PagesController@page');
     Route::get('login-reset', 'ShawnSandy\PageKit\Controllers\PagesController@resetLogin');
