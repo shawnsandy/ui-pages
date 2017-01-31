@@ -1,6 +1,7 @@
 <?php namespace ShawnSandy\PageKit\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Mail\Message;
 use Illuminate\Routing\Controller;
 use Mail;
 
