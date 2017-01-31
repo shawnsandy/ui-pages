@@ -41,6 +41,4 @@ class PageKitController extends Controller
         return view('page::admin.config');
     }
 
-
 }
-
