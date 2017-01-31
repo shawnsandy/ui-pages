@@ -2,10 +2,9 @@
 @section('title', 'Laravel Pages')
 @section('body')
 
-@include('page::shared.header', ["class_name" => "landing bg-5"])
-
-
 @include('page::shared.nav')
+
+@include('page::shared.header', ["class_name" => "landing bg-5"])
 
 <section class="sub-header text-center">
     <div class="container">
