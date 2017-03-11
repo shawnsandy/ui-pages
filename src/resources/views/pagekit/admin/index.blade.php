@@ -22,7 +22,7 @@
 
             <div class="col-md-3">
                 @include('page::admin.shared.dash-info-widget',
-                ['heading' => "Laravel Version", "content" => 'Ver. ' .App::VERSION() ])
+                ['heading' => "Laravel Version", "content" => 'Ver ' .App::VERSION() ])
             </div>
 
         </div>
