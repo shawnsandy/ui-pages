@@ -52,6 +52,7 @@ class DashController extends Controller
         $this->view = $pages;
         $this->logs = $logViewer;
         $this->log_collection = collect($this->logs->all());
+
     }
 
     /**
