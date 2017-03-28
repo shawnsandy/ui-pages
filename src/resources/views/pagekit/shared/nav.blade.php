@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-static-top">
     <div class="container">
         <div class="navbar-header">
 
@@ -33,9 +33,6 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-
-
-
             </ul>
         </div>
     </div>
