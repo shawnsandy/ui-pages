@@ -1,4 +1,4 @@
-<form id="contact-form" action="/page/send/mail" method="post">
+<form id="contact-form" action="{{ $action or '/page/send/mail' }}" method="post">
     {{ csrf_field() }}
     <p>
         {{--<label for="full_name">Your Name</label>--}}
