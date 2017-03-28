@@ -29,7 +29,7 @@
         "laravel/socialite": "^2.0",
         "laravelcollective/html": "^5.2",
         "michelf/php-markdown": "^1.6",
-        "rap2hpoutre/laravel-log-viewer": "^0.6.0",
+        "rap2hpoutre/laravel-log-viewer": "^0.8.1",
         "sven/env-providers": "^3.0",
         "vinkla/shield": "^1.2"
     },

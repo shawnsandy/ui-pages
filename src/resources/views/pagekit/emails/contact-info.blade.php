@@ -5,13 +5,13 @@
          </h1>
      </header>
     <h2 style="font-size: 22px; text-transform: capitalize; font-weight: 500">
-        {{ $data['full_name'] }} : contact request</h2>
+        {{ $gist['full_name'] }} : contact request</h2>
     <hr>
     <h3 style="font-size: 18px">
-        Subject: {{ $data['subject'] }}
+        Subject: {{ $gist['subject'] }}
     </h3>
 
-    <p>{{ $data['message'] }}</p>
+    <p>{{ $gist['message'] }}</p>
     <hr>
 
 </div>
