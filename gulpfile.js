@@ -66,9 +66,9 @@ gulp.task('build', function() {
 
 gulp.task('sass', function() {
     return gulp.src('./src/resources/assets/*.scss', { 'base': './src/resources/assets' })
-        .pipe(changed('./src/public/assets/pagekit/css/**/*.css'))
+        .pipe(changed('./src/public/css/pagekit/**/*.css'))
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./src/public/assets/pagekit/css/'))
+        .pipe(gulp.dest('./src/public/css/pagekit/'))
         .pipe(notify({
             title: "Pages Notification",
             message: "SCSS files compiled, enjoy",
@@ -81,7 +81,7 @@ gulp.task('watch:sass', function() {
 });
 
 gulp.task("copy-dev", function() {
-    gulp.src("./src/public/assets/pagekit/css/**/*.css", { 'base': "./src/public/assets/pagekit/css/" })
+    gulp.src("./src/public/css/pagekit/**/*.css", { 'base': "./src/public/css/pagekit/" })
         .pipe(changed('../../../public/css/pagekit/'))
         .pipe(gulp.dest('../../../public/css/pagekit/'))
         .pipe(notify({

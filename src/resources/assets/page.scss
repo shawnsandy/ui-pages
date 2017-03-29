@@ -31,10 +31,10 @@ header {
 }
 
 .cover-fold {
-    height: 680px;
+    height: 680px !important;
     background-repeat: no-repeat;
     background-size: cover;
-    header.bg-5 {
+    .bg-5 {
         background-image: none;
         background-color: transparent;
     }
