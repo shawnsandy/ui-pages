@@ -30,6 +30,16 @@ header {
     }
 }
 
+.cover-fold {
+    height: 680px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    header.bg-5 {
+        background-image: none;
+        background-color: transparent;
+    }
+}
+
 .footer {
     width: 100%;
     background-color: lightgrey;
