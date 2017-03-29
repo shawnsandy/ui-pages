@@ -1,3 +1,4 @@
+@include('page::shared.nav')
 <header class="{{ $class_name or "main" }} bg-5" data-aos="fade-up">
     <section class="cover">
         <div class="layout-table">

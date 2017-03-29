@@ -2,10 +2,6 @@
 
 @section('body')
 
-@section('navbar')
-    @include('page::shared.nav')
-@show
-
 @section('header')
     @include('page::shared.header')
 @show

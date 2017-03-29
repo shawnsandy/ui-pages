@@ -33,15 +33,6 @@
             }
 
             header {
-                background-color: {!! config('pagekit.brand.header_background_color') !!};
-                color: {{ config('pagekit.brand.header_font_color')}};
-
-                @if(config('pagekit.brand.header_background_image'))
-                 background-image: url("{{ config('pagekit.brand.header_background_image') }}");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
-            @endif
 
 
             }

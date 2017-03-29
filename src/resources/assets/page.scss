@@ -1,143 +1,154 @@
 @import "variables";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-
-
-html, body {
-  height: 100%;
-  -webkit-font-smoothing: antialiased;
+html,
+body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  color: $gray;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: $gray;
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-header {
-  height: 420px;
-  background-color: $gray-lighter;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  &.landing {
-    height: 75%;
-    max-height: 640px;
-  }
+    font-size: 16px;
+    line-height: 1.6;
 }
 
+header {
+    height: 520px;
+    background-color: $gray-lighter;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.landing {
+        height: 75%;
+        max-height: 740px;
+    }
+}
+
+.cover-fold {
+    height: 680px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    header.bg-5 {
+        background-image: none;
+        background-color: transparent;
+    }
+}
 
 .footer {
-  width: 100%;
-  background-color: lightgrey; }
-
+    width: 100%;
+    background-color: lightgrey;
+}
 
 .bg-1 {
-  background-image: url("/img/bg/01.jpg");
+    background-image: url("/img/bg/01.jpg");
 }
 
 .bg-2 {
-  background-image: url("/img/bg/02.jpg");
+    background-image: url("/img/bg/02.jpg");
 }
 
 .bg-3 {
-  background-image: url("/img/bg/03.jpg");
+    background-image: url("/img/bg/03.jpg");
 }
 
 .bg-4 {
-  background-image: url("/img/bg/04.jpg");
+    background-image: url("/img/bg/04.jpg");
 }
 
 .bg-5 {
-  background-image: url("/img/bg/05.jpg");
+    background-image: url("/img/bg/05.jpg");
 }
 
 .bg-6 {
-  background-image: url("/img/bg/06.jpg");
+    background-image: url("/img/bg/06.jpg");
 }
 
 .bg-7 {
-  background-image: url("/img/bg/07.jpg");
+    background-image: url("/img/bg/07.jpg");
 }
 
-header.landing h1, .headline {
-  font-size: 72px;
+header.landing h1,
+.headline {
+    font-size: 72px;
 }
 
-main, section, footer {
-  padding-top: $base-padding;
-  padding-bottom: $base-padding;
-
+main,
+section,
+footer {
+    padding-top: $base-padding;
+    padding-bottom: $base-padding;
 }
 
 main {
-  min-height: 420px;
+    min-height: 420px;
 }
 
 footer {
-  background-color: $gray-dark;
-  color: $gray-light;
+    background-color: $gray-dark;
+    color: $gray-light;
 }
 
 .layout-table {
-  display: table;
-  width: 100% ;
-  height: 100% ;
+    display: table;
+    width: 100%;
+    height: 100%;
 }
 
 .layout-row {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }
+
 .layout-left {
-  text-align: left;
+    text-align: left;
 }
+
 .g-map {
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 0;
-  background-color: #EEEEEE;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 0;
+    background-color: #EEEEEE;
 }
 
 .cover {
-  height: 100%;
+    height: 100%;
 }
 
-
-#contact-form, .borderless {
-  label {
-    font-size: 12px;
-    font-weight: normal;
-    color: $gray-lighter;
-    display: none;
-  }
-
-  input, textarea {
-    border: none;
-    border-bottom: dotted 1px $gray-light;
-    box-shadow: none;
-    margin-bottom: 20px;
-  }
-
-  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-    background-color: $gray-lighter;
-    background-image: none;
-    color: rgb(0, 0, 0);
-  }
-
+#contact-form,
+.borderless {
+    label {
+        font-size: 12px;
+        font-weight: normal;
+        color: $gray-lighter;
+        display: none;
+    }
+    input,
+    textarea {
+        border: none;
+        border-bottom: dotted 1px $gray-light;
+        box-shadow: none;
+        margin-bottom: 20px;
+    }
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+        background-color: $gray-lighter;
+        background-image: none;
+        color: rgb(0, 0, 0);
+    }
 }
 
 .team-images {
-
     margin: 20px 0 20px 0;
     img {
         box-sizing: border-box;
         padding: 20px;
     }
-
 }
