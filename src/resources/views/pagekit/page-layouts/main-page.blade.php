@@ -2,7 +2,6 @@
 
 @section('body')
 
-
 @section('header')
     @include('page::shared.header')
 @show
