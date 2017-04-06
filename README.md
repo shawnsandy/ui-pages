@@ -256,6 +256,31 @@ header-background-image' => "https://static.pexels.com/photos/129569/pexels-phot
 
 ```
 
+__Components__
+
+Contact From
+
+``` php
+{{ Html::pageContactForm() }}
+
+```
+
+Page Nav
+
+```php
+{{ Html::pageNav() }}
+
+```
+
+Page Cover
+
+```php
+
+{{ Html::pageCover('/background/img', '500px') }}
+
+```
+
+
 !['Custom Header Background'](pagekit-custom-header.png)
 
 ## TODO
