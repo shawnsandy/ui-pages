@@ -1,6 +1,6 @@
-<div class="cover-fold  bg-5" style="{{ $styles or 'height: 600px' }}">
+<div class="cover-fold {{ $attributes["class"] or 'bg-5' }} " style="height:{{ $height or '600px' }}; background-image: {{ $background or '' }}; {{ $attributes['styles'] or '' }}">
     @include('page::shared.nav')
-    <header class="{{ $class_name or " main " }}" data-aos="fade-up">
+    <header class="" data-aos="fade-up">
         <section class="cover">
             <div class="layout-table">
                 <div class="layout-row">

@@ -7,4 +7,6 @@
  */
 
 
-Html::component('cover', "page::component.cover", []);
+Html::component('pageCover', "page::component.cover", ["background", "height", "attributes"]);
+
+Html::component('pageContactForm', "page::shared.contact-form", ["attributes"]);
