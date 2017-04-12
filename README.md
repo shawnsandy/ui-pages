@@ -10,15 +10,7 @@ Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default
 
 ### Admin Dashboard (Black Haze)
 
-![Pages Screenshot](pages-dash.png)
-
-![Pages Screenshot](pages-nav-open.png)
-
-#### Black Haze Lite
-
-![Pages Screenshot](black-haze-lite.png)
-
-![Pages Screenshot](black-haze-lite-toggled.png)
+The dash admin will become a standalone package (deprecated)
 
 #### PageKit
 
@@ -218,6 +210,33 @@ Required for editing editing the settings of you .env file
 php artisan vendor:publish --provider="Brotzka\DotenvEditor\DotenvEditorServiceProvider"
 ```
 
+__Components__
+
+Contact From
+
+``` php
+
+{{ Html::pageContactForm() }}
+
+```
+
+Page Nav
+
+```php
+
+{{ Html::pageNav() }}
+
+```
+
+Page Cover
+
+```php
+
+{{ Html::pageCover('/background/img', '500px') }} // background image, height
+
+```
+
+
 ### Custom Branding
 
 You can custom brand pagekit by editing the values in the `config/pagekit.php` 
@@ -255,6 +274,7 @@ Customize :
 header-background-image' => "https://static.pexels.com/photos/129569/pexels-photo-129569-large.jpeg",
 
 ```
+
 
 !['Custom Header Background'](pagekit-custom-header.png)
 

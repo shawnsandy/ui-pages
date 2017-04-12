@@ -53,6 +53,8 @@ class PageKitServiceProvider extends ServiceProvider
             include_once __DIR__ . '/Helpers/helper.php';
         endif;
 
+        include_once __DIR__."/components/components.php";
+
     }
 
     /**
