@@ -91,3 +91,5 @@ gulp.task("copy-dev", function() {
         }))
 
 })
+
+gulp.task("default", ["sass", "copy-dev"] );
