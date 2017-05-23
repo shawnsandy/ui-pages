@@ -31,6 +31,12 @@ class PageKitServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
+                __DIR__ . '/resources/views/pagekit' => resource_path('views/theme/page'),
+            ], 'pagekit-theme'
+        );
+
+        $this->publishes(
+            [
                 __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page')
             ], 'pagekit-enveditor'
         );
