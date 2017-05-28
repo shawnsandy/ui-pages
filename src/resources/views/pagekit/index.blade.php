@@ -1,10 +1,10 @@
-@extends('page::page-layouts.default')
+@extends($pageTheme.'page-layouts.default')
 @section('title', 'Laravel Pages')
 @section('body')
 
 
 
-@include('page::shared.cover-fold', ["class_name" => "landing bg-5"])
+@include($pageTheme.'shared.cover-fold', ["class_name" => "landing bg-5"])
 
 <section class="sub-header text-center">
 
@@ -18,7 +18,7 @@
     </div>
 </section>
 
-@include('page::shared.footer')
+@include($pageTheme.'shared.footer')
 
 @endsection
 

@@ -1,4 +1,4 @@
-@extends('page::page-layouts.main-page')
+@extends($pageTheme.'page-layouts.main-page')
 @section('title', 'Contact us')
 @section('content')
     <div class="container">
@@ -10,7 +10,7 @@
                 <div class="row">
 
                     <section>
-                        @include('page::partials.messages')
+                        @include($pageTheme.'partials.messages')
                     </section>
                     <div class="col-md-6">
                         {{--<h2 class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> Visit Us</h2>--}}

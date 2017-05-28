@@ -1,4 +1,4 @@
-@extends('page::page-layouts.main-page')
+@extends($pageTheme.'page-layouts.main-page')
 @section('title', 'Missing Page')
 @section('content')
     <div class="container">
