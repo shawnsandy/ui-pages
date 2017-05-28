@@ -1,4 +1,4 @@
-@extends($page_theme.'page-layouts.main-page')
+@extends($pageTheme.'page-layouts.main-page')
 @section('title', "About us")
 @section('content')
     <div class="container">

@@ -1,4 +1,4 @@
-@extends('page::page-layouts.main-page')
+@extends($pageTheme.'page-layouts.main-page')
 @section('content')
     <div class="container">
         <div class="row">
@@ -14,8 +14,8 @@
                     <div class="panel-body">
                         <h3>Recent News</h3>
                         <hr>
-                        @each('page::markdown.markdown-links', collect(MKD::markdownPosts()),
-                        'links', 'page::shared.no-content')
+                        @each($pageTheme.'markdown.markdown-links', collect(MKD::markdownPosts()),
+                        'links', $pageTheme.'shared.no-content')
                     </div>
                 </div>
             </div>
