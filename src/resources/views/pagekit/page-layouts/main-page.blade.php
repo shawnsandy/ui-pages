@@ -1,9 +1,9 @@
-@extends('page::page-layouts.default')
+@extends($dashTheme.'page-layouts.default')
 
 @section('body')
 
 @section('header')
-    @include('page::shared.header')
+    @include($dashTheme.'shared.header')
 @show
 
 <!-- main page content  -->
@@ -13,7 +13,7 @@
 
 <!-- footer -->
 @section('footer')
-    @include('page::shared.footer')
+    @include($dashTheme.'shared.footer')
 @show
 
 @endsection
