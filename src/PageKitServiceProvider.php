@@ -15,9 +15,7 @@
          */
         public function boot()
         {
-            if (!$this->app->routesAreCached()) {
-                include __DIR__ . '/routes.php';
-            }
+
 
             $this->loadViewsFrom(__DIR__ . '/resources/views/pagekit', 'page');
 
@@ -25,6 +23,12 @@
                 [
                     __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page'),
                 ], 'pagekit-views'
+            );
+
+            $this->publishes(
+                [
+                    __DIR__ . '/resources/views/pagekit' => resource_path('views/theme/page'),
+                ], 'pagekit-theme'
             );
 
             $this->publishes(
