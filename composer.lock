@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4c1c1a0a23b865465e981492a7e1404e",
+    "hash": "ecb97cdf0c37a60c734c43eec3b5f76f",
     "content-hash": "af426bdbd0bc7cbf909cd2cbeeb8a5bc",
     "packages": [
         {
@@ -270,6 +270,53 @@
                 "laravel"
             ],
             "time": "2017-03-11 10:41:52"
+        },
+        {
+            "name": "davestewart/sketchpad",
+            "version": "v1.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/davestewart/laravel-sketchpad.git",
+                "reference": "cf5d688d3bcb237f95ea0301da2e04496a4e89a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/davestewart/laravel-sketchpad/zipball/cf5d688d3bcb237f95ea0301da2e04496a4e89a7",
+                "reference": "cf5d688d3bcb237f95ea0301da2e04496a4e89a7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0",
+                "php": ">=5.3.0",
+                "symfony/filesystem": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "davestewart\\sketchpad\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Stewart",
+                    "homepage": "http://davestewart.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An innovative front-end environment for interactive Laravel development",
+            "homepage": "https://github.com/davestewart/laravel-sketchpad",
+            "keywords": [
+                "Tinker",
+                "laravel",
+                "playground",
+                "testing",
+                "tools"
+            ],
+            "time": "2017-05-30 18:00:04"
         },
         {
             "name": "doctrine/annotations",
@@ -2312,6 +2359,49 @@
             "time": "2017-01-16 07:55:07"
         },
         {
+            "name": "nothingworks/blade-svg",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/blade-svg.git",
+                "reference": "3ec8f970a4145350bd99cb021b1ea8a1833647ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/3ec8f970a4145350bd99cb021b1ea8a1833647ce",
+                "reference": "3ec8f970a4145350bd99cb021b1ea8a1833647ce",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^5.3",
+                "illuminate/support": "^5.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BladeSvg\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "time": "2017-04-29 15:27:41"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v2.0.10",
             "source": {
@@ -2598,16 +2688,16 @@
         },
         {
             "name": "shawnsandy/extras",
-            "version": "v0.1.28",
+            "version": "v0.1.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shawnsandy/extras.git",
-                "reference": "1d547b1b58493cb535a2b02b94e73c706557f6b5"
+                "reference": "0062e4040904048a3e9636b5e9eea43f1571be4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shawnsandy/extras/zipball/1d547b1b58493cb535a2b02b94e73c706557f6b5",
-                "reference": "1d547b1b58493cb535a2b02b94e73c706557f6b5",
+                "url": "https://api.github.com/repos/shawnsandy/extras/zipball/0062e4040904048a3e9636b5e9eea43f1571be4e",
+                "reference": "0062e4040904048a3e9636b5e9eea43f1571be4e",
                 "shasum": ""
             },
             "require": {
@@ -2615,8 +2705,12 @@
                 "barryvdh/laravel-debugbar": "^2.3",
                 "barryvdh/laravel-ide-helper": "^2.3",
                 "brotzka/laravel-dotenv-editor": "^2.0",
+                "davestewart/sketchpad": "^1.2",
                 "doctrine/dbal": "^2.5",
                 "greggilbert/recaptcha": "^2.2",
+                "illuminate/contracts": "~5.3|~5.4",
+                "illuminate/http": "~5.3|~5.4",
+                "illuminate/support": "~5.3|~5.4",
                 "laracasts/flash": "^2.0",
                 "laracasts/generators": "^1.1",
                 "laracasts/utilities": "^2.1",
@@ -2626,11 +2720,11 @@
                 "league/glide-laravel": "^1.0",
                 "php": "~5.6|~7.0",
                 "rap2hpoutre/laravel-log-viewer": "^0.9.0",
-                "thujohn/twitter": "^2.2"
+                "thujohn/twitter": "^2.2",
+                "zondicons/blade-bridge": "^0.1.3"
             },
             "require-dev": {
-                "illuminate/http": "~5.3|~5.4",
-                "illuminate/support": "~5.3|~5.4",
+                "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0||~5.0",
                 "squizlabs/php_codesniffer": "^2.3"
             },
@@ -2663,7 +2757,7 @@
                 "Extras",
                 "shawnsandy"
             ],
-            "time": "2017-04-12 16:09:09"
+            "time": "2017-05-28 01:56:14"
         },
         {
             "name": "symfony/class-loader",
@@ -2900,6 +2994,55 @@
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
             "time": "2017-04-04 07:26:27"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "c709670bf64721202ddbe4162846f250735842c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/c709670bf64721202ddbe4162846f250735842c0",
+                "reference": "c709670bf64721202ddbe4162846f250735842c0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-05-28 14:08:56"
         },
         {
             "name": "symfony/finder",
@@ -3434,6 +3577,46 @@
                 "twitter"
             ],
             "time": "2017-01-31 23:37:52"
+        },
+        {
+            "name": "zondicons/blade-bridge",
+            "version": "v0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dukestreetstudio/zondicons-blade-bridge.git",
+                "reference": "9a4ebe7d2645f0c30e86b177eea8fa302fb50740"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dukestreetstudio/zondicons-blade-bridge/zipball/9a4ebe7d2645f0c30e86b177eea8fa302fb50740",
+                "reference": "9a4ebe7d2645f0c30e86b177eea8fa302fb50740",
+                "shasum": ""
+            },
+            "require": {
+                "nothingworks/blade-svg": "^0.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zondicons\\": "src/"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                },
+                {
+                    "name": "Steve Schoger",
+                    "email": "sm.schoger@gmail.com"
+                }
+            ],
+            "time": "2017-04-17 20:11:03"
         }
     ],
     "packages-dev": [
