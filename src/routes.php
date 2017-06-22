@@ -8,7 +8,7 @@
     Route::get('/login-reset', '\ShawnSandy\PageKit\Controllers\PagesController@resetLogin');
     Route::any('/send/mail/', '\ShawnSandy\PageKit\Controllers\PageKitController@contactUs');
 
-    Route::resource('md', 'ShawnSandy\PageKit\Controllers\MarkdownController');
+    Route::resource('md', '\ShawnSandy\PageKit\Controllers\MarkdownController');
 
     Route::get('test-login', function (Request $request) {
 
