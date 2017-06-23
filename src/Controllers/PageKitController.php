@@ -29,8 +29,9 @@ class PageKitController extends Controller
        );
         Mail::send(
             'page::emails.contact-info', ['data' => $request->all()], function (Message $message) use ($request) {
-            $message->from($request->email, ': Contact request');
-            $message->to('shawnsandy04@gmail.com', 'shawn sandy')->subject('Contact request');
+            $message->from(config("mail.username"), ': Contact request');
+            $message->to($this->config("mail.username"), 'CTSFLA')
+                ->subject('Contact request');
         }
         );
         return back()->with('success', config('pagekit.contact_us_response', 'Your message has been sent. Thank you!'));
