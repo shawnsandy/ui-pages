@@ -1,121 +1,133 @@
 <?php
     namespace ShawnSandy\PageKit;
 
-    use Illuminate\Support\ServiceProvider;
-    use ShawnSandy\PageKit\Classes\Breadcrumbs;
-    use ShawnSandy\PageKit\Classes\Markdown;
+use Illuminate\Support\ServiceProvider;
+use ShawnSandy\PageKit\Classes\Breadcrumbs;
+use ShawnSandy\PageKit\Classes\Markdown;
 
-    class PageKitServiceProvider extends ServiceProvider
+class PageKitServiceProvider extends ServiceProvider
     {
 
-        /**
-         * Perform post-registration booting of services.
-         *
-         * @return null
-         */
-        public function boot()
-        {
+
+	/**
+	* Perform post-registration booting of services.
+	         *
+	         * @return null
+	         */
+	        public function boot()
+	        {
 
 
-            $this->loadViewsFrom(__DIR__ . '/resources/views/pagekit', 'page');
+		$this->loadViewsFrom(__DIR__ . '/resources/views/pagekit', 'page');
 
-            $this->publishes(
-                [
-                    __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page'),
-                ], 'pagekit-views'
-            );
+		$this->publishes(
+		                [
+		                    __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page'),
+		                ], 'pagekit-views'
+		            );
 
-            $this->publishes(
-                [
-                    __DIR__ . '/resources/views/pagekit' => resource_path('views/pagekit'),
-                ], 'pagekit-theme'
-            );
+		$this->publishes(
+		                [
+		                    __DIR__ . '/resources/views/pagekit' => resource_path('views/pagekit'),
+		                ], 'pagekit-theme'
+		            );
 
-            $this->publishes(
-                [
-                    __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page')
-                ], 'pagekit-enveditor'
-            );
+		$this->publishes(
+		                [
+		                    __DIR__ . '/resources/views/pagekit' => resource_path('views/vendor/page')
+		                ], 'pagekit-enveditor'
+		            );
 
-            $this->publishes(
-                [
-                    __DIR__ . '/public/css/pagekit' => public_path('css/pagekit'),
-                    __DIR__ . '/public/css/fonts' => public_path('css/pagekit/fonts'),
-                    __DIR__ . '/public/img' => public_path('img'),
-                    __DIR__ . '/public/assets' => public_path('assets')
-                ], 'pagekit-assets'
-            );
+		$this->publishes(
+		                [
+		                    __DIR__ . '/public/css/pagekit' => public_path('css/pagekit'),
+		                    __DIR__ . '/public/css/fonts' => public_path('css/pagekit/fonts'),
+		                    __DIR__ . '/public/img' => public_path('img'),
+		                    __DIR__ . '/public/assets' => public_path('assets')
+		                ], 'pagekit-assets'
+		            );
 
-            $this->publishes(
-                [__DIR__ . '/config/pagekit.php' => config_path('pagekit.php')],
-                'pagekit-config'
-            );
+		$this->publishes(
+		                [__DIR__ . '/config/pagekit.php' => config_path('pagekit.php')],
+		                'pagekit-config'
+		            );
 
-            if (!$this->app->runningInConsole()) :
-                include_once __DIR__ . '/Helpers/helper.php';
-            endif;
+		if (!$this->app->runningInConsole()) :
+		                include_once __DIR__ . '/Helpers/helper.php';
+		endif;
 
-            include_once __DIR__ . "/components/components.php";
+		include_once __DIR__ . "/components/components.php";
 
-            $this->pageTheme();
+		$this->pageTheme();
 
+		$views = resources_path( "views/pagekit" );
 
-        }
-
-        /**
-         * Register any package services.
-         *
-         * @return null
-         */
-        public function register()
-        {
-            $this->mergeConfigFrom(
-                __DIR__ . '/config/pagekit.php', 'pagekit'
-            );
-            $this->app->bind(
-                'Breadcrumbs', function () {
-                return new Breadcrumbs();
-            }
-            );
-
-            $this->app->bind(
-                'MKD', function () {
-                return new Markdown();
-            }
-            );
-
-            $this->app->bind('Pages', function () {
-                return new Page();
-            });
-
-        }
+		$this->loadViewsFrom($views, 'pagekit');
 
 
-        /**
-         * get the default theme
-         */
-        public function pageTheme()
-        {
+	}
 
 
-            view()->composer("*", function ($view) {
-                /* get the theme if set in config */
-                $theme = config("pagekit.theme", null);
-                /* if not theme is set in the config */
-                /* check the theme folder if exist or use the theme in package*/
-                if (!$theme):
-                    if (view()->exists("theme.page.index")):
-                        $theme = "theme.page.";
-                    else :
-                        $theme = "page::";
-                    endif;
-                endif;
+	/**
+	* Register any package services.
+	         *
+	         * @return null
+	         */
+	        public function register()
+	        {
+		$this->mergeConfigFrom(
+		                __DIR__ . '/config/pagekit.php', 'pagekit'
+		            );
+		$this->app->bind(
+		                'Breadcrumbs', function () {
+			return new Breadcrumbs();
+		}
+		);
 
-                view()->share('pageTheme', $theme);
+		$this->app->bind(
+		                'MKD', function () {
+			return new Markdown();
+		}
+		);
 
-            });
+		$this->app->bind('Pages', function () {
+			return new Page();
+		}
+		);
 
-        }
+	}
 
 
-    }
+
+	/**
+	* get the default theme
+	         */
+	        public function pageTheme()
+	        {
+
+
+		view()->composer("*", function ($view) {
+
+			/* get the theme if set in config */
+			$theme = config("pagekit.theme", null);
+
+			/* if not theme is set in the config */
+
+			/* check the theme folder if exist or use the theme in package*/
+			if (!$theme):
+			                    if (view()->exists("theme.page.index")):
+			                        $theme = "theme.page.";
+			else :
+			                        $theme = "page::";
+			endif;
+			endif;
+
+			view()->share('pageTheme', $theme);
+
+		}
+		);
+
+	}
+
+
+}
