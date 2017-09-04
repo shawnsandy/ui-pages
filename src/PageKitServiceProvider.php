@@ -27,7 +27,7 @@
 
             $this->publishes(
                 [
-                    __DIR__ . '/resources/views/pagekit' => resource_path('views/theme/page'),
+                    __DIR__ . '/resources/views/pagekit' => resource_path('views/pagekit'),
                 ], 'pagekit-theme'
             );
 

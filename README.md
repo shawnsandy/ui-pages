@@ -2,7 +2,7 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9/mini.png)](https://insight.sensiolabs.com/projects/2b15870b-8188-40ef-be16-96fea6a81bb9) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/31fe3b80a4b74e68b2d06a5859a42615)](https://www.codacy.com/app/shawnsandy04/ui-pages?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shawnsandy/ui-pages&amp;utm_campaign=Badge_Grade)
 
-Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default Laravel "Welcome Page". It provides a clean and modern set of bootstrap compatible starter pages -- Home, About, Contact and a starter admin/dashboard template. Along with a static flat file system for quickly adding and using markdown files as content. Setup, configuration and customization is quick and easy, allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes so you can focus on the development. 
+Pages (ui-pages) is a simple, easy to use drop in replacement UI for the default Laravel "Welcome Page". It provides a clean and modern set of bootstrap compatible starter pages -- Home, About, Contact and a starter admin/dashboard template. Along with a static flat file system for quickly adding and using markdown files as content. Setup, configuration and customization is quick and easy, allowing you to deploy and launch a Laravel based static marketing / promotional site in minutes so you can focus on the development.
 
 ### Home Page Screen Shot
 
@@ -47,19 +47,19 @@ Vendor Service providers `config/app/php`
         Brotzka\DotenvEditor\DotenvEditorServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Vinkla\Shield\ShieldServiceProvider::class,
-        
+
 ```
- 
+
 Vendor Aliases
- 
+
 ```php
 
     'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
-    'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,    
-    'MD' => ShawnSandy\PageKit\Facades\MarkdownFacade::class,    
+    'Breadcrumbs' => ShawnSandy\PageKit\Facades\BreadcrumbFacade::class,
+    'MD' => ShawnSandy\PageKit\Facades\MarkdownFacade::class,
     'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     'Debugbar' => Barryvdh\Debugbar\Facade::class,
-     
+
 ```
 
 If you would like to use Markdown for post, add the following to `config/filesystem.php`
@@ -72,18 +72,29 @@ If you would like to use Markdown for post, add the following to `config/filesys
             'visibility' => 'public',
         ],
 ```
- 
+
  Middleware `app/Http/Kernel.php` `routeMiddlware`
- 
+
 ```php
 
     'shield' => \Vinkla\Shield\ShieldMiddleware::class,
 
 ```
 
+__Add to your `route/wep.php` __
+
+
+``` php
+
+Route::group(["prefix" => "page"], function () {
+        Pages::routes();
+    });
+
+```
+
 __Publish the vendor files / assets__
 
-You can publish all vendor files or simply publish the package assets (styles/js/images)  
+You can publish all vendor files or simply publish the package assets (styles/js/images)
 
 **All files**
 ``` bash
@@ -118,13 +129,13 @@ php artisan vendor:publish --tag=name
 
 **PageKit tags**
 
-* `--tag=pagekit-assets` publishes your pagekit public assets / files to `/public/` 
+* `--tag=pagekit-assets` publishes your pagekit public assets / files to `/public/`
 * `--tag=pagekit-views` publishes your views to `vendor\pagekit`
 * `--tag=pagekit-config` publishes configuration file `config\pagekit` to `config`
 
 You can also use the `--force` to overwrite previously published files - `--tag=pagekit-assets --force`.
 
-### Install for custom/package development 
+### Install for custom/package development
 
 To customize or use the package to start your own.
 
@@ -132,15 +143,15 @@ To customize or use the package to start your own.
 * Import the repository `php artisan packager:git https://github.com/shawnsandy/pagekit YourVendorName YourPackgeName`. This will create and download the package to `/packages/YourVendorName/YourPackageName`. It will also add your package to composer autoload parameter and add it to `config/app.php` provider array.
 * Customize and push to you repo
 * Enjoy
-          
+
 
 ## Usage
 
-Once installed correctly you should be able to goto  `http://yoursite.com/page` 
+Once installed correctly you should be able to goto  `http://yoursite.com/page`
 
 ### Default index page
 
-Replace the default *welcome* page with the PageKit index by modifying your `app/Http/route.php` 
+Replace the default *welcome* page with the PageKit index by modifying your `app/Http/route.php`
 
 ```php
 Route::get('/', function () {
@@ -157,7 +168,7 @@ Route::get('/', function () {
 
 ### Enable dashboard in login
 
-Pages comes database free by default, as a result your admin Dash(board) won't require any login. However you can enable statless login using the [Laravel Shield](https://github.com/vinkla/laravel-shield) package that is bundled with Pages. 
+Pages comes database free by default, as a result your admin Dash(board) won't require any login. However you can enable statless login using the [Laravel Shield](https://github.com/vinkla/laravel-shield) package that is bundled with Pages.
 
 Please insure the you have added the provider to your `config\app.php` (Vendor Providers).
 
@@ -175,7 +186,7 @@ Add the middleware to the $routeMiddleware array in your Kernel.php file.
 
 ```
 
-Publish the vendor assets using the provider tag. 
+Publish the vendor assets using the provider tag.
 
 ```
 
@@ -183,7 +194,7 @@ php artisan vendor:publish --provider="Vinkla\Shield\ShieldServiceProvider"
 
 ```
 
-*Using `php artisan vendor:publish' can have some unintended affects, DON'T DO IT!!!* 
+*Using `php artisan vendor:publish' can have some unintended affects, DON'T DO IT!!!*
 
 
 Run the php artisan command to generate your shield passwords `php artisan shield:hash username password`
@@ -202,7 +213,7 @@ Add the password to your '/config/shield.php' file
 Visit [Laravel Shield](https://github.com/vinkla/laravel-shield) for more info.
 
 
-__Laravel .ENV editor__ 
+__Laravel .ENV editor__
 
 Required for editing editing the settings of you .env file
 
@@ -239,13 +250,13 @@ Page Cover
 
 ### Custom Branding
 
-You can custom brand pagekit by editing the values in the `config/pagekit.php` 
+You can custom brand pagekit by editing the values in the `config/pagekit.php`
 
 Turn branding on:
 
 ```php
     'branding' => true,
-``` 
+```
 
 Customize :
 
