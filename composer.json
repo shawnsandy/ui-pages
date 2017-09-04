@@ -42,7 +42,20 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "ShawnSandy\\PageKit\\PageKitServiceProvider"
+            ],
+            "aliases": {
+                "Pages": "ShawnSandy\\PageKit\\Facades\\PageFacade"
+            }
+        },
+        "config": {
+            "sort-packages": true
         }
+
+
     },
     "config": {
         "sort-packages": true
