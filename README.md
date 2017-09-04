@@ -18,6 +18,18 @@ The dash admin will become a standalone package (deprecated)
 
 ## Installation (traditional)
 
+
+__Laravel 5.5.* (later)__
+
+```
+
+composer require shawnsandy/pagekit dev-master
+
+```
+
+
+__Laravel 5.4.* (earlier)__
+
 ```
 
 composer require shawnsandy/pagekit
