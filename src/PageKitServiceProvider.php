@@ -60,7 +60,7 @@ class PageKitServiceProvider extends ServiceProvider
 
 		$this->pageTheme();
 
-		$views = resources_path( "views/pagekit" );
+		$views = resource_path( "views/pagekit" );
 
 		$this->loadViewsFrom($views, 'pagekit');
 
