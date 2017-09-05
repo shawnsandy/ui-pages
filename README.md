@@ -93,7 +93,7 @@ If you would like to use Markdown for post, add the following to `config/filesys
 
 ```
 
-__Add to your `route/wep.php` __
+__Add to your `route/wep.php`__
 
 
 ``` php
@@ -101,6 +101,12 @@ __Add to your `route/wep.php` __
 Route::group(["prefix" => "page"], function () {
         Pages::routes();
     });
+
+
+Route::get('/', function () {
+    return view('page::index');
+});
+
 
 ```
 
